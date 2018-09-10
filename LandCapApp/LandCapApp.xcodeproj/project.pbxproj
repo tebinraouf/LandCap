@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4359069421471D9200C692D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359069321471D9200C692D7 /* AppDelegate.swift */; };
+		4359069621471D9200C692D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359069521471D9200C692D7 /* ViewController.swift */; };
+		4359069921471D9200C692D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069721471D9200C692D7 /* Main.storyboard */; };
+		4359069B21471D9300C692D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4359069A21471D9300C692D7 /* Assets.xcassets */; };
+		4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069C21471D9300C692D7 /* LaunchScreen.storyboard */; };
+		435906A921471D9300C692D7 /* LandCapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906A821471D9300C692D7 /* LandCapAppTests.swift */; };
+		435906B421471D9300C692D7 /* LandCapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906B321471D9300C692D7 /* LandCapAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		435906A521471D9300C692D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4359068821471D9200C692D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4359068F21471D9200C692D7;
+			remoteInfo = LandCapApp;
+		};
+		435906B021471D9300C692D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4359068821471D9200C692D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4359068F21471D9200C692D7;
+			remoteInfo = LandCapApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4359069021471D9200C692D7 /* LandCapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandCapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4359069321471D9200C692D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4359069521471D9200C692D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4359069821471D9200C692D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4359069A21471D9300C692D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4359069D21471D9300C692D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4359069F21471D9300C692D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		435906A421471D9300C692D7 /* LandCapAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandCapAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		435906A821471D9300C692D7 /* LandCapAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandCapAppTests.swift; sourceTree = "<group>"; };
+		435906AA21471D9300C692D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		435906AF21471D9300C692D7 /* LandCapAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandCapAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		435906B321471D9300C692D7 /* LandCapAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandCapAppUITests.swift; sourceTree = "<group>"; };
+		435906B521471D9300C692D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4359068D21471D9200C692D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		435906A121471D9300C692D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		435906AC21471D9300C692D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4359068721471D9200C692D7 = {
+			isa = PBXGroup;
+			children = (
+				4359069221471D9200C692D7 /* LandCapApp */,
+				435906A721471D9300C692D7 /* LandCapAppTests */,
+				435906B221471D9300C692D7 /* LandCapAppUITests */,
+				4359069121471D9200C692D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4359069121471D9200C692D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4359069021471D9200C692D7 /* LandCapApp.app */,
+				435906A421471D9300C692D7 /* LandCapAppTests.xctest */,
+				435906AF21471D9300C692D7 /* LandCapAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4359069221471D9200C692D7 /* LandCapApp */ = {
+			isa = PBXGroup;
+			children = (
+				4359069321471D9200C692D7 /* AppDelegate.swift */,
+				4359069521471D9200C692D7 /* ViewController.swift */,
+				4359069721471D9200C692D7 /* Main.storyboard */,
+				4359069A21471D9300C692D7 /* Assets.xcassets */,
+				4359069C21471D9300C692D7 /* LaunchScreen.storyboard */,
+				4359069F21471D9300C692D7 /* Info.plist */,
+			);
+			path = LandCapApp;
+			sourceTree = "<group>";
+		};
+		435906A721471D9300C692D7 /* LandCapAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				435906A821471D9300C692D7 /* LandCapAppTests.swift */,
+				435906AA21471D9300C692D7 /* Info.plist */,
+			);
+			path = LandCapAppTests;
+			sourceTree = "<group>";
+		};
+		435906B221471D9300C692D7 /* LandCapAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				435906B321471D9300C692D7 /* LandCapAppUITests.swift */,
+				435906B521471D9300C692D7 /* Info.plist */,
+			);
+			path = LandCapAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4359068F21471D9200C692D7 /* LandCapApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 435906B821471D9300C692D7 /* Build configuration list for PBXNativeTarget "LandCapApp" */;
+			buildPhases = (
+				4359068C21471D9200C692D7 /* Sources */,
+				4359068D21471D9200C692D7 /* Frameworks */,
+				4359068E21471D9200C692D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LandCapApp;
+			productName = LandCapApp;
+			productReference = 4359069021471D9200C692D7 /* LandCapApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		435906A321471D9300C692D7 /* LandCapAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 435906BB21471D9300C692D7 /* Build configuration list for PBXNativeTarget "LandCapAppTests" */;
+			buildPhases = (
+				435906A021471D9300C692D7 /* Sources */,
+				435906A121471D9300C692D7 /* Frameworks */,
+				435906A221471D9300C692D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				435906A621471D9300C692D7 /* PBXTargetDependency */,
+			);
+			name = LandCapAppTests;
+			productName = LandCapAppTests;
+			productReference = 435906A421471D9300C692D7 /* LandCapAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		435906AE21471D9300C692D7 /* LandCapAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 435906BE21471D9300C692D7 /* Build configuration list for PBXNativeTarget "LandCapAppUITests" */;
+			buildPhases = (
+				435906AB21471D9300C692D7 /* Sources */,
+				435906AC21471D9300C692D7 /* Frameworks */,
+				435906AD21471D9300C692D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				435906B121471D9300C692D7 /* PBXTargetDependency */,
+			);
+			name = LandCapAppUITests;
+			productName = LandCapAppUITests;
+			productReference = 435906AF21471D9300C692D7 /* LandCapAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4359068821471D9200C692D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Tebin;
+				TargetAttributes = {
+					4359068F21471D9200C692D7 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					435906A321471D9300C692D7 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 4359068F21471D9200C692D7;
+					};
+					435906AE21471D9300C692D7 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 4359068F21471D9200C692D7;
+					};
+				};
+			};
+			buildConfigurationList = 4359068B21471D9200C692D7 /* Build configuration list for PBXProject "LandCapApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4359068721471D9200C692D7;
+			productRefGroup = 4359069121471D9200C692D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4359068F21471D9200C692D7 /* LandCapApp */,
+				435906A321471D9300C692D7 /* LandCapAppTests */,
+				435906AE21471D9300C692D7 /* LandCapAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4359068E21471D9200C692D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */,
+				4359069B21471D9300C692D7 /* Assets.xcassets in Resources */,
+				4359069921471D9200C692D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		435906A221471D9300C692D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		435906AD21471D9300C692D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4359068C21471D9200C692D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4359069621471D9200C692D7 /* ViewController.swift in Sources */,
+				4359069421471D9200C692D7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		435906A021471D9300C692D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				435906A921471D9300C692D7 /* LandCapAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		435906AB21471D9300C692D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				435906B421471D9300C692D7 /* LandCapAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		435906A621471D9300C692D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4359068F21471D9200C692D7 /* LandCapApp */;
+			targetProxy = 435906A521471D9300C692D7 /* PBXContainerItemProxy */;
+		};
+		435906B121471D9300C692D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4359068F21471D9200C692D7 /* LandCapApp */;
+			targetProxy = 435906B021471D9300C692D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4359069721471D9200C692D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4359069821471D9200C692D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4359069C21471D9300C692D7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4359069D21471D9300C692D7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		435906B621471D9300C692D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		435906B721471D9300C692D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		435906B921471D9300C692D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LandCapApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.tebin.LandCapApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		435906BA21471D9300C692D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LandCapApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.tebin.LandCapApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		435906BC21471D9300C692D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LandCapAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.tebin.LandCapAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LandCapApp.app/LandCapApp";
+			};
+			name = Debug;
+		};
+		435906BD21471D9300C692D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LandCapAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.tebin.LandCapAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LandCapApp.app/LandCapApp";
+			};
+			name = Release;
+		};
+		435906BF21471D9300C692D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LandCapAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.tebin.LandCapAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LandCapApp;
+			};
+			name = Debug;
+		};
+		435906C021471D9300C692D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LandCapAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tech.tebin.LandCapAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LandCapApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4359068B21471D9200C692D7 /* Build configuration list for PBXProject "LandCapApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				435906B621471D9300C692D7 /* Debug */,
+				435906B721471D9300C692D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		435906B821471D9300C692D7 /* Build configuration list for PBXNativeTarget "LandCapApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				435906B921471D9300C692D7 /* Debug */,
+				435906BA21471D9300C692D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		435906BB21471D9300C692D7 /* Build configuration list for PBXNativeTarget "LandCapAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				435906BC21471D9300C692D7 /* Debug */,
+				435906BD21471D9300C692D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		435906BE21471D9300C692D7 /* Build configuration list for PBXNativeTarget "LandCapAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				435906BF21471D9300C692D7 /* Debug */,
+				435906C021471D9300C692D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4359068821471D9200C692D7 /* Project object */;
+}
