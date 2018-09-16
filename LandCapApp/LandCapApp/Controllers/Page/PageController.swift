@@ -97,12 +97,16 @@ extension PageController: UICollectionViewDataSource, UICollectionViewDelegate, 
 }
 
 extension PageController: LoginViewDelegate {
-    func loginBtn() {
-        print("loginBtn")
+    func signInBtn(email: String?, password: String?) {
+        print("Email: \(email), password: \(password)")
     }
     
-    func registerBtn() {
-        print("registerBtn")
+    func registerBtn(name: String?, email: String?, password: String?) {
+        print("Name: \(name), email: \(email), password: \(password)")
+    }
+    
+    func signInBtn() {
+        print("loginBtn")
     }
     
     func forgetPasswordBtn() {
