@@ -142,6 +142,14 @@ class PageView: BaseView {
         print("get started....")
         loginDelegate.getStartedBtn()
     }
+    func keyboardResponder(){
+        loginView.keyboardResponder()
+    }
+    func setTextFieldsDelegate(_ delegate: UITextFieldDelegate?){
+        loginView.nameTextField.delegate = delegate
+        loginView.emailTextField.delegate = delegate
+        loginView.passTextField.delegate = delegate
+    }
 }
 
 

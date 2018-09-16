@@ -39,6 +39,7 @@ class PageController: UIViewController {
         pageView.collectionViewDelegate = self
         pageView.collectionViewDataSource = self
         pageView.loginDelegate = self
+        pageView.setTextFieldsDelegate(self)
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -115,5 +116,15 @@ extension PageController: LoginViewDelegate {
         pageView.updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, facebookBtn: 0)
     }
     
-    
+}
+
+extension PageController: UITextFieldDelegate {
+    //MARK: Handle Keyboard Dismissal
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        pageView.keyboardResponder()
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pageView.keyboardResponder()
+        return true
+    }
 }
