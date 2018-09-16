@@ -29,6 +29,12 @@ class PageView: BaseView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    var getStartedBackground: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        return view
+    }()
     lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.pageIndicatorTintColor = .lightGray
@@ -48,12 +54,20 @@ class PageView: BaseView {
         btn.addTarget(self, action: #selector(handleGetStarted), for: .touchDown)
         return btn
     }()
+    var loginView = LoginView()
+    var centerConstraint: NSLayoutConstraint!
+    var getStartedConstraint: NSLayoutConstraint!
+    var pageControlConstraint: NSLayoutConstraint!
+    
     override func setupView() {
         collectionViewSetup()
         logoLabelViewSetup()
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: CellID.PageCell)
+        setupGetStartedBackground()
+        
         setupPageControl()
         setupGetStartedButton()
+        setupLoginView()
     }
     func collectionViewSetup() {
         addSubview(collectionView)
@@ -62,6 +76,15 @@ class PageView: BaseView {
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -150)
+            ])
+    }
+    func setupGetStartedBackground(){
+        addSubview(getStartedBackground)
+        NSLayoutConstraint.activate([
+            getStartedBackground.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
+            getStartedBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
+            getStartedBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
+            getStartedBackground.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
     func logoLabelViewSetup() {
@@ -73,35 +96,61 @@ class PageView: BaseView {
             logoLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
             ])
     }
-    func setupPageControl() {
-//        pageControlConstraint = pageControl.centerXAnchor.constraint(equalTo: getStartedBackground.centerXAnchor)
-//        pageControlConstraint.isActive = true
+    func setupPageControl(){
         addSubview(pageControl)
+        pageControlConstraint = pageControl.centerXAnchor.constraint(equalTo: getStartedBackground.centerXAnchor)
+        pageControlConstraint.isActive = true
         NSLayoutConstraint.activate([
-            pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 30),
-            pageControl.centerXAnchor.constraint(equalTo: centerXAnchor),
             pageControl.heightAnchor.constraint(equalTo: pageControl.heightAnchor),
             pageControl.widthAnchor.constraint(equalTo: pageControl.widthAnchor),
+            pageControl.topAnchor.constraint(equalTo: getStartedBackground.topAnchor, constant: 30)
             ])
     }
-    func setupGetStartedButton() {
-//        getStartedConstraint = getStartedButton.centerXAnchor.constraint(equalTo: getStartedBackground.centerXAnchor)
-//        getStartedConstraint.isActive = true
+    func setupGetStartedButton(){
         addSubview(getStartedButton)
+        getStartedConstraint = getStartedButton.centerXAnchor.constraint(equalTo: getStartedBackground.centerXAnchor)
+        getStartedConstraint.isActive = true
         NSLayoutConstraint.activate(
-            [getStartedButton.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 15),
+            [getStartedButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
              getStartedButton.heightAnchor.constraint(equalTo: getStartedButton.heightAnchor),
              getStartedButton.widthAnchor.constraint(equalTo: getStartedButton.widthAnchor),
-             getStartedButton.centerXAnchor.constraint(equalTo: centerXAnchor),
              ])
+    }
+    func setupLoginView() {
+        addSubview(loginView)
+        let top = loginView.topAnchor.constraint(equalTo: logoLabel.bottomAnchor)
+        //let leading = loginView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
+        //let trailing = loginView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+        let width = loginView.widthAnchor.constraint(equalTo: widthAnchor, constant: -40)
+        let bottom = loginView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        centerConstraint = loginView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 400)
+        centerConstraint.isActive = true
+        let constraints = [top, width, bottom]
+        NSLayoutConstraint.activate(constraints)
+    }
+    func updateConstraintFor(getStarted: CGFloat, pageControl: CGFloat, loginView: CGFloat, facebookBtn: CGFloat){
+        getStartedConstantConstraint = getStarted
+        pageControlConstantConstraint = pageControl
+        loginViewConstantConstraint = loginView
+//        fbConstantConstraint = facebookBtn
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.layoutIfNeeded()
+        }, completion: nil)
     }
     @objc func handleGetStarted() {
         print("get started....")
+        loginDelegate.getStartedBtn()
     }
 }
 
 
 extension PageView {
+    var pageCollectionView: UICollectionView {
+        get {
+            return collectionView
+        }
+    }
     var collectionViewDelegate: UICollectionViewDelegate? {
         get {
             return collectionView.delegate
@@ -124,6 +173,38 @@ extension PageView {
         }
         set {
             pageControl.currentPage = newValue
+        }
+    }
+    var getStartedConstantConstraint: CGFloat {
+        get {
+            return getStartedConstraint.constant
+        }
+        set {
+            getStartedConstraint.constant = newValue
+        }
+    }
+    var pageControlConstantConstraint: CGFloat {
+        get {
+            return pageControlConstraint.constant
+        }
+        set {
+            pageControlConstraint.constant = newValue
+        }
+    }
+    var loginViewConstantConstraint: CGFloat {
+        get {
+            return centerConstraint.constant
+        }
+        set {
+            centerConstraint.constant = newValue
+        }
+    }
+    var loginDelegate: LoginViewDelegate {
+        get {
+            return loginView.loginDelegate
+        }
+        set {
+            loginView.loginDelegate = newValue
         }
     }
 }
