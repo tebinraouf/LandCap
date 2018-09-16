@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  LandCapApp
+
+  Created by Tebin on 9/16/18.
+  Copyright © 2018 Tebin. All rights reserved.
+*/
+"Get Started" = "ده‌ست پێكه‌";
+"Sign In" = "چوونه‌ ژوره‌وه‌";
+"Register" = "Register";
+"Forget Password" = "forget password?";
+"enter name" = "enter name";
+"enter email address" = "enter email address";
+"enter password" = "enter password";

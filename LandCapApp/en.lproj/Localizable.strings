@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  LandCapApp
+
+  Created by Tebin on 9/16/18.
+  Copyright © 2018 Tebin. All rights reserved.
+*/
+"Get Started" = "GET STARTED";
+"Sign In" = "Sign In";
+"Register" = "Register";
+"Forget Password" = "forget password?";
+"enter name" = "enter name";
+"enter email address" = "enter email address";
+"enter password" = "enter password";
+
+//onboardiong pages
+"Building" = "Building";
+"Building Desc" = "Capture building information on the go. Instantly.";
+"Knowledge" = "Knowledge";
+"Knowledge Desc" = "Become smarter whenever you take a landmark photo.";
+"Geocode" = "Geocode";
+"Geocode Desc" = "Get a building addrees from your photo and get geographic information.";
+

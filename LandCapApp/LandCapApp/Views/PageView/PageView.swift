@@ -46,7 +46,8 @@ class PageView: BaseView {
     var getStartedButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("GET STARTED", for: .normal)
+        let btnName = NSLocalizedString("Get Started", comment: "skip to login view")
+        btn.setTitle(btnName, for: .normal)
         btn.backgroundColor = .orange
         btn.tintColor = .white
         btn.layer.cornerRadius = 20
@@ -118,9 +119,7 @@ class PageView: BaseView {
     }
     func setupLoginView() {
         addSubview(loginView)
-        let top = loginView.topAnchor.constraint(equalTo: logoLabel.bottomAnchor)
-        //let leading = loginView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
-        //let trailing = loginView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+        let top = loginView.topAnchor.constraint(equalTo: logoLabel.bottomAnchor, constant: 60)
         let width = loginView.widthAnchor.constraint(equalTo: widthAnchor, constant: -40)
         let bottom = loginView.bottomAnchor.constraint(equalTo: bottomAnchor)
         centerConstraint = loginView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 400)
@@ -139,7 +138,6 @@ class PageView: BaseView {
         }, completion: nil)
     }
     @objc func handleGetStarted() {
-        print("get started....")
         loginDelegate.getStartedBtn()
     }
     func keyboardResponder(){

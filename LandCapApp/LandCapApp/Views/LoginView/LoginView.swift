@@ -11,7 +11,9 @@ import UIKit
 
 class LoginView: UIScrollView {
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
-        let sc = UISegmentedControl(items: ["Sign In", "Register"])
+        let btnSignIn = NSLocalizedString("Sign In", comment: "Sign in to your account");
+        let btnRegister = NSLocalizedString("Register", comment: "Register to save your info in the cloud")
+        let sc = UISegmentedControl(items: [btnSignIn, btnRegister])
         //sc.backgroundColor = .white
         sc.tintColor = .white
         sc.selectedSegmentIndex = 1
@@ -31,7 +33,8 @@ class LoginView: UIScrollView {
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1
         textField.textColor = .white
-        textField.placeholder = "enter name"
+        let txtPlaceholder = NSLocalizedString("enter name", comment: "enter your name here")
+        textField.placeholder = txtPlaceholder
         return textField
     }()
     let emailTextField: LeftPaddedTextField = {
@@ -40,14 +43,16 @@ class LoginView: UIScrollView {
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1
         textField.textColor = .white
-        textField.placeholder = "enter email address"
+        let txtPlaceholder = NSLocalizedString("enter email address", comment: "enter your email address")
+        textField.placeholder = txtPlaceholder
         textField.keyboardType = .emailAddress
         return textField
     }()
     let passTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "enter password"
+        let txtPlaceholder = NSLocalizedString("enter password", comment: "enter your password")
+        textField.placeholder = txtPlaceholder
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1
         textField.textColor = .white
@@ -57,23 +62,19 @@ class LoginView: UIScrollView {
     lazy var loginRegisterButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Register", for: .normal)
-        btn.setTitleColor(UIColor.appColor, for: .normal)
+        let btnName = NSLocalizedString("Register", comment: "Register user")
+        btn.setTitle(btnName, for: .normal)
+        btn.setTitleColor(UIColor.orange, for: .normal)
         btn.backgroundColor = .white
         btn.layer.cornerRadius = 20
-        
-        btn.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-        btn.layer.shadowColor = UIColor.black.cgColor
-        btn.layer.shadowOffset = .zero
-        btn.layer.shadowOpacity = 0.5
-        btn.layer.shouldRasterize = true //cache the shadow because it's expensive
         btn.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
         return btn
     }()
     lazy var forgetPasswordBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("forget password?", for: .normal)
+        let btnName = NSLocalizedString("Forget Password", comment: "Forget the password label")
+        btn.setTitle(btnName, for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.addTarget(self, action: #selector(handleForgetPassword), for: .touchUpInside)
         return btn

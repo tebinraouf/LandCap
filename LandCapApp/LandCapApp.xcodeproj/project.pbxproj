@@ -22,6 +22,7 @@
 		4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069C21471D9300C692D7 /* LaunchScreen.storyboard */; };
 		435906A921471D9300C692D7 /* LandCapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906A821471D9300C692D7 /* LandCapAppTests.swift */; };
 		435906B421471D9300C692D7 /* LandCapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906B321471D9300C692D7 /* LandCapAppUITests.swift */; };
+		439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439BD25A214EFB3A00143CF7 /* Localizable.strings */; };
 		43ADA76C214EE47500F09835 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADA76B214EE47500F09835 /* LoginView.swift */; };
 		43ADA76F214EE5F900F09835 /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADA76E214EE5F900F09835 /* LeftPaddedTextField.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,10 @@
 		435906AF21471D9300C692D7 /* LandCapAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandCapAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		435906B321471D9300C692D7 /* LandCapAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandCapAppUITests.swift; sourceTree = "<group>"; };
 		435906B521471D9300C692D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		439BD259214EFB3A00143CF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		439BD25B214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/Main.strings"; sourceTree = "<group>"; };
+		439BD25C214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		439BD25D214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		43ADA76B214EE47500F09835 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		43ADA76E214EE5F900F09835 /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +163,7 @@
 		4359068721471D9200C692D7 = {
 			isa = PBXGroup;
 			children = (
+				439BD25A214EFB3A00143CF7 /* Localizable.strings */,
 				4359069221471D9200C692D7 /* LandCapApp */,
 				435906A721471D9300C692D7 /* LandCapAppTests */,
 				435906B221471D9300C692D7 /* LandCapAppUITests */,
@@ -313,6 +319,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"ckb-IQ",
 			);
 			mainGroup = 4359068721471D9200C692D7;
 			productRefGroup = 4359069121471D9200C692D7 /* Products */;
@@ -332,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */,
+				439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */,
 				4359069B21471D9300C692D7 /* Assets.xcassets in Resources */,
 				4359069921471D9200C692D7 /* Main.storyboard in Resources */,
 			);
@@ -409,6 +417,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4359069821471D9200C692D7 /* Base */,
+				439BD25B214EFD8400143CF7 /* ckb-IQ */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -417,8 +426,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				4359069D21471D9300C692D7 /* Base */,
+				439BD25C214EFD8400143CF7 /* ckb-IQ */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		439BD25A214EFB3A00143CF7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				439BD259214EFB3A00143CF7 /* en */,
+				439BD25D214EFD8400143CF7 /* ckb-IQ */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -428,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -488,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

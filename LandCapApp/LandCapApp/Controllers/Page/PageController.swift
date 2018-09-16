@@ -9,13 +9,13 @@
 import UIKit
 
 class PageController: UIViewController {
-    let pageView = PageView()
-    let pages: [Page] = {
-        let firstPage = Page(title: "Building", description: "Capture building information on the go. Instantly.", image: #imageLiteral(resourceName: "building"))
-        let secondPage = Page(title: "Knowledge", description: "Become smarter whenever you take a landmark photo.", image: #imageLiteral(resourceName: "info"))
-        let thirdPage = Page(title: "Geocode", description: "Get a building addrees from your photo and get geographic information.", image: #imageLiteral(resourceName: "geocode"))
-        return [firstPage, secondPage, thirdPage]
+    
+    let pages : [Page] = {
+        let page = Page()
+        return page.getPages()
     }()
+    
+    let pageView = PageView()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -26,7 +26,6 @@ class PageController: UIViewController {
     }
     
     func setupView(){
-        
         view.addSubview(pageView)
         NSLayoutConstraint.activate([
             pageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -99,15 +98,15 @@ extension PageController: UICollectionViewDataSource, UICollectionViewDelegate, 
 
 extension PageController: LoginViewDelegate {
     func loginBtn() {
-        
+        print("loginBtn")
     }
     
     func registerBtn() {
-        
+        print("registerBtn")
     }
     
     func forgetPasswordBtn() {
-        
+        print("forgetPasswordBtn")
     }
     
     func getStartedBtn() {
