@@ -76,6 +76,10 @@ extension PageController: UICollectionViewDataSource, UICollectionViewDelegate, 
 //            isLoginPage(false, cell)
 //        }
     }
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let pageNumber = Int(targetContentOffset.pointee.x / view.frame.width)
+        pageView.currentPage = pageNumber
+    }
 }
 
 
