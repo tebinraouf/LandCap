@@ -60,7 +60,21 @@ extension PageController: LoginViewDelegate {
     }
     
     func forgetPasswordBtn() {
-        print("forgetPasswordBtn")
+        let requestAlert = UIAlertController(title: "Request Password", message: nil, preferredStyle: .alert)
+        requestAlert.addTextField { (textfield) in
+            textfield.keyboardType = .emailAddress
+            textfield.placeholder = "enter your email here..."
+        }
+        requestAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        requestAlert.addAction(UIAlertAction(title: "Request New Password", style: .default) { (action) in
+            //action.title = "Sent..."
+            guard let requestedEmail = requestAlert.textFields?.first?.text else { return }
+            Auth.auth().sendPasswordReset(withEmail: requestedEmail) { (error) in
+                self.handling(error)
+                alert(title: "Sent", message: "Check your email to set your new password.", viewController: self)
+            }
+        })
+        self.present(requestAlert, animated: true)
     }
     
     func getStartedBtn() {
