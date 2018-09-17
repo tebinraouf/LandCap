@@ -91,21 +91,16 @@ class LoginView: UIScrollView {
     @objc func handleLoginRegisterChange(){
         let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
         loginRegisterButton.setTitle(title, for: .normal)
-        
-        
+    
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             nameTopConstarint.constant = 0
             nameTextField.isHidden = true
             forgetPasswordBtn.isHidden = false
-            
-            
         } else {
             nameTopConstarint.constant = 10
             nameTextField.isHidden = false
             forgetPasswordBtn.isHidden = true
-            
         }
-        
         containerConstraint.constant = loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? containerHeightWithoutName : containerHeight
         
         nameHeightConstraint.isActive = false

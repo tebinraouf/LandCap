@@ -14,7 +14,6 @@
 		43478AE4214732B100C2EC24 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478AE3214732B100C2EC24 /* Page.swift */; };
 		43478AE82147333700C2EC24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478AE72147333700C2EC24 /* Extensions.swift */; };
 		43478AEA21473A6900C2EC24 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478AE921473A6900C2EC24 /* BaseView.swift */; };
-		43478AEC21473B8900C2EC24 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478AEB21473B8900C2EC24 /* Helper.swift */; };
 		4359069421471D9200C692D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359069321471D9200C692D7 /* AppDelegate.swift */; };
 		4359069621471D9200C692D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359069521471D9200C692D7 /* ViewController.swift */; };
 		4359069921471D9200C692D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069721471D9200C692D7 /* Main.storyboard */; };
@@ -22,9 +21,19 @@
 		4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069C21471D9300C692D7 /* LaunchScreen.storyboard */; };
 		435906A921471D9300C692D7 /* LandCapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906A821471D9300C692D7 /* LandCapAppTests.swift */; };
 		435906B421471D9300C692D7 /* LandCapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906B321471D9300C692D7 /* LandCapAppUITests.swift */; };
+		437FAA5C214F379B0050AEE8 /* CollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA5B214F379B0050AEE8 /* CollectionDelegate.swift */; };
+		437FAA60214F37F70050AEE8 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA5F214F37F70050AEE8 /* LoginDelegate.swift */; };
+		437FAA62214F384D0050AEE8 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA61214F384D0050AEE8 /* TextFieldDelegate.swift */; };
+		437FAA64214F3BBF0050AEE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 437FAA63214F3BBF0050AEE8 /* GoogleService-Info.plist */; };
+		437FAA67214F41C00050AEE8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA66214F41C00050AEE8 /* Helper.swift */; };
+		437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA69214F43A90050AEE8 /* HomeController.swift */; };
 		439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439BD25A214EFB3A00143CF7 /* Localizable.strings */; };
+		439BD25F214F17C500143CF7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BD25E214F17C500143CF7 /* LoginModel.swift */; };
 		43ADA76C214EE47500F09835 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADA76B214EE47500F09835 /* LoginView.swift */; };
 		43ADA76F214EE5F900F09835 /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADA76E214EE5F900F09835 /* LeftPaddedTextField.swift */; };
+		69E9738D7DC9B836C40F8C36 /* Pods_LandCapAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49C17DD55C25F97DC632067 /* Pods_LandCapAppTests.framework */; };
+		7F28CD8E050E08B29261AE3F /* Pods_LandCapAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56C8A6C634323C480D0FD28 /* Pods_LandCapAppUITests.framework */; };
+		F0AE1D0E7B10E8E54EBF6FC6 /* Pods_LandCapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EF69A84E67804DC29EC337 /* Pods_LandCapApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D21E870D9807015E341C884 /* Pods-LandCapAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapAppTests/Pods-LandCapAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		198168A12942456897221550 /* Pods-LandCapAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapAppTests/Pods-LandCapAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		1A0482344FE67E693FB81DB5 /* Pods-LandCapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp.release.xcconfig"; sourceTree = "<group>"; };
 		43478AD921472E3000C2EC24 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		43478ADC214731D300C2EC24 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		43478ADE2147324400C2EC24 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
@@ -52,7 +64,6 @@
 		43478AE3214732B100C2EC24 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		43478AE72147333700C2EC24 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		43478AE921473A6900C2EC24 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		43478AEB21473B8900C2EC24 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4359069021471D9200C692D7 /* LandCapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandCapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4359069321471D9200C692D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4359069521471D9200C692D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,12 +77,25 @@
 		435906AF21471D9300C692D7 /* LandCapAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandCapAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		435906B321471D9300C692D7 /* LandCapAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandCapAppUITests.swift; sourceTree = "<group>"; };
 		435906B521471D9300C692D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		437FAA5B214F379B0050AEE8 /* CollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDelegate.swift; sourceTree = "<group>"; };
+		437FAA5F214F37F70050AEE8 /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
+		437FAA61214F384D0050AEE8 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		437FAA63214F3BBF0050AEE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		437FAA66214F41C00050AEE8 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		437FAA69214F43A90050AEE8 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		439BD259214EFB3A00143CF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		439BD25B214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/Main.strings"; sourceTree = "<group>"; };
 		439BD25C214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		439BD25D214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		439BD25E214F17C500143CF7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		43ADA76B214EE47500F09835 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		43ADA76E214EE5F900F09835 /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
+		6571EA0BB1EDB2241C4A1231 /* Pods-LandCapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B2EF69A84E67804DC29EC337 /* Pods_LandCapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LandCapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1CB455BA669B646E9B8C582 /* Pods-LandCapAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapAppUITests/Pods-LandCapAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C772E975553E1D469CAF0F4B /* Pods-LandCapAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapAppUITests/Pods-LandCapAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D49C17DD55C25F97DC632067 /* Pods_LandCapAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LandCapAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56C8A6C634323C480D0FD28 /* Pods_LandCapAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LandCapAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AE1D0E7B10E8E54EBF6FC6 /* Pods_LandCapApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E9738D7DC9B836C40F8C36 /* Pods_LandCapAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F28CD8E050E08B29261AE3F /* Pods_LandCapAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +129,7 @@
 		43478AD521472DE300C2EC24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				437FAA68214F43940050AEE8 /* Home */,
 				43478AD821472E1400C2EC24 /* Page */,
 			);
 			path = Controllers;
@@ -121,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				43478AE3214732B100C2EC24 /* Page.swift */,
+				439BD25E214F17C500143CF7 /* LoginModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +157,7 @@
 		43478AD821472E1400C2EC24 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				437FAA5A214F37850050AEE8 /* extensions */,
 				43478AD921472E3000C2EC24 /* PageController.swift */,
 			);
 			path = Page;
@@ -147,7 +177,6 @@
 			children = (
 				43478AE12147326E00C2EC24 /* BaseCell.swift */,
 				43478AE921473A6900C2EC24 /* BaseView.swift */,
-				43478AEB21473B8900C2EC24 /* Helper.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -168,6 +197,8 @@
 				435906A721471D9300C692D7 /* LandCapAppTests */,
 				435906B221471D9300C692D7 /* LandCapAppUITests */,
 				4359069121471D9200C692D7 /* Products */,
+				D6F8AF61095DEDB1B3F21C8F /* Pods */,
+				4451404DAAF81C7CA1A3D6F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +215,7 @@
 		4359069221471D9200C692D7 /* LandCapApp */ = {
 			isa = PBXGroup;
 			children = (
+				437FAA65214F41AF0050AEE8 /* Helpers */,
 				43ADA76D214EE5D800F09835 /* Subclasses */,
 				43478AE52147330800C2EC24 /* Extensions */,
 				43478AD721472DFC00C2EC24 /* Models */,
@@ -191,6 +223,7 @@
 				43478AD521472DE300C2EC24 /* Controllers */,
 				4359069321471D9200C692D7 /* AppDelegate.swift */,
 				4359069521471D9200C692D7 /* ViewController.swift */,
+				437FAA63214F3BBF0050AEE8 /* GoogleService-Info.plist */,
 				4359069721471D9200C692D7 /* Main.storyboard */,
 				4359069A21471D9300C692D7 /* Assets.xcassets */,
 				4359069C21471D9300C692D7 /* LaunchScreen.storyboard */,
@@ -217,6 +250,32 @@
 			path = LandCapAppUITests;
 			sourceTree = "<group>";
 		};
+		437FAA5A214F37850050AEE8 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				437FAA5B214F379B0050AEE8 /* CollectionDelegate.swift */,
+				437FAA5F214F37F70050AEE8 /* LoginDelegate.swift */,
+				437FAA61214F384D0050AEE8 /* TextFieldDelegate.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		437FAA65214F41AF0050AEE8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				437FAA66214F41C00050AEE8 /* Helper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		437FAA68214F43940050AEE8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				437FAA69214F43A90050AEE8 /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		43ADA76A214EE45500F09835 /* LoginView */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +292,29 @@
 			path = Subclasses;
 			sourceTree = "<group>";
 		};
+		4451404DAAF81C7CA1A3D6F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2EF69A84E67804DC29EC337 /* Pods_LandCapApp.framework */,
+				D49C17DD55C25F97DC632067 /* Pods_LandCapAppTests.framework */,
+				F56C8A6C634323C480D0FD28 /* Pods_LandCapAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6F8AF61095DEDB1B3F21C8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6571EA0BB1EDB2241C4A1231 /* Pods-LandCapApp.debug.xcconfig */,
+				1A0482344FE67E693FB81DB5 /* Pods-LandCapApp.release.xcconfig */,
+				0D21E870D9807015E341C884 /* Pods-LandCapAppTests.debug.xcconfig */,
+				198168A12942456897221550 /* Pods-LandCapAppTests.release.xcconfig */,
+				C772E975553E1D469CAF0F4B /* Pods-LandCapAppUITests.debug.xcconfig */,
+				C1CB455BA669B646E9B8C582 /* Pods-LandCapAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,9 +322,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 435906B821471D9300C692D7 /* Build configuration list for PBXNativeTarget "LandCapApp" */;
 			buildPhases = (
+				39FC36BBCD043A57319CD2DB /* [CP] Check Pods Manifest.lock */,
 				4359068C21471D9200C692D7 /* Sources */,
 				4359068D21471D9200C692D7 /* Frameworks */,
 				4359068E21471D9200C692D7 /* Resources */,
+				F387D732212A30997D262925 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,6 +341,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 435906BB21471D9300C692D7 /* Build configuration list for PBXNativeTarget "LandCapAppTests" */;
 			buildPhases = (
+				C3EA7056C279F46A321A649E /* [CP] Check Pods Manifest.lock */,
 				435906A021471D9300C692D7 /* Sources */,
 				435906A121471D9300C692D7 /* Frameworks */,
 				435906A221471D9300C692D7 /* Resources */,
@@ -275,6 +360,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 435906BE21471D9300C692D7 /* Build configuration list for PBXNativeTarget "LandCapAppUITests" */;
 			buildPhases = (
+				5E19390DC6E8E68BE0D9758D /* [CP] Check Pods Manifest.lock */,
 				435906AB21471D9300C692D7 /* Sources */,
 				435906AC21471D9300C692D7 /* Frameworks */,
 				435906AD21471D9300C692D7 /* Resources */,
@@ -340,6 +426,7 @@
 			files = (
 				4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */,
 				439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */,
+				437FAA64214F3BBF0050AEE8 /* GoogleService-Info.plist in Resources */,
 				4359069B21471D9300C692D7 /* Assets.xcassets in Resources */,
 				4359069921471D9200C692D7 /* Main.storyboard in Resources */,
 			);
@@ -361,20 +448,104 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39FC36BBCD043A57319CD2DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LandCapApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E19390DC6E8E68BE0D9758D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LandCapAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3EA7056C279F46A321A649E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LandCapAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F387D732212A30997D262925 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4359068C21471D9200C692D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4359069621471D9200C692D7 /* ViewController.swift in Sources */,
+				437FAA60214F37F70050AEE8 /* LoginDelegate.swift in Sources */,
 				43478ADF2147324400C2EC24 /* PageCell.swift in Sources */,
+				437FAA5C214F379B0050AEE8 /* CollectionDelegate.swift in Sources */,
 				43ADA76F214EE5F900F09835 /* LeftPaddedTextField.swift in Sources */,
 				43478ADD214731D300C2EC24 /* PageView.swift in Sources */,
+				437FAA62214F384D0050AEE8 /* TextFieldDelegate.swift in Sources */,
 				43478AE82147333700C2EC24 /* Extensions.swift in Sources */,
+				437FAA67214F41C00050AEE8 /* Helper.swift in Sources */,
 				4359069421471D9200C692D7 /* AppDelegate.swift in Sources */,
 				43478AE4214732B100C2EC24 /* Page.swift in Sources */,
 				43478AEA21473A6900C2EC24 /* BaseView.swift in Sources */,
-				43478AEC21473B8900C2EC24 /* Helper.swift in Sources */,
+				439BD25F214F17C500143CF7 /* LoginModel.swift in Sources */,
+				437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */,
 				43ADA76C214EE47500F09835 /* LoginView.swift in Sources */,
 				43478AE22147326E00C2EC24 /* BaseCell.swift in Sources */,
 				43478ADA21472E3000C2EC24 /* PageController.swift in Sources */,
@@ -561,6 +732,7 @@
 		};
 		435906B921471D9300C692D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6571EA0BB1EDB2241C4A1231 /* Pods-LandCapApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -580,6 +752,7 @@
 		};
 		435906BA21471D9300C692D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A0482344FE67E693FB81DB5 /* Pods-LandCapApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -599,6 +772,7 @@
 		};
 		435906BC21471D9300C692D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D21E870D9807015E341C884 /* Pods-LandCapAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -619,6 +793,7 @@
 		};
 		435906BD21471D9300C692D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 198168A12942456897221550 /* Pods-LandCapAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -639,6 +814,7 @@
 		};
 		435906BF21471D9300C692D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C772E975553E1D469CAF0F4B /* Pods-LandCapAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -658,6 +834,7 @@
 		};
 		435906C021471D9300C692D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1CB455BA669B646E9B8C582 /* Pods-LandCapAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
