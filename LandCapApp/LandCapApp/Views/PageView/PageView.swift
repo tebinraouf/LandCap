@@ -139,6 +139,9 @@ class PageView: BaseView {
     }
     @objc func handleGetStarted() {
         loginDelegate.getStartedBtn()
+        let indexPath = IndexPath(item: 3, section: 0)
+        pageCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.left, animated: true)
+        updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, facebookBtn: 0)
     }
     func keyboardResponder(){
         loginView.keyboardResponder()

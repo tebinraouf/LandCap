@@ -76,11 +76,4 @@ extension PageController: LoginViewDelegate {
         })
         self.present(requestAlert, animated: true)
     }
-    
-    func getStartedBtn() {
-        let indexPath = IndexPath(item: 3, section: 0)
-        pageView.pageCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.left, animated: true)
-        pageView.updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, facebookBtn: 0)
-    }
-    
 }
