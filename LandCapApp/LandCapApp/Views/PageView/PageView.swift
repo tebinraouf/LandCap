@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class PageView: BaseView {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -56,9 +57,11 @@ class PageView: BaseView {
         return btn
     }()
     var loginView = LoginView()
+    var socialLoginView = SocialMediaLoginView()
     var centerConstraint: NSLayoutConstraint!
     var getStartedConstraint: NSLayoutConstraint!
     var pageControlConstraint: NSLayoutConstraint!
+    var socialLoginCenterConstraint: NSLayoutConstraint!
     
     override func setupView() {
         collectionViewSetup()
@@ -69,6 +72,7 @@ class PageView: BaseView {
         setupPageControl()
         setupGetStartedButton()
         setupLoginView()
+        setupSocialMediaView()
     }
     func collectionViewSetup() {
         addSubview(collectionView)
@@ -127,21 +131,29 @@ class PageView: BaseView {
         let constraints = [top, width, bottom]
         NSLayoutConstraint.activate(constraints)
     }
-    func updateConstraintFor(getStarted: CGFloat, pageControl: CGFloat, loginView: CGFloat, facebookBtn: CGFloat){
+    func setupSocialMediaView() {
+        addSubview(socialLoginView)
+        let width = socialLoginView.widthAnchor.constraint(equalTo: widthAnchor, constant: -40)
+        let centerY = socialLoginView.centerYAnchor.constraint(equalTo: getStartedBackground.centerYAnchor)
+        let height = socialLoginView.heightAnchor.constraint(equalToConstant: 40)
+        socialLoginCenterConstraint = socialLoginView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 400)
+        socialLoginCenterConstraint.isActive = true
+        NSLayoutConstraint.activate([width, centerY, height])
+    }
+    func updateConstraintFor(getStarted: CGFloat, pageControl: CGFloat, loginView: CGFloat, socialLoginBtn: CGFloat){
         getStartedConstantConstraint = getStarted
         pageControlConstantConstraint = pageControl
         loginViewConstantConstraint = loginView
-//        fbConstantConstraint = facebookBtn
+        socialLoginCenterConstraint.constant = socialLoginBtn
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
             self.layoutIfNeeded()
         }, completion: nil)
     }
     @objc func handleGetStarted() {
-        loginDelegate.getStartedBtn()
         let indexPath = IndexPath(item: 3, section: 0)
         pageCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.left, animated: true)
-        updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, facebookBtn: 0)
+        updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, socialLoginBtn: 0)
     }
     func keyboardResponder(){
         loginView.keyboardResponder()
@@ -214,6 +226,14 @@ extension PageView {
         }
         set {
             loginView.loginDelegate = newValue
+        }
+    }
+    var socialMediaDelegate: SocialMediaLoginViewDelegate {
+        get {
+            return socialLoginView.delegate
+        }
+        set {
+            socialLoginView.delegate = newValue
         }
     }
 }

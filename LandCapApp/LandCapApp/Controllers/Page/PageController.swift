@@ -46,6 +46,7 @@ extension PageController {
         pageView.collectionViewDelegate = self
         pageView.collectionViewDataSource = self
         pageView.loginDelegate = self
+        pageView.socialMediaDelegate = self
         pageView.setTextFieldsDelegate(self)
     }
     func nextController() {

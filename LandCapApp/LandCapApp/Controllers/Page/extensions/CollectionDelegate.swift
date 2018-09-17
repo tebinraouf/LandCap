@@ -45,9 +45,9 @@ extension PageController: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     func prepareLoginPage(_ pageNumber: Int){
         if pageNumber == pages.count {
-            pageView.updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, facebookBtn: 0)
+            pageView.updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, socialLoginBtn: 0)
         } else {
-            pageView.updateConstraintFor(getStarted: 0, pageControl: 0, loginView: 400, facebookBtn: 400)
+            pageView.updateConstraintFor(getStarted: 0, pageControl: 0, loginView: 400, socialLoginBtn: 400)
         }
     }
     func isLoginPage(_ bool: Bool, _ cell: PageCell){
