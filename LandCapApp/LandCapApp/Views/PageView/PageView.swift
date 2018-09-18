@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FBSDKLoginKit
 
 class PageView: BaseView {
     lazy var collectionView: UICollectionView = {
@@ -228,12 +228,12 @@ extension PageView {
             loginView.loginDelegate = newValue
         }
     }
-    var socialMediaDelegate: SocialMediaLoginViewDelegate {
+    var socialMediaDelegate: SocialMediaLoginDelegate {
         get {
-            return socialLoginView.delegate
+            return socialLoginView.socialMediaDelegate
         }
         set {
-            socialLoginView.delegate = newValue
+            socialLoginView.socialMediaDelegate = newValue
         }
     }
 }

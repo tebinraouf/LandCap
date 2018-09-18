@@ -66,7 +66,7 @@ extension PageController {
                 case .wrongPassword:
                     alert(title: "Password", message: (error?.localizedDescription)!, viewController: self)
                 case .internalError:
-                    alert(title: "Missing Email", message: "Please provide an email address.", viewController: self)
+                    alert(title: "Missing Email", message: (error?.localizedDescription)!, viewController: self)
                 default:
                     alert(title: "Oops...", message: (error?.localizedDescription)!, viewController: self)
                 }

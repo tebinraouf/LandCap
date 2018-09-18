@@ -1,4 +1,14 @@
 PODS:
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - FBSDKCoreKit (4.36.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.36.0):
+    - FBSDKCoreKit
   - Firebase/Auth (5.8.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.4)
@@ -60,12 +70,16 @@ PODS:
   - SwiftInstagram/Core (1.1.1)
 
 DEPENDENCIES:
+  - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
   - SwiftInstagram (~> 1.1.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Bolts
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -79,6 +93,9 @@ SPEC REPOS:
     - SwiftInstagram
 
 SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FBSDKCoreKit: 3b8e6570eedb443f9fc4af196a7bf39f18e3a3d8
+  FBSDKLoginKit: 8bccb6064708ab2f4251a7fc4e3b6d8d00ad91ba
   Firebase: 25812f43e7a53b11ae2f0a5f4c6d12faeb1f7cd7
   FirebaseAnalytics: df15839e9c6ca6bd14d2e8ab6b0c672e6c49097e
   FirebaseAuth: 504b198ceb3472dca5c65bb95544ea44cfc9439e
@@ -91,6 +108,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
 
-PODFILE CHECKSUM: 63e0a120acb78690d239bba2f60d2bacd216fdfc
+PODFILE CHECKSUM: 458efb0c36545b937f0fac03fe97c7191c9a6303
 
 COCOAPODS: 1.5.3

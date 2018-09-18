@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		432322C221507127005B47CF /* SocialMediaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C121507127005B47CF /* SocialMediaLoginView.swift */; };
 		432322C421507265005B47CF /* SocialMediaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C321507265005B47CF /* SocialMediaDelegate.swift */; };
+		432322C6215099D3005B47CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 432322C5215099D3005B47CF /* GoogleService-Info.plist */; };
 		43478ADA21472E3000C2EC24 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478AD921472E3000C2EC24 /* PageController.swift */; };
 		43478ADD214731D300C2EC24 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478ADC214731D300C2EC24 /* PageView.swift */; };
 		43478ADF2147324400C2EC24 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478ADE2147324400C2EC24 /* PageCell.swift */; };
@@ -26,7 +27,6 @@
 		437FAA5C214F379B0050AEE8 /* CollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA5B214F379B0050AEE8 /* CollectionDelegate.swift */; };
 		437FAA60214F37F70050AEE8 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA5F214F37F70050AEE8 /* LoginDelegate.swift */; };
 		437FAA62214F384D0050AEE8 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA61214F384D0050AEE8 /* TextFieldDelegate.swift */; };
-		437FAA64214F3BBF0050AEE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 437FAA63214F3BBF0050AEE8 /* GoogleService-Info.plist */; };
 		437FAA67214F41C00050AEE8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA66214F41C00050AEE8 /* Helper.swift */; };
 		437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA69214F43A90050AEE8 /* HomeController.swift */; };
 		439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439BD25A214EFB3A00143CF7 /* Localizable.strings */; };
@@ -61,6 +61,7 @@
 		1A0482344FE67E693FB81DB5 /* Pods-LandCapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp.release.xcconfig"; sourceTree = "<group>"; };
 		432322C121507127005B47CF /* SocialMediaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLoginView.swift; sourceTree = "<group>"; };
 		432322C321507265005B47CF /* SocialMediaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDelegate.swift; sourceTree = "<group>"; };
+		432322C5215099D3005B47CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43478AD921472E3000C2EC24 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		43478ADC214731D300C2EC24 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		43478ADE2147324400C2EC24 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		437FAA5B214F379B0050AEE8 /* CollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDelegate.swift; sourceTree = "<group>"; };
 		437FAA5F214F37F70050AEE8 /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
 		437FAA61214F384D0050AEE8 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
-		437FAA63214F3BBF0050AEE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		437FAA66214F41C00050AEE8 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		437FAA69214F43A90050AEE8 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		439BD259214EFB3A00143CF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 				43478AD521472DE300C2EC24 /* Controllers */,
 				4359069321471D9200C692D7 /* AppDelegate.swift */,
 				4359069521471D9200C692D7 /* ViewController.swift */,
-				437FAA63214F3BBF0050AEE8 /* GoogleService-Info.plist */,
+				432322C5215099D3005B47CF /* GoogleService-Info.plist */,
 				4359069721471D9200C692D7 /* Main.storyboard */,
 				4359069A21471D9300C692D7 /* Assets.xcassets */,
 				4359069C21471D9300C692D7 /* LaunchScreen.storyboard */,
@@ -432,7 +432,7 @@
 			files = (
 				4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */,
 				439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */,
-				437FAA64214F3BBF0050AEE8 /* GoogleService-Info.plist in Resources */,
+				432322C6215099D3005B47CF /* GoogleService-Info.plist in Resources */,
 				4359069B21471D9300C692D7 /* Assets.xcassets in Resources */,
 				4359069921471D9200C692D7 /* Main.storyboard in Resources */,
 			);
@@ -516,6 +516,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftInstagram/SwiftInstagram.framework",
@@ -523,6 +526,9 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftInstagram.framework",

@@ -7,41 +7,42 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 
 class SocialMediaLoginView: BaseView {
-    var delegate: SocialMediaLoginViewDelegate!
-    lazy var instagramImageView: UIImageView = {
-        let image = UIImage(named: "signWithInstagram")
-        let iv = UIImageView(image: image)
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.contentMode = .scaleAspectFit
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(instagramHandler(tapGestureRecognizer:)))
-        iv.isUserInteractionEnabled = true
-        iv.addGestureRecognizer(tapGestureRecognizer)
-        return iv
+    var socialMediaDelegate: SocialMediaLoginDelegate!
+    var facebookBtn: FBSDKLoginButton = {
+        let fb = FBSDKLoginButton()
+        fb.translatesAutoresizingMaskIntoConstraints = false
+        return fb
     }()
     override func setupView() {
         super.setupView()
         translatesAutoresizingMaskIntoConstraints = false
         setupImageView()
+        facebookBtn.delegate = self
     }
     func setupImageView() {
-        addSubview(instagramImageView)
+        addSubview(facebookBtn)
         NSLayoutConstraint.activate([
-            instagramImageView.topAnchor.constraint(equalTo: topAnchor),
-            instagramImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            instagramImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            instagramImageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            facebookBtn.topAnchor.constraint(equalTo: topAnchor),
+            facebookBtn.leadingAnchor.constraint(equalTo: leadingAnchor),
+            facebookBtn.trailingAnchor.constraint(equalTo: trailingAnchor),
+            facebookBtn.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
-    }
-    @objc func instagramHandler(tapGestureRecognizer: UITapGestureRecognizer) {
-        delegate.instagramHandler()
     }
 }
 
-
-
-protocol SocialMediaLoginViewDelegate {
-    func instagramHandler()
+extension SocialMediaLoginView: FBSDKLoginButtonDelegate {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        socialMediaDelegate.loginButton(loginButton, didCompleteWith: result, error: error)
+    }
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        socialMediaDelegate.loginButtonDidLogOut(loginButton)
+    }
+}
+protocol SocialMediaLoginDelegate {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!)
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!)
 }
