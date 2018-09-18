@@ -15,19 +15,22 @@ extension PageController: SocialMediaLoginDelegate {
         print("loginButton")
         
         
-        
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-
-        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            if let error = error {
-                self.handling(error)
-                return
-            }
-            let current = Auth.auth().currentUser
-            print(current?.email)
-            print(current?.displayName)
+        if FBSDKAccessToken.currentAccessTokenIsActive() {
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if let error = error {
+                    self.handling(error)
+                    isLoggedIn = false
+                }
+//                let current = Auth.auth().currentUser
+                isLoggedIn = true
+                self.nextController()
+            }
         }
+        
+        
+        
 
        
         
