@@ -14,6 +14,7 @@ class SocialMediaLoginView: BaseView {
     var socialMediaDelegate: SocialMediaLoginDelegate!
     var facebookBtn: FBSDKLoginButton = {
         let fb = FBSDKLoginButton()
+        fb.readPermissions = ["email"]
         fb.translatesAutoresizingMaskIntoConstraints = false
         return fb
     }()

@@ -23,9 +23,10 @@ extension PageController: SocialMediaLoginDelegate {
                     self.handling(error)
                     isLoggedIn = false
                 }
-//                let current = Auth.auth().currentUser
-                isLoggedIn = true
-                self.nextController()
+                DispatchQueue.main.async {
+                    isLoggedIn = true
+                    self.nextController()
+                }
             }
         }
         

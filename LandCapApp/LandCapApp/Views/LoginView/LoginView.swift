@@ -12,7 +12,7 @@ import UIKit
 class LoginView: UIScrollView {
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
         let btnSignIn = NSLocalizedString("Sign In", comment: "Sign in to your account");
-        let btnRegister = NSLocalizedString("Register", comment: "Register to save your info in the cloud")
+        let btnRegister = NSLocalizedString("Sign Up", comment: "Register to save your info in the cloud")
         let sc = UISegmentedControl(items: [btnSignIn, btnRegister])
         //sc.backgroundColor = .white
         sc.tintColor = .white
