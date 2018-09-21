@@ -12,9 +12,7 @@ import FirebaseAuth
 
 extension PageController: SocialMediaLoginDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        print("loginButton")
-        
-        
+
         if FBSDKAccessToken.currentAccessTokenIsActive() {
             let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             
@@ -23,19 +21,24 @@ extension PageController: SocialMediaLoginDelegate {
                     self.handling(error)
                     isLoggedIn = false
                 }
-                DispatchQueue.main.async {
-                    isLoggedIn = true
-                    self.nextController()
+                if let authResult = authResult {
+                    
+                    //set the initial user details for database
+                    let user = CapUser()
+                    user.Key = authResult.user.uid
+                    user.Name = authResult.user.displayName
+                    
+                    //fill database with initial values
+                    let capDatabase = CapDatabase(user: user)
+                    capDatabase.add()
+
+                    DispatchQueue.main.async {
+                        isLoggedIn = true
+                        self.nextController()
+                    }
                 }
             }
         }
-        
-        
-        
-
-       
-        
-        
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {

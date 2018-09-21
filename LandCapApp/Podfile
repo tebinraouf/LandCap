@@ -8,6 +8,9 @@ target 'LandCapApp' do
   # Pods for LandCapApp
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  
   pod 'FBSDKLoginKit'
   pod 'SwiftInstagram', '~> 1.1.1'
 

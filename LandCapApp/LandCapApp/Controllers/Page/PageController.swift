@@ -54,21 +54,26 @@ extension PageController {
     }
     func handling(_ error: Error?) {
         if error != nil {
-//            print("The error is: ", error ?? "")
             if let errCode = AuthErrorCode(rawValue: (error?._code)!) {
                 switch errCode {
                 case .emailAlreadyInUse:
-                    alert(title: "Email", message: (error?.localizedDescription)!, viewController: self)
+                    let email = NSLocalizedString("Email", comment: "Email")
+                    alert(title: email, message: (error?.localizedDescription)!, viewController: self)
                 case .invalidEmail:
-                    alert(title: "Email", message: (error?.localizedDescription)!, viewController: self)
+                    let email = NSLocalizedString("Email", comment: "Email")
+                    alert(title: email, message: (error?.localizedDescription)!, viewController: self)
                 case .weakPassword:
-                    alert(title: "Password", message: (error?.localizedDescription)!, viewController: self)
+                    let password = NSLocalizedString("Password", comment: "Password")
+                    alert(title: password, message: (error?.localizedDescription)!, viewController: self)
                 case .wrongPassword:
-                    alert(title: "Password", message: (error?.localizedDescription)!, viewController: self)
+                    let password = NSLocalizedString("Password", comment: "Password")
+                    alert(title: password, message: (error?.localizedDescription)!, viewController: self)
                 case .internalError:
-                    alert(title: "Missing Email", message: (error?.localizedDescription)!, viewController: self)
+                    let internalError = NSLocalizedString("Internal Error", comment: "Internal Error")
+                    alert(title: internalError, message: (error?.localizedDescription)!, viewController: self)
                 default:
-                    alert(title: "Oops...", message: (error?.localizedDescription)!, viewController: self)
+                    let oops = NSLocalizedString("Oops", comment: "Something went wring")
+                    alert(title: oops, message: (error?.localizedDescription)!, viewController: self)
                 }
             }
             return

@@ -31,6 +31,8 @@
 		437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA69214F43A90050AEE8 /* HomeController.swift */; };
 		439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439BD25A214EFB3A00143CF7 /* Localizable.strings */; };
 		439BD25F214F17C500143CF7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BD25E214F17C500143CF7 /* LoginModel.swift */; };
+		43AD40C721548EDF000FD21D /* CapDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD40C621548EDF000FD21D /* CapDatabase.swift */; };
+		43AD40CA21548F12000FD21D /* CapUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD40C921548F12000FD21D /* CapUser.swift */; };
 		43ADA76C214EE47500F09835 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADA76B214EE47500F09835 /* LoginView.swift */; };
 		43ADA76F214EE5F900F09835 /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADA76E214EE5F900F09835 /* LeftPaddedTextField.swift */; };
 		69E9738D7DC9B836C40F8C36 /* Pods_LandCapAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49C17DD55C25F97DC632067 /* Pods_LandCapAppTests.framework */; };
@@ -92,6 +94,8 @@
 		439BD25C214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		439BD25D214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		439BD25E214F17C500143CF7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		43AD40C621548EDF000FD21D /* CapDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapDatabase.swift; sourceTree = "<group>"; };
+		43AD40C921548F12000FD21D /* CapUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapUser.swift; sourceTree = "<group>"; };
 		43ADA76B214EE47500F09835 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		43ADA76E214EE5F900F09835 /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
 		6571EA0BB1EDB2241C4A1231 /* Pods-LandCapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 		4359069221471D9200C692D7 /* LandCapApp */ = {
 			isa = PBXGroup;
 			children = (
+				43AD40C821548F03000FD21D /* CapUser */,
+				43AD40C521548EC7000FD21D /* Firebase */,
 				437FAA65214F41AF0050AEE8 /* Helpers */,
 				43ADA76D214EE5D800F09835 /* Subclasses */,
 				43478AE52147330800C2EC24 /* Extensions */,
@@ -279,6 +285,22 @@
 				437FAA69214F43A90050AEE8 /* HomeController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		43AD40C521548EC7000FD21D /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				43AD40C621548EDF000FD21D /* CapDatabase.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		43AD40C821548F03000FD21D /* CapUser */ = {
+			isa = PBXGroup;
+			children = (
+				43AD40C921548F12000FD21D /* CapUser.swift */,
+			);
+			path = CapUser;
 			sourceTree = "<group>";
 		};
 		43ADA76A214EE45500F09835 /* LoginView */ = {
@@ -522,6 +544,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftInstagram/SwiftInstagram.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -532,6 +555,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftInstagram.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,7 +570,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43AD40CA21548F12000FD21D /* CapUser.swift in Sources */,
 				4359069621471D9200C692D7 /* ViewController.swift in Sources */,
+				43AD40C721548EDF000FD21D /* CapDatabase.swift in Sources */,
 				437FAA60214F37F70050AEE8 /* LoginDelegate.swift in Sources */,
 				43478ADF2147324400C2EC24 /* PageCell.swift in Sources */,
 				432322C221507127005B47CF /* SocialMediaLoginView.swift in Sources */,

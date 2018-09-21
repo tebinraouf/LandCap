@@ -21,3 +21,18 @@
 "Geocode" = "Geocode";
 "Geocode Desc" = "Get a building addrees from your photo and get geographic information.";
 
+//handling errors labels -> PageController handling() method.
+
+"Email" = "Email";
+"Password" = "Password";
+"Missing Email" = "Missing Email";
+"Internal Error" = "Internal Error";
+"Opps" = "Opps...";
+
+//Sign In/Up Messages
+"Email Verification" = "Email Verification";
+"Email Ver Message" = "Please verify your email address.";
+"Account Created" = "Account Created";
+"Request Password" = "Request Password";
+"Email Placeholder" = "enter your email here...";
+"Request New Password" = "Request New Password";

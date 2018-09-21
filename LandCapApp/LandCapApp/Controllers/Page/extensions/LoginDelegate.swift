@@ -16,17 +16,31 @@ extension PageController: LoginViewDelegate {
         //print("Email: \(email), password: \(password)")
         guard let email = email else { return }
         guard let password = password else { return }
-        Auth.auth().signIn(withEmail: email, password: password, completion: { (authDataResult, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (authResult, error) in
             if error != nil {
                 self.handling(error)
             } else {
-                if (authDataResult?.user.isEmailVerified)! {
-                    DispatchQueue.main.async {
-                        isLoggedIn = true
-                        self.nextController()
+                if (authResult?.user.isEmailVerified)! {
+                
+                    if let authResult = authResult {
+                        //set the initial user details for database
+                        let user = CapUser()
+                        user.Key = authResult.user.uid
+                        user.Name = authResult.user.displayName
+                        
+                        //fill database with initial values
+                        let capDatabase = CapDatabase(user: user)
+                        capDatabase.add()
+                        
+                        DispatchQueue.main.async {
+                            isLoggedIn = true
+                            self.nextController()
+                        }
                     }
                 } else {
-                    alert(title: "Email Verification", message: "Please verify your email address.", viewController: self)
+                    let email = NSLocalizedString("Email Verification", comment: "Email Verification")
+                    let emailVer = NSLocalizedString("Email Ver Message", comment: "Verify your account")
+                    alert(title: email, message: emailVer, viewController: self)
                 }
             }
         })
@@ -47,7 +61,9 @@ extension PageController: LoginViewDelegate {
                                 self.nextController()
                             }
                         } else {
-                            alert(title: "Account Created", message: "Please verify your email address.", viewController: self)
+                            let account = NSLocalizedString("Account Created", comment: "Email Verification")
+                            let emailVer = NSLocalizedString("Email Ver Message", comment: "Verify your account")
+                            alert(title: account, message: emailVer, viewController: self)
                         }
                     } else {
                         self.handling(error)
@@ -60,13 +76,17 @@ extension PageController: LoginViewDelegate {
     }
     
     func forgetPasswordBtn() {
-        let requestAlert = UIAlertController(title: "Request Password", message: nil, preferredStyle: .alert)
+        let newPass = NSLocalizedString("Request Password", comment: "Request New Password")
+        let requestNewPass = NSLocalizedString("Request New Password", comment: "Request New Password")
+        let emailHereText = NSLocalizedString("Email Placeholder", comment: "Email placeholder")
+        
+        let requestAlert = UIAlertController(title: newPass, message: nil, preferredStyle: .alert)
         requestAlert.addTextField { (textfield) in
             textfield.keyboardType = .emailAddress
-            textfield.placeholder = "enter your email here..."
+            textfield.placeholder = emailHereText
         }
         requestAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        requestAlert.addAction(UIAlertAction(title: "Request New Password", style: .default) { (action) in
+        requestAlert.addAction(UIAlertAction(title: requestNewPass, style: .default) { (action) in
             //action.title = "Sent..."
             guard let requestedEmail = requestAlert.textFields?.first?.text else { return }
             Auth.auth().sendPasswordReset(withEmail: requestedEmail) { (error) in
