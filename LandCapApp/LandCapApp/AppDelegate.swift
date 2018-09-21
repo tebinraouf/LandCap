@@ -17,18 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
         //Facebook SDK
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
-        
-        
-        
+
+        //Load the correct view
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
-            window.rootViewController = UINavigationController(rootViewController: PageController())
+            if isLoggedIn {
+                window.rootViewController = UINavigationController(rootViewController: HomeController())
+            } else {
+                window.rootViewController = UINavigationController(rootViewController: PageController())
+            }
             window.makeKeyAndVisible()
         }
         
