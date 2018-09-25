@@ -14,17 +14,13 @@ public extension UIColor {
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: a)
     }
-    public class var appColor: UIColor {
-        return UIColor(r: 255, g: 56, b: 63, a: 1)
+    public class var mainColor: UIColor {
+        return UIColor(r: 33, g: 147, b: 176, a: 1)
     }
-    public class var appGray: UIColor {
-        return UIColor(r: 247, g: 247, b: 247, a: 1)
+    public class var secondaryColor: UIColor {
+        return UIColor(r: 109, g: 213, b: 237, a: 1)
     }
-    public class var appRedish: UIColor {
-        return UIColor(r: 255, g: 56, b: 63, a: 1)
+    public class var textColor: UIColor {
+        return .white
     }
-    public class var appLightGreen: UIColor {
-        return UIColor(r: 220, g: 226, b: 202, a: 1)
-    }
-    
 }

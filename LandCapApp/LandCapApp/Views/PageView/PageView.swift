@@ -41,7 +41,7 @@ class PageView: BaseView {
         pc.pageIndicatorTintColor = .lightGray
         pc.translatesAutoresizingMaskIntoConstraints = false
         pc.numberOfPages = 4 //self.pages.count + 1
-        pc.currentPageIndicatorTintColor = .orange
+        pc.currentPageIndicatorTintColor = UIColor.mainColor
         return pc
     }()
     var getStartedButton: UIButton = {
@@ -49,8 +49,8 @@ class PageView: BaseView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         let btnName = NSLocalizedString("Get Started", comment: "skip to login view")
         btn.setTitle(btnName, for: .normal)
-        btn.backgroundColor = .orange
-        btn.tintColor = .white
+        btn.backgroundColor = UIColor.mainColor
+        btn.tintColor = UIColor.textColor
         btn.layer.cornerRadius = 20
         btn.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         btn.addTarget(self, action: #selector(handleGetStarted), for: .touchDown)

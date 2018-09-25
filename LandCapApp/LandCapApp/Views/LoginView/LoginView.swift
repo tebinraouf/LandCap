@@ -15,7 +15,7 @@ class LoginView: UIScrollView {
         let btnRegister = NSLocalizedString("Sign Up", comment: "Register to save your info in the cloud")
         let sc = UISegmentedControl(items: [btnSignIn, btnRegister])
         //sc.backgroundColor = .white
-        sc.tintColor = .white
+        sc.tintColor = UIColor.textColor
         sc.selectedSegmentIndex = 1
         sc.translatesAutoresizingMaskIntoConstraints = false
         sc.addTarget(self, action: #selector(handleLoginRegisterChange), for: UIControlEvents.valueChanged)
@@ -32,7 +32,7 @@ class LoginView: UIScrollView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1
-        textField.textColor = .white
+        textField.textColor = UIColor.textColor
         let txtPlaceholder = NSLocalizedString("enter name", comment: "enter your name here")
         textField.placeholder = txtPlaceholder
         return textField
@@ -42,7 +42,7 @@ class LoginView: UIScrollView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1
-        textField.textColor = .white
+        textField.textColor = UIColor.textColor
         let txtPlaceholder = NSLocalizedString("enter email address", comment: "enter your email address")
         textField.placeholder = txtPlaceholder
         textField.keyboardType = .emailAddress
@@ -55,7 +55,7 @@ class LoginView: UIScrollView {
         textField.placeholder = txtPlaceholder
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1
-        textField.textColor = .white
+        textField.textColor = UIColor.textColor
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -64,8 +64,8 @@ class LoginView: UIScrollView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         let btnName = NSLocalizedString("Register", comment: "Register user")
         btn.setTitle(btnName, for: .normal)
-        btn.setTitleColor(UIColor.orange, for: .normal)
-        btn.backgroundColor = .white
+        btn.setTitleColor(UIColor.mainColor, for: .normal)
+        btn.backgroundColor = UIColor.textColor
         btn.layer.cornerRadius = 20
         btn.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
         return btn
@@ -75,7 +75,7 @@ class LoginView: UIScrollView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         let btnName = NSLocalizedString("Forget Password", comment: "Forget the password label")
         btn.setTitle(btnName, for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.setTitleColor(UIColor.textColor, for: .normal)
         btn.addTarget(self, action: #selector(handleForgetPassword), for: .touchUpInside)
         return btn
     }()

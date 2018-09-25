@@ -28,7 +28,7 @@ class PageCell: BaseCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Title"
-        label.textColor = .white
+        label.textColor = UIColor.textColor
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
@@ -36,7 +36,7 @@ class PageCell: BaseCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Description"
-        label.textColor = .white
+        label.textColor = UIColor.textColor
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 4
         label.textAlignment = .center
@@ -80,7 +80,7 @@ class PageCell: BaseCell {
     }
     func setupGradientColor() {
         layer.addSublayer(gradientLayer)
-        gradientLayer.colors = [UIColor(r: 253, g: 200, b: 48, a: 1).cgColor, UIColor(r: 243, g: 115, b: 53, a: 1).cgColor]
+        gradientLayer.colors = [UIColor.mainColor.cgColor, UIColor.secondaryColor.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
