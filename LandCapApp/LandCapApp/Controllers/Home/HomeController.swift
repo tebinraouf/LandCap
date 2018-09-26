@@ -46,7 +46,9 @@ class HomeController: UIViewController {
         
         setupCamera()
         
-        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeToProfile(sender:)))
+        swipe.direction = UISwipeGestureRecognizerDirection.left
+        view.addGestureRecognizer(swipe)
     }
     
     
@@ -126,6 +128,14 @@ extension HomeController: AVCapturePhotoCaptureDelegate {
             photoController.takenImage = UIImage(data: imageData)
             let navigationController = UINavigationController(rootViewController: photoController)
             present(navigationController, animated: true, completion: nil)
+        }
+    }
+}
+
+extension HomeController: UIGestureRecognizerDelegate {
+    @objc func handleSwipeToProfile(sender: UISwipeGestureRecognizer) {
+        if sender.direction == .left {
+            navigationController?.pushViewController(ProfileController(), animated: true)
         }
     }
 }

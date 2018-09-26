@@ -19,7 +19,7 @@ extension PageController: SocialMediaLoginDelegate {
             Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
                 if let error = error {
                     self.handling(error)
-                    isLoggedIn = false
+                    isSignedIn = false
                 }
                 if let authResult = authResult {
                     
@@ -33,7 +33,7 @@ extension PageController: SocialMediaLoginDelegate {
                     capDatabase.add()
 
                     DispatchQueue.main.async {
-                        isLoggedIn = true
+                        isSignedIn = true
                         self.nextController()
                     }
                 }

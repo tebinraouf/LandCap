@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Load the correct view
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
-            if isLoggedIn {
+            if isSignedIn {
                 window.rootViewController = UINavigationController(rootViewController: HomeController())
             } else {
                 window.rootViewController = UINavigationController(rootViewController: PageController())

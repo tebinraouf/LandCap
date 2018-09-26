@@ -19,7 +19,7 @@ public func alert(title: String, message: String, viewController: UIViewControll
     viewController.present(alert, animated: true)
 }
 
-public var isLoggedIn: Bool {
+public var isSignedIn: Bool {
     get {
         return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }

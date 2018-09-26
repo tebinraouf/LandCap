@@ -33,7 +33,7 @@ extension PageController: LoginViewDelegate {
                         capDatabase.add()
                         
                         DispatchQueue.main.async {
-                            isLoggedIn = true
+                            isSignedIn = true
                             self.nextController()
                         }
                     }
@@ -57,7 +57,7 @@ extension PageController: LoginViewDelegate {
                     if error == nil {
                         if (Auth.auth().currentUser?.isEmailVerified)! {
                             DispatchQueue.main.async {
-                                isLoggedIn = true
+                                isSignedIn = true
                                 self.nextController()
                             }
                         } else {

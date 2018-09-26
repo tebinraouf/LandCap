@@ -37,6 +37,7 @@
 		43ADA76F214EE5F900F09835 /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADA76E214EE5F900F09835 /* LeftPaddedTextField.swift */; };
 		43EB528B215AFBE700B3E6CF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB528A215AFBE700B3E6CF /* Home.swift */; };
 		43FE19A9215B3E2200437B1B /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE19A8215B3E2200437B1B /* PhotoController.swift */; };
+		43FE19AC215B49AA00437B1B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE19AB215B49AA00437B1B /* ProfileController.swift */; };
 		69E9738D7DC9B836C40F8C36 /* Pods_LandCapAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49C17DD55C25F97DC632067 /* Pods_LandCapAppTests.framework */; };
 		7F28CD8E050E08B29261AE3F /* Pods_LandCapAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56C8A6C634323C480D0FD28 /* Pods_LandCapAppUITests.framework */; };
 		F0AE1D0E7B10E8E54EBF6FC6 /* Pods_LandCapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EF69A84E67804DC29EC337 /* Pods_LandCapApp.framework */; };
@@ -102,6 +103,7 @@
 		43ADA76E214EE5F900F09835 /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
 		43EB528A215AFBE700B3E6CF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		43FE19A8215B3E2200437B1B /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		43FE19AB215B49AA00437B1B /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		6571EA0BB1EDB2241C4A1231 /* Pods-LandCapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B2EF69A84E67804DC29EC337 /* Pods_LandCapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LandCapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1CB455BA669B646E9B8C582 /* Pods-LandCapAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapAppUITests/Pods-LandCapAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		43478AD521472DE300C2EC24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				43FE19AA215B498B00437B1B /* Profile */,
 				43FE19A7215B3E0C00437B1B /* Photo */,
 				437FAA68214F43940050AEE8 /* Home */,
 				43478AD821472E1400C2EC24 /* Page */,
@@ -340,6 +343,14 @@
 				43FE19A8215B3E2200437B1B /* PhotoController.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		43FE19AA215B498B00437B1B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				43FE19AB215B49AA00437B1B /* ProfileController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		4451404DAAF81C7CA1A3D6F7 /* Frameworks */ = {
@@ -615,6 +626,7 @@
 				43ADA76C214EE47500F09835 /* LoginView.swift in Sources */,
 				43478AE22147326E00C2EC24 /* BaseCell.swift in Sources */,
 				43478ADA21472E3000C2EC24 /* PageController.swift in Sources */,
+				43FE19AC215B49AA00437B1B /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
