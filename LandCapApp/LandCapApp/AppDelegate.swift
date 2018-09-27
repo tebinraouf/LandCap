@@ -26,11 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Load the correct view
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
+            var viewController: UIViewController
             if isSignedIn {
-                window.rootViewController = UINavigationController(rootViewController: HomeController())
+                viewController = HomeController()
             } else {
-                window.rootViewController = UINavigationController(rootViewController: PageController())
+                viewController = PageController()
             }
+            window.rootViewController = UINavigationController(rootViewController: viewController)
             window.makeKeyAndVisible()
         }
         

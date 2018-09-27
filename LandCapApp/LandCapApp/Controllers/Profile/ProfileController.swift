@@ -19,6 +19,10 @@ class ProfileController: UIViewController {
     }
     @objc func handleSignOut() {
         isSignedIn = false
-        present(PageController(), animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: PageController())
+        present(navigationController, animated: true, completion: nil)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }

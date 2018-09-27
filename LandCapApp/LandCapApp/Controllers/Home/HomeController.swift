@@ -30,6 +30,11 @@ class HomeController: UIViewController {
         handleSwipeGestureRecognizer()
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    
     func setupDelegate() {
         homeView.delegate = self
     }
