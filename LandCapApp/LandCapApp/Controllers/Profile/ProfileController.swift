@@ -18,7 +18,7 @@ class ProfileController: UIViewController {
         print("ProfileController")
     }
     @objc func handleSignOut() {
-        isSignedIn = false
+        User.session.isSignedIn = false
         let navigationController = UINavigationController(rootViewController: PageController())
         present(navigationController, animated: true, completion: nil)
     }

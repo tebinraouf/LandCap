@@ -21,9 +21,12 @@ extension PageController: LoginViewDelegate {
                 self.handling(error)
             } else {
                 if (authResult?.user.isEmailVerified)! {
+                    //Get the Current User ID Saved.
+                    User.session.currentUserID = (authResult?.user.uid)!
+                    
                     //Move to the HomeController
                     DispatchQueue.main.async {
-                        isSignedIn = true
+                        User.session.isSignedIn = true
                         self.nextController()
                     }
                 } else {
@@ -57,7 +60,7 @@ extension PageController: LoginViewDelegate {
                     if error == nil {
                         if (Auth.auth().currentUser?.isEmailVerified)! {
                             DispatchQueue.main.async {
-                                isSignedIn = true
+                                User.session.isSignedIn = true
                                 self.nextController()
                             }
                         } else {

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             var viewController: UIViewController
-            if isSignedIn {
+            if User.session.isSignedIn {
                 viewController = HomeController()
             } else {
                 viewController = PageController()

@@ -19,12 +19,37 @@ public func alert(title: String, message: String, viewController: UIViewControll
     viewController.present(alert, animated: true)
 }
 
-public var isSignedIn: Bool {
-    get {
-        return UserDefaults.standard.bool(forKey: "isLoggedIn")
+
+
+public class User {
+    //singleton to handle current
+    public static let session = User()
+    
+    public var isSignedIn: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "isLoggedIn")
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "isLoggedIn")
+            UserDefaults.standard.synchronize()
+        }
     }
-    set {
-        UserDefaults.standard.setValue(newValue, forKey: "isLoggedIn")
-        UserDefaults.standard.synchronize()
+    public var currentUserID: String {
+        get {
+            return UserDefaults.standard.string(forKey: "currentUserID") ?? "None"
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "currentUserID")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    public var tempID: String {
+        get {
+            return UserDefaults.standard.string(forKey: "tempID") ?? "None"
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "tempID")
+            UserDefaults.standard.synchronize()
+        }
     }
 }

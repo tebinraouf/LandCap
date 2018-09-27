@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		432322C221507127005B47CF /* SocialMediaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C121507127005B47CF /* SocialMediaLoginView.swift */; };
 		432322C421507265005B47CF /* SocialMediaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C321507265005B47CF /* SocialMediaDelegate.swift */; };
-		432322C6215099D3005B47CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 432322C5215099D3005B47CF /* GoogleService-Info.plist */; };
 		432AA0D3215C78B700809F78 /* CaptureCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D2215C78B700809F78 /* CaptureCamera.swift */; };
 		432AA0D6215C799800809F78 /* AVDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D5215C799800809F78 /* AVDelegate.swift */; };
 		432AA0D8215C79FF00809F78 /* GestureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D7215C79FF00809F78 /* GestureDelegate.swift */; };
 		432AA0DA215C7A6100809F78 /* HomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D9215C7A6100809F78 /* HomeViewDelegate.swift */; };
+		432AA0DC215C906700809F78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 432AA0DB215C906700809F78 /* GoogleService-Info.plist */; };
 		43478ADA21472E3000C2EC24 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478AD921472E3000C2EC24 /* PageController.swift */; };
 		43478ADD214731D300C2EC24 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478ADC214731D300C2EC24 /* PageView.swift */; };
 		43478ADF2147324400C2EC24 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478ADE2147324400C2EC24 /* PageCell.swift */; };
@@ -70,11 +70,11 @@
 		1A0482344FE67E693FB81DB5 /* Pods-LandCapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp.release.xcconfig"; sourceTree = "<group>"; };
 		432322C121507127005B47CF /* SocialMediaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLoginView.swift; sourceTree = "<group>"; };
 		432322C321507265005B47CF /* SocialMediaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDelegate.swift; sourceTree = "<group>"; };
-		432322C5215099D3005B47CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		432AA0D2215C78B700809F78 /* CaptureCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCamera.swift; sourceTree = "<group>"; };
 		432AA0D5215C799800809F78 /* AVDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVDelegate.swift; sourceTree = "<group>"; };
 		432AA0D7215C79FF00809F78 /* GestureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureDelegate.swift; sourceTree = "<group>"; };
 		432AA0D9215C7A6100809F78 /* HomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDelegate.swift; sourceTree = "<group>"; };
+		432AA0DB215C906700809F78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43478AD921472E3000C2EC24 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		43478ADC214731D300C2EC24 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		43478ADE2147324400C2EC24 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
@@ -260,10 +260,10 @@
 				43478AD521472DE300C2EC24 /* Controllers */,
 				4359069321471D9200C692D7 /* AppDelegate.swift */,
 				4359069521471D9200C692D7 /* ViewController.swift */,
-				432322C5215099D3005B47CF /* GoogleService-Info.plist */,
 				4359069721471D9200C692D7 /* Main.storyboard */,
 				4359069A21471D9300C692D7 /* Assets.xcassets */,
 				4359069C21471D9300C692D7 /* LaunchScreen.storyboard */,
+				432AA0DB215C906700809F78 /* GoogleService-Info.plist */,
 				4359069F21471D9300C692D7 /* Info.plist */,
 			);
 			path = LandCapApp;
@@ -507,7 +507,7 @@
 			files = (
 				4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */,
 				439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */,
-				432322C6215099D3005B47CF /* GoogleService-Info.plist in Resources */,
+				432AA0DC215C906700809F78 /* GoogleService-Info.plist in Resources */,
 				4359069B21471D9300C692D7 /* Assets.xcassets in Resources */,
 				4359069921471D9200C692D7 /* Main.storyboard in Resources */,
 			);
