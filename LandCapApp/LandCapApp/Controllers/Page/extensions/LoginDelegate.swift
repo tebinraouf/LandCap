@@ -21,21 +21,10 @@ extension PageController: LoginViewDelegate {
                 self.handling(error)
             } else {
                 if (authResult?.user.isEmailVerified)! {
-                
-                    if let authResult = authResult {
-                        //set the initial user details for database
-                        let user = CapUser()
-                        user.Key = authResult.user.uid
-                        user.Name = authResult.user.displayName
-                        
-                        //fill database with initial values
-                        let capDatabase = CapDatabase(user: user)
-                        capDatabase.add()
-                        
-                        DispatchQueue.main.async {
-                            isSignedIn = true
-                            self.nextController()
-                        }
+                    //Move to the HomeController
+                    DispatchQueue.main.async {
+                        isSignedIn = true
+                        self.nextController()
                     }
                 } else {
                     let email = NSLocalizedString("Email Verification", comment: "Email Verification")
@@ -47,12 +36,23 @@ extension PageController: LoginViewDelegate {
     }
     
     func registerBtn(name: String?, email: String?, password: String?) {
-        //guard let name = name else { return }
+        guard let name = name else { return }
         guard let email = email else { return }
         guard let password = password else { return }
         
-        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (authResult, error) in
             if error == nil {
+                //Store the user's name in the database
+                if let authResult = authResult {
+                    //set the initial user details for database
+                    let user = CapUser()
+                    user.Key = authResult.user.uid
+                    user.Name = name
+                    //fill database with initial values
+                    let capDatabase = CapDatabase(user: user)
+                    capDatabase.add()
+                }
+                //Check if account is verified.
                 Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
                     if error == nil {
                         if (Auth.auth().currentUser?.isEmailVerified)! {
