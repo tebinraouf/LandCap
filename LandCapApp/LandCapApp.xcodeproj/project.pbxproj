@@ -10,6 +10,10 @@
 		432322C221507127005B47CF /* SocialMediaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C121507127005B47CF /* SocialMediaLoginView.swift */; };
 		432322C421507265005B47CF /* SocialMediaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C321507265005B47CF /* SocialMediaDelegate.swift */; };
 		432322C6215099D3005B47CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 432322C5215099D3005B47CF /* GoogleService-Info.plist */; };
+		432AA0D3215C78B700809F78 /* CaptureCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D2215C78B700809F78 /* CaptureCamera.swift */; };
+		432AA0D6215C799800809F78 /* AVDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D5215C799800809F78 /* AVDelegate.swift */; };
+		432AA0D8215C79FF00809F78 /* GestureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D7215C79FF00809F78 /* GestureDelegate.swift */; };
+		432AA0DA215C7A6100809F78 /* HomeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D9215C7A6100809F78 /* HomeViewDelegate.swift */; };
 		43478ADA21472E3000C2EC24 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478AD921472E3000C2EC24 /* PageController.swift */; };
 		43478ADD214731D300C2EC24 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478ADC214731D300C2EC24 /* PageView.swift */; };
 		43478ADF2147324400C2EC24 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478ADE2147324400C2EC24 /* PageCell.swift */; };
@@ -67,6 +71,10 @@
 		432322C121507127005B47CF /* SocialMediaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLoginView.swift; sourceTree = "<group>"; };
 		432322C321507265005B47CF /* SocialMediaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDelegate.swift; sourceTree = "<group>"; };
 		432322C5215099D3005B47CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		432AA0D2215C78B700809F78 /* CaptureCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCamera.swift; sourceTree = "<group>"; };
+		432AA0D5215C799800809F78 /* AVDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVDelegate.swift; sourceTree = "<group>"; };
+		432AA0D7215C79FF00809F78 /* GestureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureDelegate.swift; sourceTree = "<group>"; };
+		432AA0D9215C7A6100809F78 /* HomeViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDelegate.swift; sourceTree = "<group>"; };
 		43478AD921472E3000C2EC24 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		43478ADC214731D300C2EC24 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		43478ADE2147324400C2EC24 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
@@ -140,6 +148,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432AA0D4215C797C00809F78 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				432AA0D5215C799800809F78 /* AVDelegate.swift */,
+				432AA0D7215C79FF00809F78 /* GestureDelegate.swift */,
+				432AA0D9215C7A6100809F78 /* HomeViewDelegate.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		43478AD521472DE300C2EC24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,7 +309,9 @@
 		437FAA68214F43940050AEE8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				432AA0D4215C797C00809F78 /* extensions */,
 				437FAA69214F43A90050AEE8 /* HomeController.swift */,
+				432AA0D2215C78B700809F78 /* CaptureCamera.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -603,12 +623,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432AA0DA215C7A6100809F78 /* HomeViewDelegate.swift in Sources */,
+				432AA0D8215C79FF00809F78 /* GestureDelegate.swift in Sources */,
 				43AD40CA21548F12000FD21D /* CapUser.swift in Sources */,
 				43FE19A9215B3E2200437B1B /* PhotoController.swift in Sources */,
 				4359069621471D9200C692D7 /* ViewController.swift in Sources */,
+				432AA0D3215C78B700809F78 /* CaptureCamera.swift in Sources */,
 				43AD40C721548EDF000FD21D /* CapDatabase.swift in Sources */,
 				437FAA60214F37F70050AEE8 /* LoginDelegate.swift in Sources */,
 				43478ADF2147324400C2EC24 /* PageCell.swift in Sources */,
+				432AA0D6215C799800809F78 /* AVDelegate.swift in Sources */,
 				432322C221507127005B47CF /* SocialMediaLoginView.swift in Sources */,
 				437FAA5C214F379B0050AEE8 /* CollectionDelegate.swift in Sources */,
 				43ADA76F214EE5F900F09835 /* LeftPaddedTextField.swift in Sources */,
