@@ -28,6 +28,7 @@
 		4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069C21471D9300C692D7 /* LaunchScreen.storyboard */; };
 		435906A921471D9300C692D7 /* LandCapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906A821471D9300C692D7 /* LandCapAppTests.swift */; };
 		435906B421471D9300C692D7 /* LandCapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906B321471D9300C692D7 /* LandCapAppUITests.swift */; };
+		436DE40E215DD323004D8062 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DE40D215DD323004D8062 /* PhotoView.swift */; };
 		437FAA5C214F379B0050AEE8 /* CollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA5B214F379B0050AEE8 /* CollectionDelegate.swift */; };
 		437FAA60214F37F70050AEE8 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA5F214F37F70050AEE8 /* LoginDelegate.swift */; };
 		437FAA62214F384D0050AEE8 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA61214F384D0050AEE8 /* TextFieldDelegate.swift */; };
@@ -95,6 +96,7 @@
 		435906AF21471D9300C692D7 /* LandCapAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandCapAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		435906B321471D9300C692D7 /* LandCapAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandCapAppUITests.swift; sourceTree = "<group>"; };
 		435906B521471D9300C692D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		436DE40D215DD323004D8062 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		437FAA5B214F379B0050AEE8 /* CollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDelegate.swift; sourceTree = "<group>"; };
 		437FAA5F214F37F70050AEE8 /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
 		437FAA61214F384D0050AEE8 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		43478AD621472DF600C2EC24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				436DE40C215DD310004D8062 /* Photo */,
 				43EB5289215AFBC400B3E6CF /* HomeView */,
 				43ADA76A214EE45500F09835 /* LoginView */,
 				43478AE02147326100C2EC24 /* Commons */,
@@ -285,6 +288,14 @@
 				435906B521471D9300C692D7 /* Info.plist */,
 			);
 			path = LandCapAppUITests;
+			sourceTree = "<group>";
+		};
+		436DE40C215DD310004D8062 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				436DE40D215DD323004D8062 /* PhotoView.swift */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 		437FAA5A214F37850050AEE8 /* extensions */ = {
@@ -649,6 +660,7 @@
 				437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */,
 				43ADA76C214EE47500F09835 /* LoginView.swift in Sources */,
 				43478AE22147326E00C2EC24 /* BaseCell.swift in Sources */,
+				436DE40E215DD323004D8062 /* PhotoView.swift in Sources */,
 				43478ADA21472E3000C2EC24 /* PageController.swift in Sources */,
 				43FE19AC215B49AA00437B1B /* ProfileController.swift in Sources */,
 			);

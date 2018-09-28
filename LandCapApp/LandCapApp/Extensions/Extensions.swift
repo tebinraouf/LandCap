@@ -23,4 +23,10 @@ public extension UIColor {
     public class var textColor: UIColor {
         return .white
     }
+    public class var blackColor: UIColor {
+        return .black
+    }
+    public class var whiteColor: UIColor {
+        return .white
+    }
 }

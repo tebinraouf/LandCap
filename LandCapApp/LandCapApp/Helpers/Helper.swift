@@ -43,12 +43,12 @@ public class User {
             UserDefaults.standard.synchronize()
         }
     }
-    public var tempID: String {
+    public var imageURL: String {
         get {
-            return UserDefaults.standard.string(forKey: "tempID") ?? "None"
+            return UserDefaults.standard.string(forKey: "imageURL") ?? "None"
         }
         set {
-            UserDefaults.standard.setValue(newValue, forKey: "tempID")
+            UserDefaults.standard.setValue(newValue, forKey: "imageURL")
             UserDefaults.standard.synchronize()
         }
     }

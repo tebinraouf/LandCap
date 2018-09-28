@@ -10,45 +10,54 @@ import Foundation
 import UIKit
 
 class PhotoController: UIViewController {
-    
-    
-    var takenImage: UIImage?
-    
-    var imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.contentMode = .scaleAspectFill
-        return iv
-    }()
-    
+
+    var imageData: Data!
+    let photoView = PhotoView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor  = .white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancleHandler))
-        
+        self.view.backgroundColor  = UIColor.whiteColor
+        setNavigationItems()
         setupView()
-        imageView.image = takenImage
+//        setupDelegate()
+        photoView.image = UIImage(data: imageData)
+        
         print("PhotoController")
-    }
-    
-    
-    
-    func setupView() {
-        view.addSubview(imageView)
-        NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: view.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: view.frame.height/2)
-            ])
-    }
-    
-    @objc func cancleHandler() {
-        self.dismiss(animated: true, completion: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
+    private func setupDelegate() {
+        photoView.delegate = self
+    }
+    private func setupView() {
+        view.addSubview(photoView)
+        NSLayoutConstraint.activate([
+            photoView.topAnchor.constraint(equalTo: view.topAnchor),
+            photoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            photoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            photoView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+    }
+    private func setNavigationItems() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancleHandler))
+    }
+    @objc func doneHandler() {
+        //upload photo to firebase
+        let userID = User.session.currentUserID
+        let database = CapDatabase(userID: userID)
+        //image URL
+        database.uploadImage(imageData: imageData) { (url) in
+            alert(title: "Upload Successful", message: "", viewController: self)
+            print(url)
+        }
+    }
+    @objc func cancleHandler() {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PhotoController: PhotoViewDelegate {
+
 }

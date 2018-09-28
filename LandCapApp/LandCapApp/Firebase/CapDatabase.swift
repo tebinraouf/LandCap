@@ -38,34 +38,41 @@ class CapDatabase {
     func update(name: String) {
         self.ref.child("users/\(user.Key!)/name").setValue(name)
     }
-    func uploadImage(imageData: Data) -> StorageReference {
+    //Accepts an image data to be uploaded and return its URL
+    func uploadImage(imageData: Data, success: @escaping (_ url:String)->()) {
         
-        //get unique id for image
-        User.session.tempID = UUID().uuidString
+        let imageID = uniqueImageName()
+        
         //Upload the image
         storageRef = Storage.storage().reference()
-        let photoRef = storageRef.child("users/temp//\(userID!)/\(User.session.tempID).jpeg")
-        let photo = photoRef.putData(imageData, metadata: nil) { (metaData, error) in
+        let photoRef = storageRef.child("users").child("temp").child(userID!).child("\(imageID).jpeg")
+        //Set Image Metadata
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+        //Upload Image to Firebase
+        let photo = photoRef.putData(imageData, metadata: metaData) { (metaData, error) in
             if error == nil {
-                print("Correct...")
-                print(metaData)
+//                print(metaData)
             }
             else {
-                print(error)
+//                print(error)
             }
         }
-        return photoRef
+        photo.resume()
+        
+        photo.observe(StorageTaskStatus.success) { (snap) in
+            snap.reference.downloadURL { (url, error) in
+                if let downloadUrl = url {
+                    success(downloadUrl.absoluteString)
+                }
+            }
+        }
     }
-    func getUrl(ref: StorageReference) -> String {
-        //get the URL
-        var returnUrl = ""
-        ref.downloadURL { (url, error) in
-            print(error)
-            if let downloadUrl = url {
-                print(downloadUrl)
-                returnUrl = downloadUrl.absoluteString
-            }
-        }
-        return returnUrl
+    private func uniqueImageName() -> String {
+        //get unique id for image
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmss"
+        return formatter.string(from: currentDateTime)
     }
 }
