@@ -56,21 +56,31 @@ class PhotoController: UIViewController {
         
         
         
-        let visionImage = VisionImage(image: UIImage(named: "statue.png")!) //VisionImage(image: image!)
+        let visionImage = VisionImage(image: image!)
         cloudDetector.detect(in: visionImage) { (landmarks, error) in
-//            guard error == nil, let landmarks = landmarks, !landmarks.isEmpty else {
-//                alert(title: "No Landmarks", message: "", viewController: self)
-//                return
-//            }
-            print(error)
-            if let landmarks = landmarks {
-                for landmark in landmarks {
-                    print(landmark.confidence)
-                    print(landmark.landmark)
-                    
-                }
+            
+            if let error = error {
+                alert(title: "Error!", message: error.localizedDescription, viewController: self)
             }
             
+            if let landmarks = landmarks {
+                
+                if landmarks.isEmpty {
+                    alert(title: "No Landmark", message: "", viewController: self)
+                }
+                else {
+                    if let landmark = landmarks.first {
+                        if let con = landmark.confidence, let land = landmark.landmark {
+                            alert(title: "Landmark Detection", message: "Confidence: \(con)\n\(land)", viewController: self)
+                        }
+                    }
+                }
+//                for landmark in landmarks {
+//                    print(landmark.confidence)
+//                    print(landmark.landmark)
+//
+//                }
+            }
         }
         
         
