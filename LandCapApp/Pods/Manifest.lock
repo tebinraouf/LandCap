@@ -20,6 +20,9 @@ PODS:
   - Firebase/Database (5.8.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.0.3)
+  - Firebase/MLVision (5.8.0):
+    - Firebase/CoreOnly
+    - FirebaseMLVision (= 0.11.0)
   - Firebase/Storage (5.8.0):
     - Firebase/CoreOnly
     - FirebaseStorage (= 3.0.2)
@@ -46,16 +49,39 @@ PODS:
   - FirebaseInstanceID (3.2.1):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
+  - FirebaseMLCommon (0.11.0):
+    - FirebaseCore (~> 5.1)
+  - FirebaseMLVision (0.11.0):
+    - FirebaseCore (~> 5.1)
+    - FirebaseMLCommon (~> 0.11)
+    - GoogleAPIClientForREST/Core (~> 1.3)
+    - GoogleAPIClientForREST/Vision (~> 1.3)
+    - GoogleMobileVision/Detector (~> 1.3)
   - FirebaseStorage (3.0.2):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleAPIClientForREST/Core (1.3.6):
+    - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/Vision (1.3.6):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleAppMeasurement (5.1.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2.0)
     - GoogleUtilities/MethodSwizzler (~> 5.2.0)
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
+  - GoogleMobileVision/Detector (1.3.2):
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.1)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - GoogleToolboxForMac/Logger (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
+    - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleUtilities/AppDelegateSwizzler (5.2.3):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -72,13 +98,18 @@ PODS:
   - "GoogleUtilities/NSData+zlib (5.2.3)"
   - GoogleUtilities/Reachability (5.2.3):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher (1.2.0):
+    - GTMSessionFetcher/Full (= 1.2.0)
   - GTMSessionFetcher/Core (1.2.0)
+  - GTMSessionFetcher/Full (1.2.0):
+    - GTMSessionFetcher/Core (= 1.2.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Protobuf (3.6.1)
   - SwiftInstagram (1.1.1):
     - SwiftInstagram/Core (= 1.1.1)
   - SwiftInstagram/Core (1.1.1)
@@ -88,6 +119,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/MLVision
   - Firebase/Storage
   - SwiftInstagram (~> 1.1.1)
 
@@ -103,12 +135,18 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseDatabase
     - FirebaseInstanceID
+    - FirebaseMLCommon
+    - FirebaseMLVision
     - FirebaseStorage
+    - GoogleAPIClientForREST
     - GoogleAppMeasurement
+    - GoogleMobileVision
+    - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - Protobuf
     - SwiftInstagram
 
 SPEC CHECKSUMS:
@@ -122,14 +160,20 @@ SPEC CHECKSUMS:
   FirebaseCore: 27bd80e5bfaaf9552a1f5cacb4c7e8bb925bab22
   FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
+  FirebaseMLCommon: 285b93416df5f37164ad08795cb799f253fda549
+  FirebaseMLVision: b2a14ec0d0d885b6b0d0c04825794715cb755c3e
   FirebaseStorage: fd82e5e5c474897e19972b34b22ac0f589dce04e
+  GoogleAPIClientForREST: 5b95b38a0fa912e8ac7bdcf9e124578ef1a61bf2
   GoogleAppMeasurement: fc4a4c3fe0144db9313cbf443ffe62e6b1d6268c
+  GoogleMobileVision: 6b0a3a2dae1974ec35d80fdeeacc3a03193642e0
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
 
-PODFILE CHECKSUM: 33ff84209bf5922fc626602b03b6568485e2d1bd
+PODFILE CHECKSUM: 7f0ff68f112eb9ede889113afd086b9ff530c00a
 
 COCOAPODS: 1.5.3

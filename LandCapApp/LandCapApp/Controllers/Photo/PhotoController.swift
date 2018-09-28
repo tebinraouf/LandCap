@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import Firebase
 import UIKit
+
 
 class PhotoController: UIViewController {
 
     var imageData: Data!
     let photoView = PhotoView()
+    lazy var vision = Vision.vision()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +49,43 @@ class PhotoController: UIViewController {
     @objc func doneHandler() {
         //upload photo to firebase
         let userID = User.session.currentUserID
-        let database = CapDatabase(userID: userID)
-        //image URL
-        database.uploadImage(imageData: imageData) { (url) in
-            alert(title: "Upload Successful", message: "", viewController: self)
-            print(url)
+
+        
+        let cloudDetector = vision.cloudLandmarkDetector()
+        let image = UIImage(data: imageData)
+        
+        
+        
+        let visionImage = VisionImage(image: UIImage(named: "statue.png")!) //VisionImage(image: image!)
+        cloudDetector.detect(in: visionImage) { (landmarks, error) in
+//            guard error == nil, let landmarks = landmarks, !landmarks.isEmpty else {
+//                alert(title: "No Landmarks", message: "", viewController: self)
+//                return
+//            }
+            print(error)
+            if let landmarks = landmarks {
+                for landmark in landmarks {
+                    print(landmark.confidence)
+                    print(landmark.landmark)
+                    
+                }
+            }
+            
         }
+        
+        
+        //        let database = CapDatabase(userID: userID)
+//        //image URL
+//
+//
+//
+//        database.uploadImage(imageData: imageData) { (url) in
+//            alert(title: "Upload Successful", message: "", viewController: self)
+//            print(url)
+//
+//
+//
+//        }
     }
     @objc func cancleHandler() {
         self.dismiss(animated: true, completion: nil)
