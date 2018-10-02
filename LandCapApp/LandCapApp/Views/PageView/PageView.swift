@@ -177,7 +177,7 @@ class PageView: BaseView {
         updateConstraintFor(getStarted: -300, skip: -20, pageControl: -300, loginView: 0, socialLoginBtn: 0)
     }
     @objc func handleSkip() {
-        
+        loginDelegate.skipBtn()
     }
     func keyboardResponder(){
         loginView.keyboardResponder()

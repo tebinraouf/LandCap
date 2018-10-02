@@ -11,4 +11,6 @@ import Foundation
 public class CapUser {
     public var Name : String!
     public var Key: String!
+    public var isAnonymous: Bool!
+    public var photoLimit: Int!
 }

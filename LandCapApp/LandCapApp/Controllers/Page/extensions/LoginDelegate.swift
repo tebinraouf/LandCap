@@ -50,6 +50,8 @@ extension PageController: LoginViewDelegate {
                     //set the initial user details for database
                     let user = CapUser()
                     user.Key = authResult.user.uid
+                    user.isAnonymous = false
+                    user.photoLimit = 100
                     user.Name = name
                     //fill database with initial values
                     let capDatabase = CapDatabase(user: user)
@@ -96,6 +98,47 @@ extension PageController: LoginViewDelegate {
                 self.handling(error)
                 alert(title: "Sent", message: "Check your email to set your new password.", viewController: self)
             }
+        })
+        self.present(requestAlert, animated: true)
+    }
+    
+    func skipBtn() {
+        let requestAlert = UIAlertController(title: "Skip Alert", message: "You can't save your information if you don't create an account.", preferredStyle: .alert)
+        
+        requestAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        requestAlert.addAction(UIAlertAction(title: "That's Okay", style: .default) { (action) in
+            
+            Auth.auth().signInAnonymously() { (authResult, error) in
+                if error == nil {
+                    if let authResult = authResult {
+                        let user = authResult.user
+                        let uid = user.uid
+                        //set the initial user details for database
+                        let capUser = CapUser()
+                        capUser.Name = "Guest"
+                        capUser.isAnonymous = true
+                        capUser.photoLimit = 10
+                        capUser.Key = uid
+                        //fill database with initial values
+                        let capDatabase = CapDatabase(user: capUser)
+                        capDatabase.add()
+                    }
+                    //Get the Current User ID Saved.
+                    User.session.currentUserID = (authResult?.user.uid)!
+                    
+                    //Move to the HomeController
+                    DispatchQueue.main.async {
+                        User.session.isSignedIn = true
+                        User.session.isAnonymous = true
+                        self.nextController()
+                    }
+                }
+                else {
+                    self.handling(error)
+                }
+            }
+            
+            
         })
         self.present(requestAlert, animated: true)
     }

@@ -242,4 +242,5 @@ protocol LoginViewDelegate {
     func signInBtn(email: String?, password: String?)
     func registerBtn(name: String?, email: String?, password: String?)
     func forgetPasswordBtn()
+    func skipBtn()
 }

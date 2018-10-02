@@ -43,6 +43,15 @@ public class User {
             UserDefaults.standard.synchronize()
         }
     }
+    public var isAnonymous: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "isAnonymous")
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "isAnonymous")
+            UserDefaults.standard.synchronize()
+        }
+    }
     public var imageURL: String {
         get {
             return UserDefaults.standard.string(forKey: "imageURL") ?? "None"

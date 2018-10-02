@@ -32,7 +32,7 @@ class CapDatabase {
     }
     
     func add() {
-        self.ref.child("users").child(user.Key).setValue(["name": user.Name])
+        self.ref.child("users").child(user.Key).setValue(["name": user.Name, "isAnonymous": user.isAnonymous, "photoLimit": user.photoLimit])
     }
     
     func update(name: String) {
