@@ -50,9 +50,8 @@ extension PageController: LoginViewDelegate {
                     //set the initial user details for database
                     let user = CapUser()
                     user.Key = authResult.user.uid
-                    user.isAnonymous = false
-                    user.photoLimit = 100
                     user.Name = name
+                    user.setAuthorizedUser()
                     //fill database with initial values
                     let capDatabase = CapDatabase(user: user)
                     capDatabase.add()
@@ -120,10 +119,8 @@ extension PageController: LoginViewDelegate {
                         let uid = user.uid
                         //set the initial user details for database
                         let capUser = CapUser()
-                        capUser.Name = "Guest"
-                        capUser.isAnonymous = true
-                        capUser.photoLimit = 10
                         capUser.Key = uid
+                        capUser.setAnonymousUser()
                         //fill database with initial values
                         let capDatabase = CapDatabase(user: capUser)
                         capDatabase.add()

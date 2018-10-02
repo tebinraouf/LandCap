@@ -22,12 +22,11 @@ extension PageController: SocialMediaLoginDelegate {
                     User.session.isSignedIn = false
                 }
                 if let authResult = authResult {
-                    
                     //set the initial user details for database
                     let user = CapUser()
                     user.Key = authResult.user.uid
                     user.Name = authResult.user.displayName
-                    
+                    user.setAuthorizedUser()
                     //fill database with initial values
                     let capDatabase = CapDatabase(user: user)
                     capDatabase.add()

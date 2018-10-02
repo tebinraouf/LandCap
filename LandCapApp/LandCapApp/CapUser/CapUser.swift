@@ -13,4 +13,23 @@ public class CapUser {
     public var Key: String!
     public var isAnonymous: Bool!
     public var photoLimit: Int!
+    
+    
+    
+    /// Initial Value for Authorized User.
+    /// - Photo Limit: 100
+    /// - isAnonymous: false
+    public func setAuthorizedUser() {
+        photoLimit = 100
+        isAnonymous = false
+    }
+    /// Initial Value for Anonymous User
+    /// - Photo Limit: 10
+    /// - isAnonymous: true
+    /// - Name: Guest
+    public func setAnonymousUser() {
+        photoLimit = 10
+        isAnonymous = true
+        Name = "Guest"
+    }
 }
