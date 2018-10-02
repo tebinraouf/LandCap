@@ -103,10 +103,15 @@ extension PageController: LoginViewDelegate {
     }
     
     func skipBtn() {
-        let requestAlert = UIAlertController(title: "Skip Alert", message: "You can't save your information if you don't create an account.", preferredStyle: .alert)
+        let skipTitle = NSLocalizedString("Skip Title", comment: "Skip Title goes here")
+        let skipMessage = NSLocalizedString("Skip Message", comment: "Skip message goes here")
+        let skipCancel = NSLocalizedString("Skip Cancel", comment: "Skip cancel goes here")
+        let skipOkay = NSLocalizedString("Skip Okay", comment: "Skip okay goes here")
         
-        requestAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        requestAlert.addAction(UIAlertAction(title: "That's Okay", style: .default) { (action) in
+        let requestAlert = UIAlertController(title: skipTitle, message: skipMessage, preferredStyle: .alert)
+        
+        requestAlert.addAction(UIAlertAction(title: skipCancel, style: .cancel, handler: nil))
+        requestAlert.addAction(UIAlertAction(title: skipOkay, style: .default) { (action) in
             
             Auth.auth().signInAnonymously() { (authResult, error) in
                 if error == nil {

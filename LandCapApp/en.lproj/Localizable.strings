@@ -37,3 +37,9 @@
 "Request Password" = "Request Password";
 "Email Placeholder" = "enter your email here...";
 "Request New Password" = "Request New Password";
+
+//Anonymous User
+"Skip Title" = "Skip Alert";
+"Skip Message" = "You can't save your information if you don't create an account.";
+"Skip Okay" = "Okay";
+"Skip Cancel" = "Cancel";
