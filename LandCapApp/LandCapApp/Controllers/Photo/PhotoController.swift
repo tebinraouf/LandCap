@@ -43,19 +43,16 @@ class PhotoController: UIViewController {
             ])
     }
     private func setNavigationItems() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Process", style: UIBarButtonItemStyle.done, target: self, action: #selector(doneHandler))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancleHandler))
     }
     @objc func doneHandler() {
         //upload photo to firebase
         let userID = User.session.currentUserID
 
-        
         let cloudDetector = vision.cloudLandmarkDetector()
         let image = UIImage(data: imageData)
-        
-        
-        
+
         let visionImage = VisionImage(image: image!)
         cloudDetector.detect(in: visionImage) { (landmarks, error) in
             
@@ -64,7 +61,6 @@ class PhotoController: UIViewController {
             }
             
             if let landmarks = landmarks {
-                
                 if landmarks.isEmpty {
                     alert(title: "No Landmark", message: "", viewController: self)
                 }
@@ -75,27 +71,8 @@ class PhotoController: UIViewController {
                         }
                     }
                 }
-//                for landmark in landmarks {
-//                    print(landmark.confidence)
-//                    print(landmark.landmark)
-//
-//                }
             }
         }
-        
-        
-        //        let database = CapDatabase(userID: userID)
-//        //image URL
-//
-//
-//
-//        database.uploadImage(imageData: imageData) { (url) in
-//            alert(title: "Upload Successful", message: "", viewController: self)
-//            print(url)
-//
-//
-//
-//        }
     }
     @objc func cancleHandler() {
         self.dismiss(animated: true, completion: nil)

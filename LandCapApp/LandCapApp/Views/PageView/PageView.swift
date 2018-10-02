@@ -56,10 +56,21 @@ class PageView: BaseView {
         btn.addTarget(self, action: #selector(handleGetStarted), for: .touchDown)
         return btn
     }()
+    var skipBtn: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        let btnName = NSLocalizedString("Skip", comment: "skip sign in")
+        btn.setTitle(btnName, for: .normal)
+        btn.backgroundColor = UIColor.clear
+        btn.tintColor = UIColor.textColor
+        btn.addTarget(self, action: #selector(handleSkip), for: .touchDown)
+        return btn
+    }()
     var loginView = LoginView()
     var socialLoginView = SocialMediaLoginView()
     var centerConstraint: NSLayoutConstraint!
     var getStartedConstraint: NSLayoutConstraint!
+    var skipConstraint: NSLayoutConstraint!
     var pageControlConstraint: NSLayoutConstraint!
     var socialLoginCenterConstraint: NSLayoutConstraint!
     
@@ -68,6 +79,7 @@ class PageView: BaseView {
         logoLabelViewSetup()
         collectionView.register(PageCell.self, forCellWithReuseIdentifier: CellID.PageCell)
         setupGetStartedBackground()
+        setupSkipButton()
         
         setupPageControl()
         setupGetStartedButton()
@@ -121,6 +133,14 @@ class PageView: BaseView {
              getStartedButton.widthAnchor.constraint(equalTo: getStartedButton.widthAnchor),
              ])
     }
+    func setupSkipButton(){
+        addSubview(skipBtn)
+        skipConstraint = skipBtn.rightAnchor.constraint(equalTo: rightAnchor, constant: 100)
+        skipConstraint.isActive = true
+        NSLayoutConstraint.activate([
+            skipBtn.topAnchor.constraint(equalTo: topAnchor, constant: 20)
+            ])
+    }
     func setupLoginView() {
         addSubview(loginView)
         let top = loginView.topAnchor.constraint(equalTo: logoLabel.bottomAnchor, constant: 60)
@@ -140,8 +160,9 @@ class PageView: BaseView {
         socialLoginCenterConstraint.isActive = true
         NSLayoutConstraint.activate([width, centerY, height])
     }
-    func updateConstraintFor(getStarted: CGFloat, pageControl: CGFloat, loginView: CGFloat, socialLoginBtn: CGFloat){
+    func updateConstraintFor(getStarted: CGFloat, skip: CGFloat ,pageControl: CGFloat, loginView: CGFloat, socialLoginBtn: CGFloat){
         getStartedConstantConstraint = getStarted
+        skipConstantConstraint = skip
         pageControlConstantConstraint = pageControl
         loginViewConstantConstraint = loginView
         socialLoginCenterConstraint.constant = socialLoginBtn
@@ -153,7 +174,10 @@ class PageView: BaseView {
     @objc func handleGetStarted() {
         let indexPath = IndexPath(item: 3, section: 0)
         pageCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.left, animated: true)
-        updateConstraintFor(getStarted: -300, pageControl: -300, loginView: 0, socialLoginBtn: 0)
+        updateConstraintFor(getStarted: -300, skip: -20, pageControl: -300, loginView: 0, socialLoginBtn: 0)
+    }
+    @objc func handleSkip() {
+        
     }
     func keyboardResponder(){
         loginView.keyboardResponder()
@@ -202,6 +226,14 @@ extension PageView {
         }
         set {
             getStartedConstraint.constant = newValue
+        }
+    }
+    var skipConstantConstraint: CGFloat {
+        get {
+            return skipConstraint.constant
+        }
+        set {
+            skipConstraint.constant = newValue
         }
     }
     var pageControlConstantConstraint: CGFloat {
