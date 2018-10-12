@@ -22,7 +22,7 @@ class PageView: BaseView {
     }()
     var logoLabel: UILabel = {
         let label = UILabel()
-        label.text = "LandCap"
+        label.text = App.label.appName
         label.tintColor = .white
         label.textColor = .white
         label.backgroundColor = .clear
@@ -47,8 +47,7 @@ class PageView: BaseView {
     var getStartedButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        let btnName = NSLocalizedString("Get Started", comment: "skip to login view")
-        btn.setTitle(btnName, for: .normal)
+        btn.setTitle(App.label.getStartedButton, for: .normal)
         btn.backgroundColor = UIColor.mainColor
         btn.tintColor = UIColor.textColor
         btn.layer.cornerRadius = 20
@@ -59,8 +58,7 @@ class PageView: BaseView {
     var skipBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        let btnName = NSLocalizedString("Skip", comment: "skip sign in")
-        btn.setTitle(btnName, for: .normal)
+        btn.setTitle(App.label.skipButton, for: .normal)
         btn.backgroundColor = UIColor.clear
         btn.tintColor = UIColor.textColor
         btn.addTarget(self, action: #selector(handleSkip), for: .touchDown)

@@ -5,6 +5,8 @@
   Created by Tebin on 9/16/18.
   Copyright © 2018 Tebin. All rights reserved.
 */
+
+"LandCap" = "The name of the app";
 "Get Started" = "GET STARTED";
 "Skip" = "Skip";
 "Sign In" = "Sign In";
@@ -43,3 +45,20 @@
 "Skip Message" = "You can't save your information if you don't create an account.";
 "Skip Okay" = "Okay";
 "Skip Cancel" = "Cancel";
+
+//Request Password
+"Request Cancel" = "Cancel";
+"Request Sent" = "Sent";
+"Request Message" = "Check your email to set your new password.";
+
+//Photo Controller
+"Cancel Photo" = "Cancel";
+"Process Photo" = "Process";
+"Not Detected Title" = "Not Detected";
+"Not Detected Message" = "The photo is not detected. Please try another one!";
+"Vision Error" = "Error";
+
+
+//Info Controller
+"Cancel Info" = "Cancel";
+"Save Info" = "Save";

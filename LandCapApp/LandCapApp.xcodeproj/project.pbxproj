@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430E6348217109A9008109B9 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E6347217109A9008109B9 /* AppLabel.swift */; };
 		432322C221507127005B47CF /* SocialMediaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C121507127005B47CF /* SocialMediaLoginView.swift */; };
 		432322C421507265005B47CF /* SocialMediaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C321507265005B47CF /* SocialMediaDelegate.swift */; };
 		432AA0D3215C78B700809F78 /* CaptureCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D2215C78B700809F78 /* CaptureCamera.swift */; };
@@ -70,6 +71,7 @@
 		0D21E870D9807015E341C884 /* Pods-LandCapAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapAppTests/Pods-LandCapAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		198168A12942456897221550 /* Pods-LandCapAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapAppTests/Pods-LandCapAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		1A0482344FE67E693FB81DB5 /* Pods-LandCapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp.release.xcconfig"; sourceTree = "<group>"; };
+		430E6347217109A9008109B9 /* AppLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
 		432322C121507127005B47CF /* SocialMediaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLoginView.swift; sourceTree = "<group>"; };
 		432322C321507265005B47CF /* SocialMediaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDelegate.swift; sourceTree = "<group>"; };
 		432AA0D2215C78B700809F78 /* CaptureCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCamera.swift; sourceTree = "<group>"; };
@@ -165,8 +167,8 @@
 		43478AD521472DE300C2EC24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				43C9FE382170FA23007C2D4A /* Info */,
 				43FE19AA215B498B00437B1B /* Profile */,
+				43C9FE382170FA23007C2D4A /* Info */,
 				43FE19A7215B3E0C00437B1B /* Photo */,
 				437FAA68214F43940050AEE8 /* Home */,
 				43478AD821472E1400C2EC24 /* Page */,
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				437FAA66214F41C00050AEE8 /* Helper.swift */,
+				430E6347217109A9008109B9 /* AppLabel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				43AD40C721548EDF000FD21D /* CapDatabase.swift in Sources */,
 				437FAA60214F37F70050AEE8 /* LoginDelegate.swift in Sources */,
 				43478ADF2147324400C2EC24 /* PageCell.swift in Sources */,
+				430E6348217109A9008109B9 /* AppLabel.swift in Sources */,
 				432AA0D6215C799800809F78 /* AVDelegate.swift in Sources */,
 				432322C221507127005B47CF /* SocialMediaLoginView.swift in Sources */,
 				437FAA5C214F379B0050AEE8 /* CollectionDelegate.swift in Sources */,

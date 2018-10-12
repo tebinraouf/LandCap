@@ -30,9 +30,7 @@ extension PageController: LoginViewDelegate {
                         self.nextController()
                     }
                 } else {
-                    let email = NSLocalizedString("Email Verification", comment: "Email Verification")
-                    let emailVer = NSLocalizedString("Email Ver Message", comment: "Verify your account")
-                    alert(title: email, message: emailVer, viewController: self)
+                    alert(title: App.label.emailTitle, message: App.label.emailMessage, viewController: self)
                 }
             }
         })
@@ -65,9 +63,7 @@ extension PageController: LoginViewDelegate {
                                 self.nextController()
                             }
                         } else {
-                            let account = NSLocalizedString("Account Created", comment: "Email Verification")
-                            let emailVer = NSLocalizedString("Email Ver Message", comment: "Verify your account")
-                            alert(title: account, message: emailVer, viewController: self)
+                            alert(title: App.label.accountCreated, message: App.label.emailMessage, viewController: self)
                         }
                     } else {
                         self.handling(error)
@@ -80,37 +76,26 @@ extension PageController: LoginViewDelegate {
     }
     
     func forgetPasswordBtn() {
-        let newPass = NSLocalizedString("Request Password", comment: "Request New Password")
-        let requestNewPass = NSLocalizedString("Request New Password", comment: "Request New Password")
-        let emailHereText = NSLocalizedString("Email Placeholder", comment: "Email placeholder")
-        
-        let requestAlert = UIAlertController(title: newPass, message: nil, preferredStyle: .alert)
+        let requestAlert = UIAlertController(title: App.label.requestPassword, message: nil, preferredStyle: .alert)
         requestAlert.addTextField { (textfield) in
             textfield.keyboardType = .emailAddress
-            textfield.placeholder = emailHereText
+            textfield.placeholder = App.label.emailPlaceHolder
         }
-        requestAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        requestAlert.addAction(UIAlertAction(title: requestNewPass, style: .default) { (action) in
-            //action.title = "Sent..."
+        requestAlert.addAction(UIAlertAction(title: App.label.requestPasswordCancel, style: .cancel, handler: nil))
+        requestAlert.addAction(UIAlertAction(title: App.label.requestNewPassword, style: .default) { (action) in
             guard let requestedEmail = requestAlert.textFields?.first?.text else { return }
             Auth.auth().sendPasswordReset(withEmail: requestedEmail) { (error) in
                 self.handling(error)
-                alert(title: "Sent", message: "Check your email to set your new password.", viewController: self)
+                alert(title: App.label.requestSentTitle, message: App.label.requestSentMessage, viewController: self)
             }
         })
         self.present(requestAlert, animated: true)
     }
     
     func skipBtn() {
-        let skipTitle = NSLocalizedString("Skip Title", comment: "Skip Title goes here")
-        let skipMessage = NSLocalizedString("Skip Message", comment: "Skip message goes here")
-        let skipCancel = NSLocalizedString("Skip Cancel", comment: "Skip cancel goes here")
-        let skipOkay = NSLocalizedString("Skip Okay", comment: "Skip okay goes here")
-        
-        let requestAlert = UIAlertController(title: skipTitle, message: skipMessage, preferredStyle: .alert)
-        
-        requestAlert.addAction(UIAlertAction(title: skipCancel, style: .cancel, handler: nil))
-        requestAlert.addAction(UIAlertAction(title: skipOkay, style: .default) { (action) in
+        let requestAlert = UIAlertController(title: App.label.skipTitle, message: App.label.skipMessage, preferredStyle: .alert)
+        requestAlert.addAction(UIAlertAction(title: App.label.skipCancel, style: .cancel, handler: nil))
+        requestAlert.addAction(UIAlertAction(title: App.label.skipOkay, style: .default) { (action) in
             
             Auth.auth().signInAnonymously() { (authResult, error) in
                 if error == nil {

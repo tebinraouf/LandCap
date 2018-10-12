@@ -57,23 +57,18 @@ extension PageController {
             if let errCode = AuthErrorCode(rawValue: (error?._code)!) {
                 switch errCode {
                 case .emailAlreadyInUse:
-                    let email = NSLocalizedString("Email", comment: "Email")
-                    alert(title: email, message: (error?.localizedDescription)!, viewController: self)
+                    alert(title: App.label.email, message: (error?.localizedDescription)!, viewController: self)
                 case .invalidEmail:
-                    let email = NSLocalizedString("Email", comment: "Email")
-                    alert(title: email, message: (error?.localizedDescription)!, viewController: self)
+                    alert(title: App.label.email, message: (error?.localizedDescription)!, viewController: self)
                 case .weakPassword:
-                    let password = NSLocalizedString("Password", comment: "Password")
+                    let password = App.label.password
                     alert(title: password, message: (error?.localizedDescription)!, viewController: self)
                 case .wrongPassword:
-                    let password = NSLocalizedString("Password", comment: "Password")
-                    alert(title: password, message: (error?.localizedDescription)!, viewController: self)
+                    alert(title: App.label.password, message: (error?.localizedDescription)!, viewController: self)
                 case .internalError:
-                    let internalError = NSLocalizedString("Internal Error", comment: "Internal Error")
-                    alert(title: internalError, message: (error?.localizedDescription)!, viewController: self)
+                    alert(title: App.label.internalError, message: (error?.localizedDescription)!, viewController: self)
                 default:
-                    let oops = NSLocalizedString("Oops", comment: "Something went wring")
-                    alert(title: oops, message: (error?.localizedDescription)!, viewController: self)
+                    alert(title: App.label.oops, message: (error?.localizedDescription)!, viewController: self)
                 }
             }
             return

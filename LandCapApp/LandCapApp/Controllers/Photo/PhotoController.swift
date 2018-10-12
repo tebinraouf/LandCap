@@ -40,8 +40,8 @@ class PhotoController: UIViewController {
             ])
     }
     private func setNavigationItems() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Process", style: UIBarButtonItemStyle.done, target: self, action: #selector(processHandler))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancleHandler))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: App.label.processPhoto, style: UIBarButtonItemStyle.done, target: self, action: #selector(processHandler))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: App.label.cancelPhoto, style: UIBarButtonItemStyle.done, target: self, action: #selector(cancleHandler))
     }
 }
 
@@ -54,12 +54,12 @@ extension PhotoController {
         cloudDetector.detect(in: visionImage) { (landmarks, error) in
             
             if let error = error {
-                alert(title: "Error!", message: error.localizedDescription, viewController: self)
+                alert(title: App.label.visionError, message: error.localizedDescription, viewController: self)
             }
             
             if let landmarks = landmarks {
                 if !landmarks.isEmpty {
-                    alert(title: "No Landmark", message: "", viewController: self)
+                    alert(title: App.label.notDetectedTitle, message: App.label.notDetectedMessage, viewController: self)
                 }
                 else {
                     let infoController = InfoController()

@@ -11,9 +11,7 @@ import UIKit
 
 class LoginView: UIScrollView {
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
-        let btnSignIn = NSLocalizedString("Sign In", comment: "Sign in to your account");
-        let btnRegister = NSLocalizedString("Sign Up", comment: "Register to save your info in the cloud")
-        let sc = UISegmentedControl(items: [btnSignIn, btnRegister])
+        let sc = UISegmentedControl(items: [App.label.signIn, App.label.signUp])
         //sc.backgroundColor = .white
         sc.tintColor = UIColor.textColor
         sc.selectedSegmentIndex = 1
@@ -33,8 +31,7 @@ class LoginView: UIScrollView {
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1
         textField.textColor = UIColor.textColor
-        let txtPlaceholder = NSLocalizedString("enter name", comment: "enter your name here")
-        textField.placeholder = txtPlaceholder
+        textField.placeholder = App.label.enterName
         return textField
     }()
     let emailTextField: LeftPaddedTextField = {
@@ -43,16 +40,14 @@ class LoginView: UIScrollView {
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1
         textField.textColor = UIColor.textColor
-        let txtPlaceholder = NSLocalizedString("enter email address", comment: "enter your email address")
-        textField.placeholder = txtPlaceholder
+        textField.placeholder = App.label.enterEmail
         textField.keyboardType = .emailAddress
         return textField
     }()
     let passTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        let txtPlaceholder = NSLocalizedString("enter password", comment: "enter your password")
-        textField.placeholder = txtPlaceholder
+        textField.placeholder = App.label.enterPassword
         textField.layer.borderColor = UIColor.white.cgColor
         textField.layer.borderWidth = 1
         textField.textColor = UIColor.textColor
@@ -62,8 +57,7 @@ class LoginView: UIScrollView {
     lazy var loginRegisterButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        let btnName = NSLocalizedString("Register", comment: "Register user")
-        btn.setTitle(btnName, for: .normal)
+        btn.setTitle(App.label.signUp, for: .normal)
         btn.setTitleColor(UIColor.mainColor, for: .normal)
         btn.backgroundColor = UIColor.textColor
         btn.layer.cornerRadius = 20
@@ -73,8 +67,7 @@ class LoginView: UIScrollView {
     lazy var forgetPasswordBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        let btnName = NSLocalizedString("Forget Password", comment: "Forget the password label")
-        btn.setTitle(btnName, for: .normal)
+        btn.setTitle(App.label.forgetPassword, for: .normal)
         btn.setTitleColor(UIColor.textColor, for: .normal)
         btn.addTarget(self, action: #selector(handleForgetPassword), for: .touchUpInside)
         return btn

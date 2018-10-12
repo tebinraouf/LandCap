@@ -21,8 +21,8 @@ class InfoController: UIViewController {
     }
     
     private func setNavigationItems() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancleHandler))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveHandler))
+        navigationItem.rightBarButtonItem =  UIBarButtonItem(title: App.label.cancelInfo, style: .plain, target: self, action: #selector(cancelHandler))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: App.label.saveInfo, style: .plain, target: self, action: #selector(saveHandler))
     }
 }
 
@@ -30,7 +30,7 @@ extension InfoController {
     @objc private func saveHandler() {
         print("save photo...")
     }
-    @objc private func cancleHandler() {
+    @objc private func cancelHandler() {
         //Back to the Camera
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
