@@ -64,6 +64,7 @@ extension PhotoController {
                 else {
                     let infoController = InfoController()
                     infoController.landmarks = landmarks
+                    infoController.processedImage = image!
                     let navController = UINavigationController(rootViewController: infoController)
                     self.present(navController, animated: true, completion: nil)
                 }

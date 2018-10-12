@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		430E6348217109A9008109B9 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E6347217109A9008109B9 /* AppLabel.swift */; };
+		430E634B217140D8008109B9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E634A217140D8008109B9 /* InfoView.swift */; };
+		430E634D21715A43008109B9 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E634C21715A43008109B9 /* InfoModel.swift */; };
 		432322C221507127005B47CF /* SocialMediaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C121507127005B47CF /* SocialMediaLoginView.swift */; };
 		432322C421507265005B47CF /* SocialMediaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C321507265005B47CF /* SocialMediaDelegate.swift */; };
 		432AA0D3215C78B700809F78 /* CaptureCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D2215C78B700809F78 /* CaptureCamera.swift */; };
@@ -72,6 +74,8 @@
 		198168A12942456897221550 /* Pods-LandCapAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapAppTests/Pods-LandCapAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		1A0482344FE67E693FB81DB5 /* Pods-LandCapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp.release.xcconfig"; sourceTree = "<group>"; };
 		430E6347217109A9008109B9 /* AppLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
+		430E634A217140D8008109B9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		430E634C21715A43008109B9 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
 		432322C121507127005B47CF /* SocialMediaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLoginView.swift; sourceTree = "<group>"; };
 		432322C321507265005B47CF /* SocialMediaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDelegate.swift; sourceTree = "<group>"; };
 		432AA0D2215C78B700809F78 /* CaptureCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCamera.swift; sourceTree = "<group>"; };
@@ -154,6 +158,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430E6349217140C2008109B9 /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				430E634A217140D8008109B9 /* InfoView.swift */,
+			);
+			path = InfoView;
+			sourceTree = "<group>";
+		};
 		432AA0D4215C797C00809F78 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +191,8 @@
 		43478AD621472DF600C2EC24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				436DE40C215DD310004D8062 /* Photo */,
+				430E6349217140C2008109B9 /* InfoView */,
+				436DE40C215DD310004D8062 /* PhotoView */,
 				43EB5289215AFBC400B3E6CF /* HomeView */,
 				43ADA76A214EE45500F09835 /* LoginView */,
 				43478AE02147326100C2EC24 /* Commons */,
@@ -193,6 +206,7 @@
 			children = (
 				43478AE3214732B100C2EC24 /* Page.swift */,
 				439BD25E214F17C500143CF7 /* LoginModel.swift */,
+				430E634C21715A43008109B9 /* InfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,12 +309,12 @@
 			path = LandCapAppUITests;
 			sourceTree = "<group>";
 		};
-		436DE40C215DD310004D8062 /* Photo */ = {
+		436DE40C215DD310004D8062 /* PhotoView */ = {
 			isa = PBXGroup;
 			children = (
 				436DE40D215DD323004D8062 /* PhotoView.swift */,
 			);
-			path = Photo;
+			path = PhotoView;
 			sourceTree = "<group>";
 		};
 		437FAA5A214F37850050AEE8 /* extensions */ = {
@@ -670,12 +684,14 @@
 				43ADA76F214EE5F900F09835 /* LeftPaddedTextField.swift in Sources */,
 				43478ADD214731D300C2EC24 /* PageView.swift in Sources */,
 				437FAA62214F384D0050AEE8 /* TextFieldDelegate.swift in Sources */,
+				430E634B217140D8008109B9 /* InfoView.swift in Sources */,
 				43478AE82147333700C2EC24 /* Extensions.swift in Sources */,
 				437FAA67214F41C00050AEE8 /* Helper.swift in Sources */,
 				4359069421471D9200C692D7 /* AppDelegate.swift in Sources */,
 				43478AE4214732B100C2EC24 /* Page.swift in Sources */,
 				43EB528B215AFBE700B3E6CF /* Home.swift in Sources */,
 				43478AEA21473A6900C2EC24 /* BaseView.swift in Sources */,
+				430E634D21715A43008109B9 /* InfoModel.swift in Sources */,
 				439BD25F214F17C500143CF7 /* LoginModel.swift in Sources */,
 				432322C421507265005B47CF /* SocialMediaDelegate.swift in Sources */,
 				437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */,

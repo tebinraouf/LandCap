@@ -12,12 +12,33 @@ import Firebase
 class InfoController: UIViewController {
     
     var landmarks: [VisionCloudLandmark]!
+    var processedImage: UIImage!
+    
+    var infoView: InfoView = InfoView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         print("InfoController")
+        setupView()
         setNavigationItems()
+        setupViewValue()
+    }
+    
+    private func setupView() {
+        view.addSubview(infoView)
+        NSLayoutConstraint.activate([
+            infoView.topAnchor.constraint(equalTo: view.topAnchor),
+            infoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            infoView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+    }
+    
+    private func setupViewValue() {
+        let infoModel = InfoModel(image: UIImage(named: "statue.png"), title: "Statue", confidence: "12%")
+//        let infoModel = InfoModel(image: processedImage, title: "Statue", confidence: "12%")
+        infoView.infoModel = infoModel
     }
     
     private func setNavigationItems() {
