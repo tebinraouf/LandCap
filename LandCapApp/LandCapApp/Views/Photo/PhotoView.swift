@@ -19,7 +19,6 @@ class PhotoView: BaseView {
         return iv
         
     }()
-    var delegate: PhotoViewDelegate!
     
     override func setupView() {
         imageViewSetup()
@@ -45,8 +44,4 @@ extension PhotoView {
             imageView.image = newValue
         }
     }
-}
-
-protocol PhotoViewDelegate {
-    
 }

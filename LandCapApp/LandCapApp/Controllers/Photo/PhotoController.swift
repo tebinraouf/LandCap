@@ -22,17 +22,14 @@ class PhotoController: UIViewController {
         self.view.backgroundColor  = UIColor.whiteColor
         setNavigationItems()
         setupView()
-//        setupDelegate()
         photoView.image = UIImage(data: imageData)
-        
         print("PhotoController")
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    private func setupDelegate() {
-        photoView.delegate = self
-    }
+
     private func setupView() {
         view.addSubview(photoView)
         NSLayoutConstraint.activate([
@@ -43,16 +40,16 @@ class PhotoController: UIViewController {
             ])
     }
     private func setNavigationItems() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Process", style: UIBarButtonItemStyle.done, target: self, action: #selector(doneHandler))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Process", style: UIBarButtonItemStyle.done, target: self, action: #selector(processHandler))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancleHandler))
     }
-    @objc func doneHandler() {
-        //upload photo to firebase
-        let userID = User.session.currentUserID
+}
 
+extension PhotoController {
+    @objc func processHandler() {
         let cloudDetector = vision.cloudLandmarkDetector()
         let image = UIImage(data: imageData)
-
+        
         let visionImage = VisionImage(image: image!)
         cloudDetector.detect(in: visionImage) { (landmarks, error) in
             
@@ -61,15 +58,14 @@ class PhotoController: UIViewController {
             }
             
             if let landmarks = landmarks {
-                if landmarks.isEmpty {
+                if !landmarks.isEmpty {
                     alert(title: "No Landmark", message: "", viewController: self)
                 }
                 else {
-                    if let landmark = landmarks.first {
-                        if let con = landmark.confidence, let land = landmark.landmark {
-                            alert(title: "Landmark Detection", message: "Confidence: \(con)\n\(land)", viewController: self)
-                        }
-                    }
+                    let infoController = InfoController()
+                    infoController.landmarks = landmarks
+                    let navController = UINavigationController(rootViewController: infoController)
+                    self.present(navController, animated: true, completion: nil)
                 }
             }
         }
@@ -77,8 +73,4 @@ class PhotoController: UIViewController {
     @objc func cancleHandler() {
         self.dismiss(animated: true, completion: nil)
     }
-}
-
-extension PhotoController: PhotoViewDelegate {
-
 }
