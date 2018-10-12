@@ -22,7 +22,8 @@ class InfoController: UIViewController {
         print("InfoController")
         setupView()
         setNavigationItems()
-        setupViewValue()
+        setupModel()
+        setupDelegate()
     }
     
     private func setupView() {
@@ -35,10 +36,14 @@ class InfoController: UIViewController {
             ])
     }
     
-    private func setupViewValue() {
+    private func setupModel() {
         let infoModel = InfoModel(image: UIImage(named: "statue.png"), title: "Statue", confidence: "12%")
 //        let infoModel = InfoModel(image: processedImage, title: "Statue", confidence: "12%")
         infoView.infoModel = infoModel
+    }
+    private func setupDelegate() {
+        infoView.collectionViewDataSource = self
+        infoView.collectionViewDelegate = self
     }
     
     private func setNavigationItems() {
@@ -55,4 +60,26 @@ extension InfoController {
         //Back to the Camera
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+}
+
+extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
+        
+        cell.backgroundColor = .red
+        
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = CGSize(width: collectionView.frame.width, height: 200)
+        return size
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
 }

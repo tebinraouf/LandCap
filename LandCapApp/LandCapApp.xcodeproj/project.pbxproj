@@ -10,6 +10,7 @@
 		430E6348217109A9008109B9 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E6347217109A9008109B9 /* AppLabel.swift */; };
 		430E634B217140D8008109B9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E634A217140D8008109B9 /* InfoView.swift */; };
 		430E634D21715A43008109B9 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E634C21715A43008109B9 /* InfoModel.swift */; };
+		430E634F21716499008109B9 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430E634E21716499008109B9 /* InfoCell.swift */; };
 		432322C221507127005B47CF /* SocialMediaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C121507127005B47CF /* SocialMediaLoginView.swift */; };
 		432322C421507265005B47CF /* SocialMediaDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432322C321507265005B47CF /* SocialMediaDelegate.swift */; };
 		432AA0D3215C78B700809F78 /* CaptureCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432AA0D2215C78B700809F78 /* CaptureCamera.swift */; };
@@ -76,6 +77,7 @@
 		430E6347217109A9008109B9 /* AppLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
 		430E634A217140D8008109B9 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		430E634C21715A43008109B9 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		430E634E21716499008109B9 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		432322C121507127005B47CF /* SocialMediaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaLoginView.swift; sourceTree = "<group>"; };
 		432322C321507265005B47CF /* SocialMediaDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaDelegate.swift; sourceTree = "<group>"; };
 		432AA0D2215C78B700809F78 /* CaptureCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureCamera.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				430E634A217140D8008109B9 /* InfoView.swift */,
+				430E634E21716499008109B9 /* InfoCell.swift */,
 			);
 			path = InfoView;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */,
 				43ADA76C214EE47500F09835 /* LoginView.swift in Sources */,
 				43478AE22147326E00C2EC24 /* BaseCell.swift in Sources */,
+				430E634F21716499008109B9 /* InfoCell.swift in Sources */,
 				436DE40E215DD323004D8062 /* PhotoView.swift in Sources */,
 				43478ADA21472E3000C2EC24 /* PageController.swift in Sources */,
 				43FE19AC215B49AA00437B1B /* ProfileController.swift in Sources */,

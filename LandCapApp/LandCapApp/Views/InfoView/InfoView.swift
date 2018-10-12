@@ -41,11 +41,27 @@ class InfoView: BaseView {
         label.font = UIFont(name: "Iowan Old Style", size: 20)
         return label
     }()
+    
+    lazy var wikiCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .blue
+        cv.showsHorizontalScrollIndicator = false
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.isPagingEnabled = true
+        return cv
+    }()
+    
+    
     override func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         imageViewSetup()
         titleLabelSetup()
         confidenceLabelSetup()
+        
+        wikiCollectionView.register(InfoCell.self, forCellWithReuseIdentifier: CellID.InfoCell)
+        wikiCollectionSetup()
     }
     private func imageViewSetup() {
         addSubview(imageView)
@@ -80,5 +96,33 @@ class InfoView: BaseView {
             confidenceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             confidenceLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
             ])
+    }
+    private func wikiCollectionSetup() {
+        addSubview(wikiCollectionView)
+        NSLayoutConstraint.activate([
+            wikiCollectionView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+            wikiCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            wikiCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            wikiCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+    }
+}
+
+extension InfoView {
+    public var collectionViewDelegate: UICollectionViewDelegate? {
+        get {
+            return wikiCollectionView.delegate
+        }
+        set {
+            wikiCollectionView.delegate = newValue
+        }
+    }
+    public var collectionViewDataSource: UICollectionViewDataSource? {
+        get {
+            return wikiCollectionView.dataSource
+        }
+        set {
+            wikiCollectionView.dataSource = newValue
+        }
     }
 }

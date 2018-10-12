@@ -11,6 +11,7 @@ import UIKit
 
 class CellID {
     static let PageCell = "PageCell"
+    static let InfoCell = "InfoCell"
 }
 
 public func alert(title: String, message: String, viewController: UIViewController) {
