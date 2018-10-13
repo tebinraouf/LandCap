@@ -46,7 +46,7 @@ class InfoView: BaseView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .blue
+        cv.backgroundColor = .mainColor
         cv.showsHorizontalScrollIndicator = false
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.isPagingEnabled = true
@@ -103,7 +103,7 @@ class InfoView: BaseView {
             wikiCollectionView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
             wikiCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             wikiCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            wikiCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            wikiCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
             ])
     }
 }
@@ -124,5 +124,8 @@ extension InfoView {
         set {
             wikiCollectionView.dataSource = newValue
         }
+    }
+    public var wikitextViewHeight: CGFloat {
+        return 10
     }
 }

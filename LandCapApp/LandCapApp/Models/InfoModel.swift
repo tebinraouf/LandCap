@@ -12,6 +12,7 @@ struct InfoModel {
     var title: String?
     var confidence: String?
     var image: UIImage?
+    var wikiText: [String]?
     public init(image: UIImage?, title: String?, confidence: String?) {
         self.image = image
         self.title = title

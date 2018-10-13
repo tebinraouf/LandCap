@@ -110,6 +110,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.1)
+  - SwiftIconFont (2.8.0)
   - SwiftInstagram (1.1.1):
     - SwiftInstagram/Core (= 1.1.1)
   - SwiftInstagram/Core (1.1.1)
@@ -121,6 +122,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/MLVision
   - Firebase/Storage
+  - SwiftIconFont
   - SwiftInstagram (~> 1.1.1)
 
 SPEC REPOS:
@@ -147,6 +149,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - SwiftIconFont
     - SwiftInstagram
 
 SPEC CHECKSUMS:
@@ -172,8 +175,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  SwiftIconFont: ddaccaa3bb90fc21ebc528cfdf793342618a5cc2
   SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
 
-PODFILE CHECKSUM: 7f0ff68f112eb9ede889113afd086b9ff530c00a
+PODFILE CHECKSUM: 8cac4565318427e4ca43379d6f360210b96f82a3
 
 COCOAPODS: 1.5.3

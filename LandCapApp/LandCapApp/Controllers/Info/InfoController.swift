@@ -15,6 +15,10 @@ class InfoController: UIViewController {
     var processedImage: UIImage!
     
     var infoView: InfoView = InfoView()
+    var infoModel: InfoModel?
+    
+    
+    var heights = [CGFloat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +41,8 @@ class InfoController: UIViewController {
     }
     
     private func setupModel() {
-        let infoModel = InfoModel(image: UIImage(named: "statue.png"), title: "Statue", confidence: "12%")
+        infoModel = InfoModel(image: UIImage(named: "statue.png"), title: "Statue", confidence: "12%")
+        infoModel?.wikiText = ["The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", "The copper statue, a gift from the people of France to the people of the United States, was designed by French sculptor Frédéric Auguste Bartholdi and built by Gustave Eiffel.","The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", "The copper statue, a gift from the people of France to the people of the United States, was designed by French sculptor Frédéric Auguste Bartholdi and built by Gustave Eiffel.","The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", "The copper statue, a gift from the people of France to the people of the United States, was designed by French sculptor Frédéric Auguste Bartholdi and built by Gustave Eiffel."]
 //        let infoModel = InfoModel(image: processedImage, title: "Statue", confidence: "12%")
         infoView.infoModel = infoModel
     }
@@ -64,22 +69,38 @@ extension InfoController {
 
 extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if let model = infoModel {
+            if let wikiText = model.wikiText {
+                return wikiText.count
+            }
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
         
-        cell.backgroundColor = .red
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.secondaryColor.cgColor
+        cell.backgroundColor = .white
+        cell.wikiTextView.text = infoModel?.wikiText?[indexPath.row]
+        cell.textViewDidChange(cell.wikiTextView)
         
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: collectionView.frame.width, height: 200)
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
+        cell.wikiTextView.text = infoModel?.wikiText?[indexPath.row]
+        let estimatedSize = cell.wikiTextView.sizeThatFits(CGSize(width: view.frame.width, height: .infinity))
+
+        infoView.wikiCollectionView.reloadData()
+        
+        let size = CGSize(width: collectionView.frame.width, height: estimatedSize.height)
         return size
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 3
     }
-    
 }
+
