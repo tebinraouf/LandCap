@@ -52,6 +52,9 @@ class InfoCell: BaseCell {
         wikiTextView.delegate = self
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleWikiTextTap))
         wikiTextView.addGestureRecognizer(tap)
+        
+        
+        
     }
     private func bookmarkButtonSetup() {
         addSubview(bookmarkButton)

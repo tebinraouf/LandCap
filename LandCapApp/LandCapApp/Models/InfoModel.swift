@@ -8,14 +8,20 @@
 
 import UIKit
 
+struct WikiContentModel {
+    var text: String
+    var isSelected: Bool
+}
+
 struct InfoModel {
     var title: String?
     var confidence: String?
     var image: UIImage?
-    var wikiText: [String]?
+    var wikiModel: [WikiContentModel]
     public init(image: UIImage?, title: String?, confidence: String?) {
         self.image = image
         self.title = title
         self.confidence = confidence
+        wikiModel = []
     }
 }

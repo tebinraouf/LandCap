@@ -18,7 +18,7 @@ class InfoController: UIViewController {
     var infoModel: InfoModel?
     
     
-    var heights = [CGFloat]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +42,12 @@ class InfoController: UIViewController {
     
     private func setupModel() {
         infoModel = InfoModel(image: UIImage(named: "statue.png"), title: "Statue", confidence: "12%")
-        infoModel?.wikiText = ["The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", "The copper statue, a gift from the people of France to the people of the United States, was designed by French sculptor Frédéric Auguste Bartholdi and built by Gustave Eiffel.","The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", "The copper statue, a gift from the people of France to the people of the United States, was designed by French sculptor Frédéric Auguste Bartholdi and built by Gustave Eiffel.","The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", "The copper statue, a gift from the people of France to the people of the United States, was designed by French sculptor Frédéric Auguste Bartholdi and built by Gustave Eiffel."]
-//        let infoModel = InfoModel(image: processedImage, title: "Statue", confidence: "12%")
+        
+        let model = WikiContentModel(text: "The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", isSelected: false)
+        let model2 = WikiContentModel(text: "The copper statue, a gift from the people of France to the people of the United States, was designed by French sculptor Frédéric Auguste Bartholdi and built by Gustave Eiffel. The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States.", isSelected: false)
+        
+        infoModel?.wikiModel = [model, model2]
+        
         infoView.infoModel = infoModel
     }
     private func setupDelegate() {
@@ -70,20 +74,30 @@ extension InfoController {
 extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let model = infoModel {
-            if let wikiText = model.wikiText {
-                return wikiText.count
-            }
+            return model.wikiModel.count
         }
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
-        
 
-        cell.wikiTextView.text = infoModel?.wikiText?[indexPath.row]
+        cell.wikiTextView.text = infoModel?.wikiModel[indexPath.row].text
         cell.textViewDidChange(cell.wikiTextView)
+        
         cell.didCellTap = {
+            if let wikiModel = self.infoModel?.wikiModel[indexPath.row] {
+                if !wikiModel.isSelected {
+                    cell.wikiTextView.backgroundColor = .mainColor
+                    cell.wikiTextView.textColor = .white
+                    self.infoModel?.wikiModel[indexPath.row].isSelected = true
+                }
+                else {
+                    cell.wikiTextView.backgroundColor = .white
+                    cell.wikiTextView.textColor = .black
+                    self.infoModel?.wikiModel[indexPath.row].isSelected = false
+                }
+            }
             print(indexPath.row)
             print(cell.wikiTextView.text)
         }
@@ -93,8 +107,9 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let cell = InfoCell()
-        cell.wikiTextView.text = infoModel?.wikiText?[indexPath.row]
+        cell.wikiTextView.text = infoModel?.wikiModel[indexPath.row].text
         let estimatedSize = cell.wikiTextView.sizeThatFits(CGSize(width: view.frame.width, height: .infinity))
+        
         
         let size = CGSize(width: collectionView.frame.width, height: estimatedSize.height)
         return size
