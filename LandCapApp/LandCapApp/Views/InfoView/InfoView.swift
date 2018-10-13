@@ -12,7 +12,7 @@ import UIKit
 
 class InfoView: BaseView {
     
-    var infoModel: InfoModel? {
+    public var infoModel: InfoModel? {
         didSet {
             guard let info = infoModel else { return }
             imageView.image = createThumbnail(from: info.image!)
@@ -41,8 +41,7 @@ class InfoView: BaseView {
         label.font = UIFont(name: "Iowan Old Style", size: 20)
         return label
     }()
-    
-    lazy var wikiCollectionView: UICollectionView = {
+    private var wikiCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -52,8 +51,6 @@ class InfoView: BaseView {
         cv.isPagingEnabled = false
         return cv
     }()
-    
-    
     override func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         imageViewSetup()
@@ -124,8 +121,5 @@ extension InfoView {
         set {
             wikiCollectionView.dataSource = newValue
         }
-    }
-    public var wikitextViewHeight: CGFloat {
-        return 10
     }
 }
