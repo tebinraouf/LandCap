@@ -36,7 +36,6 @@ class InfoCell: BaseCell {
         btn.backgroundColor = .clear
         return btn
     }()
-    var delegate: InfoCellDelegate!
     override func setupView() {
         backgroundColor = .clear
         textViewSetup()
@@ -80,8 +79,4 @@ extension InfoCell: UITextViewDelegate {
         }
         
     }
-}
-
-protocol InfoCellDelegate {
-    
 }

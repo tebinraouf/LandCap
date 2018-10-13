@@ -83,7 +83,6 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
 
         cell.wikiTextView.text = infoModel?.wikiText?[indexPath.row]
         cell.textViewDidChange(cell.wikiTextView)
-        cell.delegate = self
         cell.didCellTap = {
             print(indexPath.row)
             print(cell.wikiTextView.text)
@@ -109,10 +108,4 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
     }
-}
-
-extension InfoController: InfoCellDelegate {
-    
-    
-    
 }
