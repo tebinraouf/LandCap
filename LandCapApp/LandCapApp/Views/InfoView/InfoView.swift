@@ -46,10 +46,10 @@ class InfoView: BaseView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .mainColor
+        cv.backgroundColor = .mainLightGray
         cv.showsHorizontalScrollIndicator = false
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.isPagingEnabled = true
+        cv.isPagingEnabled = false
         return cv
     }()
     

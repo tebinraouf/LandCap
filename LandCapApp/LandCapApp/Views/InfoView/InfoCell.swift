@@ -18,6 +18,10 @@ class InfoCell: BaseCell {
         tv.isEditable = false
         tv.textAlignment = .left
         tv.isScrollEnabled = false
+        tv.layer.cornerRadius = 20
+        tv.layer.borderWidth = 0.5
+        tv.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        tv.layer.borderColor = UIColor.lightGray.cgColor
         tv.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         tv.isSelectable = false
         return tv
@@ -25,14 +29,16 @@ class InfoCell: BaseCell {
     var bookmarkButton: UIButton = {
         let btn = UIButton(type: UIButtonType.system)
         btn.titleLabel?.font = UIFont.icon(from: .fontAwesome, ofSize: 30)
-        btn.setTitle(String.fontAwesomeIcon("bookmarko"), for: UIControlState.normal)
+//        btn.setTitle(String.fontAwesomeIcon("bookmarko"), for: UIControlState.normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.showsTouchWhenHighlighted = true
-        btn.tintColor = .mainColor
+        btn.tintColor = .lightGray
         btn.backgroundColor = .clear
         return btn
     }()
+    var delegate: InfoCellDelegate!
     override func setupView() {
+        backgroundColor = .clear
         textViewSetup()
         bookmarkButtonSetup()
     }
@@ -41,26 +47,31 @@ class InfoCell: BaseCell {
         NSLayoutConstraint.activate([
             wikiTextView.topAnchor.constraint(equalTo: topAnchor),
             wikiTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            wikiTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35),
+            wikiTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             wikiTextView.heightAnchor.constraint(equalToConstant: 150)
             ])
         wikiTextView.delegate = self
-        textViewDidChange(wikiTextView)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleWikiTextTap))
+        wikiTextView.addGestureRecognizer(tap)
     }
     private func bookmarkButtonSetup() {
         addSubview(bookmarkButton)
         NSLayoutConstraint.activate([
-            bookmarkButton.topAnchor.constraint(equalTo: topAnchor, constant: -6),
+            bookmarkButton.topAnchor.constraint(equalTo: topAnchor, constant: -7),
             bookmarkButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             bookmarkButton.heightAnchor.constraint(equalToConstant: 40),
             bookmarkButton.widthAnchor.constraint(equalToConstant: 40)
             ])
     }
+    public var didCellTap: (()->())?
+    @objc private func handleWikiTextTap() {
+        didCellTap?()
+    }
 }
 
 extension InfoCell: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        let size = CGSize(width: frame.width, height: .infinity)
+        let size = CGSize(width: frame.width, height: CGFloat.infinity)
         let estimatedSize = textView.sizeThatFits(size)
         wikiTextView.constraints.forEach { (constraint) in
             if constraint.firstAttribute == .height {
@@ -69,4 +80,8 @@ extension InfoCell: UITextViewDelegate {
         }
         
     }
+}
+
+protocol InfoCellDelegate {
+    
 }

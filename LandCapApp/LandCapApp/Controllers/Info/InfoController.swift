@@ -80,27 +80,39 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
         
-        cell.layer.borderWidth = 1.0
-        cell.layer.borderColor = UIColor.secondaryColor.cgColor
-        cell.backgroundColor = .white
+
         cell.wikiTextView.text = infoModel?.wikiText?[indexPath.row]
         cell.textViewDidChange(cell.wikiTextView)
+        cell.delegate = self
+        cell.didCellTap = {
+            print(indexPath.row)
+            print(cell.wikiTextView.text)
+        }
         
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
+        let cell = InfoCell()
         cell.wikiTextView.text = infoModel?.wikiText?[indexPath.row]
         let estimatedSize = cell.wikiTextView.sizeThatFits(CGSize(width: view.frame.width, height: .infinity))
-
-        infoView.wikiCollectionView.reloadData()
         
         let size = CGSize(width: collectionView.frame.width, height: estimatedSize.height)
         return size
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 3
+        return 5
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
 
+extension InfoController: InfoCellDelegate {
+    
+    
+    
+}

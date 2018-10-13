@@ -29,4 +29,7 @@ public extension UIColor {
     public class var whiteColor: UIColor {
         return .white
     }
+    public class var mainLightGray: UIColor {
+        return UIColor(r: 245, g: 245, b: 245, a: 1)
+    }
 }
