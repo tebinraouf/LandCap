@@ -15,10 +15,7 @@ class InfoController: UIViewController {
     var processedImage: UIImage!
     
     var infoView: InfoView = InfoView()
-    var infoModel: InfoModel?
-    
-    
-    
+    var infoModel: InfoModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +42,9 @@ class InfoController: UIViewController {
         
         let model = WikiContentModel(text: "The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", isSelected: false)
         let model2 = WikiContentModel(text: "The copper statue, a gift from the people of France to the people of the United States, was designed by French sculptor Frédéric Auguste Bartholdi and built by Gustave Eiffel. The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States.", isSelected: false)
+        let model3 = WikiContentModel(text: "The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", isSelected: false)
         
-        infoModel?.wikiModel = [model, model2]
+        infoModel.wikiModel = [model, model2, model3]
         
         infoView.infoModel = infoModel
     }
@@ -73,12 +71,8 @@ extension InfoController {
 
 extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let model = infoModel {
-            return model.wikiModel.count
-        }
-        return 0
+        return infoModel.wikiModel.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
 
@@ -86,28 +80,14 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
         cell.textViewDidChange(cell.wikiTextView)
         
         cell.didCellTap = {
-            if let wikiModel = self.infoModel?.wikiModel[indexPath.row] {
-                if !wikiModel.isSelected {
-                    cell.wikiTextView.backgroundColor = .mainColor
-                    cell.wikiTextView.textColor = .white
-                    self.infoModel?.wikiModel[indexPath.row].isSelected = true
-                }
-                else {
-                    cell.wikiTextView.backgroundColor = .white
-                    cell.wikiTextView.textColor = .black
-                    self.infoModel?.wikiModel[indexPath.row].isSelected = false
-                }
-            }
-            print(indexPath.row)
-            print(cell.wikiTextView.text)
+            self.handleCellTap(cell, indexPath)
         }
-        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let cell = InfoCell()
-        cell.wikiTextView.text = infoModel?.wikiModel[indexPath.row].text
+        cell.wikiTextView.text = infoModel.wikiModel[indexPath.row].text
         let estimatedSize = cell.wikiTextView.sizeThatFits(CGSize(width: view.frame.width, height: .infinity))
         
         
@@ -120,7 +100,23 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+    func handleCellTap(_ cell: InfoCell, _ indexPath: IndexPath) {
+        let wikiModel = self.infoModel.wikiModel[indexPath.row]
+        if !wikiModel.isSelected {
+            if (self.infoModel.selectedWikiTextCount < 2) {
+                cell.wikiTextView.backgroundColor = .mainColor
+                cell.wikiTextView.textColor = .white
+                self.infoModel.wikiModel[indexPath.row].isSelected = true
+            }
+            else {
+                alert(title: "Oops", message: "Please choose upto 3 texts", viewController: self)
+            }
+        }
+        else {
+            cell.wikiTextView.backgroundColor = .white
+            cell.wikiTextView.textColor = .black
+            self.infoModel?.wikiModel[indexPath.row].isSelected = false
+        }
     }
+    
 }

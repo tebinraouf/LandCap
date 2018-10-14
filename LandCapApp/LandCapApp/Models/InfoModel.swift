@@ -18,6 +18,9 @@ struct InfoModel {
     var confidence: String?
     var image: UIImage?
     var wikiModel: [WikiContentModel]
+    var selectedWikiTextCount: Int {
+        return wikiModel.filter({$0.isSelected == true}).count
+    }
     public init(image: UIImage?, title: String?, confidence: String?) {
         self.image = image
         self.title = title
