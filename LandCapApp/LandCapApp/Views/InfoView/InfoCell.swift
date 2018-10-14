@@ -53,8 +53,8 @@ class InfoCell: BaseCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleWikiTextTap))
         wikiTextView.addGestureRecognizer(tap)
         
-        
-        
+        textViewDidChange(wikiTextView)
+        wikiTextView.layoutIfNeeded()
     }
     private func bookmarkButtonSetup() {
         addSubview(bookmarkButton)
@@ -80,6 +80,5 @@ extension InfoCell: UITextViewDelegate {
                 constraint.constant = estimatedSize.height
             }
         }
-        
     }
 }

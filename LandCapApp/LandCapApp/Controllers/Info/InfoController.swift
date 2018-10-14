@@ -16,6 +16,8 @@ class InfoController: UIViewController {
     
     var infoView: InfoView = InfoView()
     var infoModel: InfoModel!
+    var selected = Dictionary<Int, WikiContentModel>()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +42,16 @@ class InfoController: UIViewController {
     private func setupModel() {
         infoModel = InfoModel(image: UIImage(named: "statue.png"), title: "Statue", confidence: "12%")
         
-        let model = WikiContentModel(text: "The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", isSelected: false)
-        let model2 = WikiContentModel(text: "The copper statue, a gift from the people of France to the people of the United States, was designed by French sculptor Frédéric Auguste Bartholdi and built by Gustave Eiffel. The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States.", isSelected: false)
-        let model3 = WikiContentModel(text: "The Statue of Liberty (Liberty Enlightening the World; French: La Liberté éclairant le monde) is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City, in the United States", isSelected: false)
+        let wikiModel = WikiModel("Staten%20Island%20Ferry")
+        wikiModel.getWikiContent { (wikiContents) in
+            DispatchQueue.main.async {
+                self.infoModel.wikiModel = wikiContents
+                self.infoView.infoModel = self.infoModel
+                self.infoView.wikiCollectionView.reloadData()
+            }
+        }
         
-        infoModel.wikiModel = [model, model2, model3]
         
-        infoView.infoModel = infoModel
     }
     private func setupDelegate() {
         infoView.collectionViewDataSource = self
@@ -62,6 +67,9 @@ class InfoController: UIViewController {
 extension InfoController {
     @objc private func saveHandler() {
         print("save photo...")
+        
+        
+        
     }
     @objc private func cancelHandler() {
         //Back to the Camera
@@ -76,9 +84,10 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
 
+        print(infoModel?.wikiModel[indexPath.row].text)
+        
         cell.wikiTextView.text = infoModel?.wikiModel[indexPath.row].text
         cell.textViewDidChange(cell.wikiTextView)
-        
         cell.didCellTap = {
             self.handleCellTap(cell, indexPath)
         }
@@ -89,8 +98,8 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
         let cell = InfoCell()
         cell.wikiTextView.text = infoModel.wikiModel[indexPath.row].text
         let estimatedSize = cell.wikiTextView.sizeThatFits(CGSize(width: view.frame.width, height: .infinity))
-        
-        
+        cell.textViewDidChange(cell.wikiTextView)
+
         let size = CGSize(width: collectionView.frame.width, height: estimatedSize.height)
         return size
     }
@@ -102,21 +111,31 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     func handleCellTap(_ cell: InfoCell, _ indexPath: IndexPath) {
         let wikiModel = self.infoModel.wikiModel[indexPath.row]
-        if !wikiModel.isSelected {
-            if (self.infoModel.selectedWikiTextCount < 2) {
+        let count = self.selected.count
+        
+        if count < 4 {
+            if  self.selected[indexPath.row] == nil {
                 cell.wikiTextView.backgroundColor = .mainColor
                 cell.wikiTextView.textColor = .white
-                self.infoModel.wikiModel[indexPath.row].isSelected = true
+                self.selected[indexPath.row] = wikiModel
             }
             else {
-                alert(title: App.label.wikiAlertTitle, message: App.label.wikiAlertMessage, viewController: self)
+                cell.wikiTextView.backgroundColor = .white
+                cell.wikiTextView.textColor = .black
+                self.selected[indexPath.row] = nil
             }
         }
         else {
-            cell.wikiTextView.backgroundColor = .white
-            cell.wikiTextView.textColor = .black
-            self.infoModel?.wikiModel[indexPath.row].isSelected = false
+            alert(title: App.label.wikiAlertTitle, message: App.label.wikiAlertMessage, viewController: self)
         }
     }
     
 }
+
+
+
+
+
+
+
+

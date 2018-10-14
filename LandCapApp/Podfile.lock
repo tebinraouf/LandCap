@@ -114,6 +114,7 @@ PODS:
   - SwiftInstagram (1.1.1):
     - SwiftInstagram/Core (= 1.1.1)
   - SwiftInstagram/Core (1.1.1)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - FBSDKLoginKit
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - SwiftIconFont
   - SwiftInstagram (~> 1.1.1)
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -151,6 +153,7 @@ SPEC REPOS:
     - Protobuf
     - SwiftIconFont
     - SwiftInstagram
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -177,7 +180,8 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SwiftIconFont: ddaccaa3bb90fc21ebc528cfdf793342618a5cc2
   SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 8cac4565318427e4ca43379d6f360210b96f82a3
+PODFILE CHECKSUM: e67d604a061cb6bcb047ea53dc89d63563abf96f
 
 COCOAPODS: 1.5.3

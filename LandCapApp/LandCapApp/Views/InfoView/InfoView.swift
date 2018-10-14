@@ -41,7 +41,7 @@ class InfoView: BaseView {
         label.font = UIFont(name: "Iowan Old Style", size: 20)
         return label
     }()
-    private var wikiCollectionView: UICollectionView = {
+    public var wikiCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)

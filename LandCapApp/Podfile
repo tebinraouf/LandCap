@@ -12,6 +12,7 @@ target 'LandCapApp' do
   pod 'Firebase/Storage'
   pod 'Firebase/MLVision'
   pod 'SwiftIconFont'
+  pod 'SwiftyJSON'
   
   pod 'FBSDKLoginKit'
   pod 'SwiftInstagram', '~> 1.1.1'
