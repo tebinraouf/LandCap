@@ -62,3 +62,5 @@
 //Info Controller
 "Cancel Info" = "Cancel";
 "Save Info" = "Save";
+"Wiki Alert Title" = "Oops";
+"Wiki Alert Message" = "Please choose up to 3 texts";

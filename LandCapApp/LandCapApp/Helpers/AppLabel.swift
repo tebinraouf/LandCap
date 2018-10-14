@@ -118,4 +118,10 @@ public class App {
     public var saveInfo: String {
         return NSLocalizedString("Save Info", comment: "Save InfoController")
     }
+    public var wikiAlertTitle: String {
+        return NSLocalizedString("Wiki Alert Title", comment: "Indicate how many texts can be selected")
+    }
+    public var wikiAlertMessage: String {
+        return NSLocalizedString("Wiki Alert Message", comment: "Indicate how many texts can be selected")
+    }
 }

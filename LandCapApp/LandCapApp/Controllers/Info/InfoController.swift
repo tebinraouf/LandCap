@@ -109,7 +109,7 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
                 self.infoModel.wikiModel[indexPath.row].isSelected = true
             }
             else {
-                alert(title: "Oops", message: "Please choose upto 3 texts", viewController: self)
+                alert(title: App.label.wikiAlertTitle, message: App.label.wikiAlertMessage, viewController: self)
             }
         }
         else {
