@@ -16,7 +16,7 @@ struct WikiContentModel {
 
 struct InfoModel {
     var title: String?
-    var confidence: String?
+    var confidence: Double?
     var image: UIImage?
     var wikiModel: [WikiContentModel]
     var selectedWiki: Dictionary<Int, WikiContentModel>
@@ -24,7 +24,7 @@ struct InfoModel {
     var selectedWikiTextCount: Int {
         return wikiModel.filter({$0.isSelected == true}).count
     }
-    public init(image: UIImage?, title: String?, confidence: String?) {
+    public init(image: UIImage?, title: String?, confidence: Double?) {
         self.image = image
         self.title = title
         self.confidence = confidence
@@ -35,7 +35,7 @@ struct InfoModel {
 
 
 struct WikiModel {
-    var baseUrl: String = "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles="
+    var baseUrl: String = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles="
     
     public init(_ title: String) {
         baseUrl += title
@@ -45,6 +45,7 @@ struct WikiModel {
         parse { (content) in
             let results = self.linguisticTag(content)
             for text in results {
+                print(text)
                 let model = WikiContentModel(text: text, isSelected: false)
                 all.append(model)
             }
@@ -59,10 +60,14 @@ struct WikiModel {
             do {
                 let json = try JSON(data: data)
                 for (_,subJson):(String, JSON) in json["query"]["pages"] {
-                    let html = Data(subJson["extract"].string!.utf8)
-                    if let attributedString = try? NSAttributedString(data: html, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
-                        callback(attributedString.string.replacingOccurrences(of: "\n", with: ""))
-                    }
+                    
+                    let text = (subJson["extract"].string!).replacingOccurrences(of: "\n", with: "")
+                    callback(text)
+                    
+//                    let html = Data(subJson["extract"].string!.utf8)
+//                    if let attributedString = try? NSAttributedString(data: html, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+//                        callback(attributedString.string.replacingOccurrences(of: "\n", with: ""))
+//                    }
                     break
                 }
             }

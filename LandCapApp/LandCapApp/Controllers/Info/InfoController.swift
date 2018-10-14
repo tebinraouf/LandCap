@@ -40,19 +40,32 @@ class InfoController: UIViewController {
     }
     
     private func setupModel() {
-        infoModel = InfoModel(image: UIImage(named: "statue.png"), title: "Statue", confidence: "12%")
         
-        let wikiModel = WikiModel("Staten%20Island%20Ferry")
-        wikiModel.getWikiContent { (wikiContents) in
-            DispatchQueue.main.async {
-                self.infoModel.wikiModel = wikiContents
-                self.infoView.infoModel = self.infoModel
-                self.infoView.wikiCollectionView.reloadData()
+        if let landmark = landmarks.first?.landmark, let confidence = landmarks.first?.confidence {
+            let roundConfidence = round(confidence.doubleValue * 100.0)
+            infoModel = InfoModel(image: processedImage, title: landmark, confidence: roundConfidence)
+
+            let wikiModel = WikiModel(landmark.replacingOccurrences(of: " ", with: "%20"))
+            wikiModel.getWikiContent { (wikiContents) in
+                DispatchQueue.main.async {
+                    self.infoModel.wikiModel = wikiContents
+                    self.infoView.infoModel = self.infoModel
+                    self.infoView.wikiCollectionView.reloadData()
+                }
             }
         }
         
         
+        func viewDidLayoutSubviews() {
+            print("hi...")
+        }
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.infoView.wikiCollectionView.reloadData()
+    }
+    
     private func setupDelegate() {
         infoView.collectionViewDataSource = self
         infoView.collectionViewDelegate = self
@@ -90,7 +103,6 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
             self.handleCellTap(cell, indexPath)
         }
 
-        //TODO: refactor
         if selected[indexPath.row] != nil {
             cell.wikiTextView.backgroundColor = .mainColor
             cell.wikiTextView.textColor = .white
@@ -99,7 +111,6 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
             cell.wikiTextView.backgroundColor = .white
             cell.wikiTextView.textColor = .black
         }
-        
         
         return cell
     }

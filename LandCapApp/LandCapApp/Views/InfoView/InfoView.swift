@@ -17,7 +17,7 @@ class InfoView: BaseView {
             guard let info = infoModel else { return }
             imageView.image = createThumbnail(from: info.image!)
             titleLabel.text = info.title
-            confidenceLabel.text = "Confidence: \(info.confidence!)"
+            confidenceLabel.text = "Confidence: \(info.confidence!)%"
         }
     }
     private var imageView: UIImageView = {

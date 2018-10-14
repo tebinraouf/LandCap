@@ -17,7 +17,7 @@ class InfoCell: BaseCell {
         tv.backgroundColor = .white
         tv.isEditable = false
         tv.textAlignment = .left
-        tv.isScrollEnabled = false
+        tv.isScrollEnabled = true
         tv.layer.cornerRadius = 20
         tv.layer.borderWidth = 0.5
         tv.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)

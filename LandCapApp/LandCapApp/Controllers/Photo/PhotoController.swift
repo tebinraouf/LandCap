@@ -58,7 +58,7 @@ extension PhotoController {
             }
             
             if let landmarks = landmarks {
-                if !landmarks.isEmpty {
+                if landmarks.isEmpty {
                     alert(title: App.label.notDetectedTitle, message: App.label.notDetectedMessage, viewController: self)
                 }
                 else {
