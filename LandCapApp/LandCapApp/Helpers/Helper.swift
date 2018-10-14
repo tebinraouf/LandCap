@@ -63,13 +63,3 @@ public class User {
         }
     }
 }
-
-public var selectedRows: Dictionary<String,Int>? {
-    get {
-        return UserDefaults.standard.dictionary(forKey: "selectedRows") as? Dictionary<String, Int>
-    }
-    set {
-        UserDefaults.standard.setValue(newValue, forKey: "selectedRows")
-        UserDefaults.standard.synchronize()
-    }
-}

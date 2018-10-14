@@ -68,7 +68,7 @@ extension InfoController {
     @objc private func saveHandler() {
         print("save photo...")
         
-        
+        print(selected)
         
     }
     @objc private func cancelHandler() {
@@ -84,13 +84,23 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
 
-        print(infoModel?.wikiModel[indexPath.row].text)
-        
         cell.wikiTextView.text = infoModel?.wikiModel[indexPath.row].text
         cell.textViewDidChange(cell.wikiTextView)
         cell.didCellTap = {
             self.handleCellTap(cell, indexPath)
         }
+
+        //TODO: refactor
+        if selected[indexPath.row] != nil {
+            cell.wikiTextView.backgroundColor = .mainColor
+            cell.wikiTextView.textColor = .white
+        }
+        else {
+            cell.wikiTextView.backgroundColor = .white
+            cell.wikiTextView.textColor = .black
+        }
+        
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -113,20 +123,21 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
         let wikiModel = self.infoModel.wikiModel[indexPath.row]
         let count = self.selected.count
         
-        if count < 4 {
-            if  self.selected[indexPath.row] == nil {
+        
+        if  self.selected[indexPath.row] == nil {
+            if count < 3 {
                 cell.wikiTextView.backgroundColor = .mainColor
                 cell.wikiTextView.textColor = .white
                 self.selected[indexPath.row] = wikiModel
             }
             else {
-                cell.wikiTextView.backgroundColor = .white
-                cell.wikiTextView.textColor = .black
-                self.selected[indexPath.row] = nil
+                alert(title: App.label.wikiAlertTitle, message: App.label.wikiAlertMessage, viewController: self)
             }
         }
         else {
-            alert(title: App.label.wikiAlertTitle, message: App.label.wikiAlertMessage, viewController: self)
+            cell.wikiTextView.backgroundColor = .white
+            cell.wikiTextView.textColor = .black
+            self.selected[indexPath.row] = nil
         }
     }
     
