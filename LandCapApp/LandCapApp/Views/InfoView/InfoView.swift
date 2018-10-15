@@ -31,7 +31,8 @@ class InfoView: BaseView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Statue of Liberty"
-        label.font = UIFont(name: "Iowan Old Style", size: 30)
+        label.font = UIFont(name: "Iowan Old Style", size: 25)
+        label.numberOfLines = 2
         return label
     }()
     private var confidenceLabel: UILabel = {
@@ -85,12 +86,13 @@ class InfoView: BaseView {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 74),
             titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             ])
     }
     private func confidenceLabelSetup() {
         addSubview(confidenceLabel)
         NSLayoutConstraint.activate([
-            confidenceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            confidenceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             confidenceLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
             ])
     }

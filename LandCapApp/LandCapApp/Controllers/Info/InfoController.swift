@@ -40,7 +40,7 @@ class InfoController: UIViewController {
     }
     
     private func setupModel() {
-        
+        /*
         if let landmark = landmarks.first?.landmark, let confidence = landmarks.first?.confidence {
             let roundConfidence = round(confidence.doubleValue * 100.0)
             infoModel = InfoModel(image: processedImage, title: landmark, confidence: roundConfidence)
@@ -52,6 +52,16 @@ class InfoController: UIViewController {
                     self.infoView.infoModel = self.infoModel
                     self.infoView.wikiCollectionView.reloadData()
                 }
+            }
+        */
+        infoModel = InfoModel(image: UIImage(named: "statue.png")!, title: "Statue of Liberty Statue Liberty Statue", confidence: 20)
+        
+        let wikiModel = WikiModel("Statue of Liberty")
+        wikiModel.getWikiContent { (wikiContents) in
+            DispatchQueue.main.async {
+                self.infoModel.wikiModel = wikiContents
+                self.infoView.infoModel = self.infoModel
+                self.infoView.wikiCollectionView.reloadData()
             }
         }
         

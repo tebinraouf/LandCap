@@ -38,14 +38,13 @@ struct WikiModel {
     var baseUrl: String = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles="
     
     public init(_ title: String) {
-        baseUrl += title
+        baseUrl += title.replacingOccurrences(of: " ", with: "%20")
     }
     public func getWikiContent(_ callback: @escaping ([WikiContentModel])->()) {
         var all = [WikiContentModel]()
         parse { (content) in
             let results = self.linguisticTag(content)
             for text in results {
-                print(text)
                 let model = WikiContentModel(text: text, isSelected: false)
                 all.append(model)
             }
@@ -59,11 +58,14 @@ struct WikiModel {
             guard let data = data else { return }
             do {
                 let json = try JSON(data: data)
+                print(json)
                 for (_,subJson):(String, JSON) in json["query"]["pages"] {
-                    
-                    let text = (subJson["extract"].string!).replacingOccurrences(of: "\n", with: "")
-                    callback(text)
-                    
+                    if let name = subJson["extract"].string {
+                        let text = (name).replacingOccurrences(of: "\n", with: "")
+                        callback(text)
+                    } else {
+                        callback("No Description")
+                    }
 //                    let html = Data(subJson["extract"].string!.utf8)
 //                    if let attributedString = try? NSAttributedString(data: html, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
 //                        callback(attributedString.string.replacingOccurrences(of: "\n", with: ""))
