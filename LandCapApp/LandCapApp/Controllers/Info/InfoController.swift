@@ -18,7 +18,6 @@ class InfoController: UIViewController {
     var infoModel: InfoModel!
     var selected = Dictionary<Int, WikiContentModel>()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -28,7 +27,6 @@ class InfoController: UIViewController {
         setupModel()
         setupDelegate()
     }
-    
     private func setupView() {
         view.addSubview(infoView)
         NSLayoutConstraint.activate([
@@ -38,7 +36,6 @@ class InfoController: UIViewController {
             infoView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
-    
     private func setupModel() {
         /*
         if let landmark = landmarks.first?.landmark, let confidence = landmarks.first?.confidence {
@@ -55,7 +52,6 @@ class InfoController: UIViewController {
             }
         */
         infoModel = InfoModel(image: UIImage(named: "statue.png")!, title: "Statue of Liberty Statue Liberty Statue", confidence: 20)
-        
         let wikiModel = WikiModel("Statue of Liberty")
         wikiModel.getWikiContent { (wikiContents) in
             DispatchQueue.main.async {
@@ -64,23 +60,14 @@ class InfoController: UIViewController {
                 self.infoView.wikiCollectionView.reloadData()
             }
         }
-        
-        
-        func viewDidLayoutSubviews() {
-            print("hi...")
-        }
-        
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         self.infoView.wikiCollectionView.reloadData()
     }
-    
     private func setupDelegate() {
         infoView.collectionViewDataSource = self
         infoView.collectionViewDelegate = self
     }
-    
     private func setNavigationItems() {
         navigationItem.rightBarButtonItem =  UIBarButtonItem(title: App.label.cancelInfo, style: .plain, target: self, action: #selector(cancelHandler))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: App.label.saveInfo, style: .plain, target: self, action: #selector(saveHandler))
@@ -90,9 +77,7 @@ class InfoController: UIViewController {
 extension InfoController {
     @objc private func saveHandler() {
         print("save photo...")
-        
         print(selected)
-        
     }
     @objc private func cancelHandler() {
         //Back to the Camera
@@ -100,69 +85,7 @@ extension InfoController {
     }
 }
 
-extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return infoModel.wikiModel.count
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
 
-        cell.wikiTextView.text = infoModel?.wikiModel[indexPath.row].text
-        cell.textViewDidChange(cell.wikiTextView)
-        cell.didCellTap = {
-            self.handleCellTap(cell, indexPath)
-        }
-
-        if selected[indexPath.row] != nil {
-            cell.wikiTextView.backgroundColor = .mainColor
-            cell.wikiTextView.textColor = .white
-        }
-        else {
-            cell.wikiTextView.backgroundColor = .white
-            cell.wikiTextView.textColor = .black
-        }
-        
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let cell = InfoCell()
-        cell.wikiTextView.text = infoModel.wikiModel[indexPath.row].text
-        let estimatedSize = cell.wikiTextView.sizeThatFits(CGSize(width: view.frame.width, height: .infinity))
-        cell.textViewDidChange(cell.wikiTextView)
-
-        let size = CGSize(width: collectionView.frame.width, height: estimatedSize.height)
-        return size
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
-    }
-    func handleCellTap(_ cell: InfoCell, _ indexPath: IndexPath) {
-        let wikiModel = self.infoModel.wikiModel[indexPath.row]
-        let count = self.selected.count
-        
-        
-        if  self.selected[indexPath.row] == nil {
-            if count < 5 {
-                cell.wikiTextView.backgroundColor = .mainColor
-                cell.wikiTextView.textColor = .white
-                self.selected[indexPath.row] = wikiModel
-            }
-            else {
-                alert(title: App.label.wikiAlertTitle, message: App.label.wikiAlertMessage, viewController: self)
-            }
-        }
-        else {
-            cell.wikiTextView.backgroundColor = .white
-            cell.wikiTextView.textColor = .black
-            self.selected[indexPath.row] = nil
-        }
-    }
-    
-}
 
 
 
