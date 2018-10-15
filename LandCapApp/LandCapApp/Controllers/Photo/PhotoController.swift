@@ -15,6 +15,8 @@ class PhotoController: UIViewController {
 
     var imageData: Data!
     let photoView = PhotoView()
+    
+    weak var homeController: HomeController!
     lazy var vision = Vision.vision()
     
     override func viewDidLoad() {
@@ -65,8 +67,9 @@ extension PhotoController {
                 else {
                     self.photoView.spinner.stopAnimating()
                     let infoController = InfoController()
+                    infoController.homeController = self.homeController
                     infoController.landmarks = landmarks
-                    infoController.processedImage = image!
+                    infoController.imageData = self.imageData
                     let navController = UINavigationController(rootViewController: infoController)
                     self.present(navController, animated: true, completion: nil)
                 }

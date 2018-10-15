@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - CDAlertView (0.8.3)
   - FBSDKCoreKit (4.36.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.36.0):
@@ -117,6 +118,7 @@ PODS:
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
+  - CDAlertView
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
@@ -130,6 +132,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Bolts
+    - CDAlertView
     - FBSDKCoreKit
     - FBSDKLoginKit
     - Firebase
@@ -157,6 +160,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CDAlertView: 7ec9ce91ccd800a66a18f7fd92a9dea20c5326a2
   FBSDKCoreKit: 3b8e6570eedb443f9fc4af196a7bf39f18e3a3d8
   FBSDKLoginKit: 8bccb6064708ab2f4251a7fc4e3b6d8d00ad91ba
   Firebase: 25812f43e7a53b11ae2f0a5f4c6d12faeb1f7cd7
@@ -182,6 +186,6 @@ SPEC CHECKSUMS:
   SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: e67d604a061cb6bcb047ea53dc89d63563abf96f
+PODFILE CHECKSUM: 3a99ec7f3ddf2ff22b77b5612b41537bc897d37e
 
 COCOAPODS: 1.5.3

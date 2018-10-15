@@ -64,3 +64,7 @@
 "Save Info" = "Save";
 "Wiki Alert Title" = "Oops";
 "Wiki Alert Message" = "Please choose up to 5 texts";
+"Wiki Firebase Title" = "Great News!";
+"Wiki Firebase Message" = "Your image and text are now saved!";
+"Wiki Button Profile" = "Profile";
+"Wiki Button Home" = "More Photos";

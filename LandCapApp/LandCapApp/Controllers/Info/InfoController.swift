@@ -8,11 +8,13 @@
 
 import UIKit
 import Firebase
+import CDAlertView
 
 class InfoController: UIViewController {
     
     var landmarks: [VisionCloudLandmark]!
-    var processedImage: UIImage!
+    var imageData: Data!
+    weak var homeController: HomeController!
     
     var infoView: InfoView = InfoView()
     var infoModel: InfoModel!
@@ -37,11 +39,9 @@ class InfoController: UIViewController {
     }
     private func setupModel() {
         infoView.spinner.startAnimating()
-       
         if let landmark = landmarks.first?.landmark, let confidence = landmarks.first?.confidence {
             let roundConfidence = round(confidence.doubleValue * 100.0)
-            infoModel = InfoModel(image: processedImage, title: landmark, confidence: roundConfidence)
-
+            infoModel = InfoModel(image: UIImage(data: imageData), title: landmark, confidence: roundConfidence)
             let wikiModel = WikiModel(landmark)
             wikiModel.getWikiContent { (wikiContents) in
                 DispatchQueue.main.async {
@@ -50,10 +50,12 @@ class InfoController: UIViewController {
                     self.infoView.wikiCollectionView.reloadData()
                     self.infoView.imageViewIsHidden = false
                     self.infoView.spinner.stopAnimating()
-                    
                 }
             }
-            /*
+        }
+//        testData()
+    }
+    func testData() {
         infoModel = InfoModel(image: UIImage(named: "statue.png")!, title: "Statue of Liberty Statue Liberty Statue", confidence: 20)
         let wikiModel = WikiModel("Statue of Liberty")
         wikiModel.getWikiContent { (wikiContents) in
@@ -61,11 +63,12 @@ class InfoController: UIViewController {
                 self.infoModel.wikiModel = wikiContents
                 self.infoView.infoModel = self.infoModel
                 self.infoView.wikiCollectionView.reloadData()
+                self.infoView.imageViewIsHidden = false
                 self.infoView.spinner.stopAnimating()
-            }*/
+            }
         }
- 
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.infoView.wikiCollectionView.reloadData()
     }
@@ -81,11 +84,45 @@ class InfoController: UIViewController {
 
 extension InfoController {
     @objc private func saveHandler() {
-        print("save photo...")
-        print(selected)
+        //initial setup
+        infoView.spinner.startAnimating()
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        navigationItem.leftBarButtonItem?.isEnabled = false
+        
+        let userID = User.session.currentUserID
+        let capDatabase = CapDatabase(userID: userID)
+        capDatabase.addNew(image: imageData, with: userSelectedText()) {
+            self.infoView.spinner.stopAnimating()
+            self.handleAlert()
+        }
+    }
+    private func userSelectedText() -> String {
+        let sortedText = selected.sorted(by: {$0.key < $1.key })
+        var text = ""
+        for (_,value) in sortedText {
+            text += value.text
+            text += " "
+        }
+        return text
+    }
+    private func handleAlert() {
+        let alert = CDAlertView(title: App.label.wikiFirebaseAlertTitle, message: App.label.wikiFirebaseAlertMessage, type: .success)
+        let profile = CDAlertViewAction(title: App.label.wikiFirebaseAlertProfileBtn, font: nil, textColor: .mainColor, backgroundColor: nil, handler: { (action) -> Bool in
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: {
+                let profile = ProfileController()
+                self.homeController.navigationController?.pushViewController(profile, animated: true)
+            })
+            return true
+        })
+        let morePhotos = CDAlertViewAction(title: App.label.wikiFirebaseAlertHomeBtn, font: nil, textColor: .mainColor, backgroundColor: nil, handler: { (action) -> Bool in
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+            return true
+        })
+        alert.add(action: profile)
+        alert.add(action: morePhotos)
+        alert.show()
     }
     @objc private func cancelHandler() {
-        //Back to the Camera
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }

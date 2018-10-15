@@ -124,4 +124,16 @@ public class App {
     public var wikiAlertMessage: String {
         return NSLocalizedString("Wiki Alert Message", comment: "Indicate how many texts can be selected")
     }
+    public var wikiFirebaseAlertTitle: String {
+        return NSLocalizedString("Wiki Firebase Title", comment: "Title to indicate artifact is uploaded")
+    }
+    public var wikiFirebaseAlertMessage: String {
+        return NSLocalizedString("Wiki Firebase Message", comment: "Message to indicate artifact is uploaded")
+    }
+    public var wikiFirebaseAlertProfileBtn: String {
+        return NSLocalizedString("Wiki Button Profile", comment: "Button to go to profile")
+    }
+    public var wikiFirebaseAlertHomeBtn: String {
+        return NSLocalizedString("Wiki Button Home", comment: "Button to go back to home")
+    }
 }

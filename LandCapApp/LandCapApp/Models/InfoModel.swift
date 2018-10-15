@@ -58,7 +58,6 @@ struct WikiModel {
             guard let data = data else { return }
             do {
                 let json = try JSON(data: data)
-                print(json)
                 for (_,subJson):(String, JSON) in json["query"]["pages"] {
                     if let name = subJson["extract"].string {
                         let text = (name).replacingOccurrences(of: "\n", with: "")

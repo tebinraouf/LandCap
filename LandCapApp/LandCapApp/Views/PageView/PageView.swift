@@ -22,7 +22,7 @@ class PageView: BaseView {
     }()
     var logoLabel: UILabel = {
         let label = UILabel()
-        label.text = App.label.appName
+        label.text = "LandCap" //App.label.appName
         label.tintColor = .white
         label.textColor = .white
         label.backgroundColor = .clear

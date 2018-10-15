@@ -24,6 +24,7 @@ class CapDatabase {
     }
     //Create an instance of CapDatabase with userID and get/set user information
     init(userID: String) {
+        ref = Database.database().reference()
         self.userID = userID
     }
     init(user: CapUser) {
@@ -45,10 +46,10 @@ class CapDatabase {
         
         //Upload the image
         storageRef = Storage.storage().reference()
-        let photoRef = storageRef.child("users").child("temp").child(userID!).child("\(imageID).jpeg")
+        let photoRef = storageRef.child("users").child(userID!).child("\(imageID).png")
         //Set Image Metadata
         let metaData = StorageMetadata()
-        metaData.contentType = "image/jpg"
+        metaData.contentType = "image/png"
         //Upload Image to Firebase
         let photo = photoRef.putData(imageData, metadata: metaData) { (metaData, error) in
             if error == nil {
@@ -75,4 +76,13 @@ class CapDatabase {
         formatter.dateFormat = "yyyyMMddHHmmss"
         return formatter.string(from: currentDateTime)
     }
+    
+    public func addNew(image data: Data, with text: String, callback: @escaping ()->()) {
+        uploadImage(imageData: data) { (urlString) in
+            let newRef = self.ref.child("users").child(self.userID!).child("images").childByAutoId()
+            newRef.setValue(["link": urlString, "text":text])
+            callback()
+        }
+    }
+    
 }

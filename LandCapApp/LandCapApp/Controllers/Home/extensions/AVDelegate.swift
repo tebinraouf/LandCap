@@ -14,6 +14,7 @@ extension HomeController: AVCapturePhotoCaptureDelegate {
         if let imageData = photo.fileDataRepresentation() {
             //After finish processing the photo, display the photo
             let photoController = PhotoController()
+            photoController.homeController = self
             photoController.imageData = imageData
             let navigationController = UINavigationController(rootViewController: photoController)
             present(navigationController, animated: true, completion: nil)
