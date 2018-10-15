@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 viewController = PageController()
             }
-            window.rootViewController = UINavigationController(rootViewController: InfoController())
+            window.rootViewController = UINavigationController(rootViewController: viewController)
             window.makeKeyAndVisible()
         }
         

@@ -47,6 +47,7 @@ class PhotoController: UIViewController {
 
 extension PhotoController {
     @objc func processHandler() {
+        photoView.spinner.startAnimating()
         let cloudDetector = vision.cloudLandmarkDetector()
         let image = UIImage(data: imageData)
         
@@ -62,6 +63,7 @@ extension PhotoController {
                     alert(title: App.label.notDetectedTitle, message: App.label.notDetectedMessage, viewController: self)
                 }
                 else {
+                    self.photoView.spinner.stopAnimating()
                     let infoController = InfoController()
                     infoController.landmarks = landmarks
                     infoController.processedImage = image!

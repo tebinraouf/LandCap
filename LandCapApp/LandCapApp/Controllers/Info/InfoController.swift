@@ -20,7 +20,6 @@ class InfoController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         print("InfoController")
         setupView()
         setNavigationItems()
@@ -37,20 +36,24 @@ class InfoController: UIViewController {
             ])
     }
     private func setupModel() {
-        /*
+        infoView.spinner.startAnimating()
+       
         if let landmark = landmarks.first?.landmark, let confidence = landmarks.first?.confidence {
             let roundConfidence = round(confidence.doubleValue * 100.0)
             infoModel = InfoModel(image: processedImage, title: landmark, confidence: roundConfidence)
 
-            let wikiModel = WikiModel(landmark.replacingOccurrences(of: " ", with: "%20"))
+            let wikiModel = WikiModel(landmark)
             wikiModel.getWikiContent { (wikiContents) in
                 DispatchQueue.main.async {
                     self.infoModel.wikiModel = wikiContents
                     self.infoView.infoModel = self.infoModel
                     self.infoView.wikiCollectionView.reloadData()
+                    self.infoView.imageViewIsHidden = false
+                    self.infoView.spinner.stopAnimating()
+                    
                 }
             }
-        */
+            /*
         infoModel = InfoModel(image: UIImage(named: "statue.png")!, title: "Statue of Liberty Statue Liberty Statue", confidence: 20)
         let wikiModel = WikiModel("Statue of Liberty")
         wikiModel.getWikiContent { (wikiContents) in
@@ -58,8 +61,10 @@ class InfoController: UIViewController {
                 self.infoModel.wikiModel = wikiContents
                 self.infoView.infoModel = self.infoModel
                 self.infoView.wikiCollectionView.reloadData()
-            }
+                self.infoView.spinner.stopAnimating()
+            }*/
         }
+ 
     }
     override func viewWillAppear(_ animated: Bool) {
         self.infoView.wikiCollectionView.reloadData()

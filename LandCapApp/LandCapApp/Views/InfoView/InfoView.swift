@@ -23,14 +23,18 @@ class InfoView: BaseView {
     private var imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.backgroundColor = .blue
+        iv.backgroundColor = .clear
+        iv.layer.cornerRadius = 20
+        iv.layer.borderWidth = 0.5
+        iv.layer.masksToBounds = true
+        iv.isHidden = true
         iv.transform = CGAffineTransform(rotationAngle: .pi/2)
         return iv
     }()
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Statue of Liberty"
+        //label.text = "Statue of Liberty"
         label.font = UIFont(name: "Iowan Old Style", size: 25)
         label.numberOfLines = 2
         return label
@@ -38,9 +42,14 @@ class InfoView: BaseView {
     private var confidenceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Confidence: 73%"
+        //label.text = "Confidence: 73%"
         label.font = UIFont(name: "Iowan Old Style", size: 20)
         return label
+    }()
+    public var spinner: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+        ai.translatesAutoresizingMaskIntoConstraints = false
+        return ai
     }()
     public var wikiCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -54,12 +63,15 @@ class InfoView: BaseView {
     }()
     override func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .mainLightGray
+        
         imageViewSetup()
         titleLabelSetup()
         confidenceLabelSetup()
         
         wikiCollectionView.register(InfoCell.self, forCellWithReuseIdentifier: CellID.InfoCell)
         wikiCollectionSetup()
+        spinnerSetup()
     }
     private func imageViewSetup() {
         addSubview(imageView)
@@ -105,6 +117,13 @@ class InfoView: BaseView {
             wikiCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
             ])
     }
+    private func spinnerSetup() {
+        addSubview(spinner)
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: centerYAnchor)
+            ])
+    }
 }
 
 extension InfoView {
@@ -122,6 +141,14 @@ extension InfoView {
         }
         set {
             wikiCollectionView.dataSource = newValue
+        }
+    }
+    public var imageViewIsHidden: Bool {
+        get {
+            return imageView.isHidden
+        }
+        set {
+            imageView.isHidden = newValue
         }
     }
 }

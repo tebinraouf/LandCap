@@ -11,20 +11,22 @@ import UIKit
 
 class PhotoView: BaseView {
     
-    var imageView: UIImageView = {
+    private var imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFit
         iv.backgroundColor = .whiteColor
         return iv
-        
     }()
-    
+    public var spinner: UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+        ai.translatesAutoresizingMaskIntoConstraints = false
+        return ai
+    }()
     override func setupView() {
         imageViewSetup()
-        
+        spinnerSetup()
     }
-    
     private func imageViewSetup() {
         addSubview(imageView)
         NSLayoutConstraint.activate([
@@ -32,6 +34,13 @@ class PhotoView: BaseView {
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 500)])
+    }
+    private func spinnerSetup() {
+        addSubview(spinner)
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: centerYAnchor)
+            ])
     }
 }
 
