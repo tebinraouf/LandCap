@@ -146,7 +146,7 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
         
         
         if  self.selected[indexPath.row] == nil {
-            if count < 3 {
+            if count < 5 {
                 cell.wikiTextView.backgroundColor = .mainColor
                 cell.wikiTextView.textColor = .white
                 self.selected[indexPath.row] = wikiModel
