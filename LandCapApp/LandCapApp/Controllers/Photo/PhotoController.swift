@@ -7,8 +7,9 @@
 //
 
 import Foundation
-import Firebase
 import UIKit
+import Firebase
+import SwiftIconFont
 
 
 class PhotoController: UIViewController {
@@ -42,8 +43,27 @@ class PhotoController: UIViewController {
             ])
     }
     private func setNavigationItems() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: App.label.processPhoto, style: UIBarButtonItemStyle.done, target: self, action: #selector(processHandler))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: App.label.cancelPhoto, style: UIBarButtonItemStyle.done, target: self, action: #selector(cancleHandler))
+        let processButton = UIBarButtonItem()
+        processButton.action = #selector(processHandler)
+        processButton.target = self
+        processButton.tintColor = .mainColor
+        processButton.title = "Process"
+        navigationItem.leftBarButtonItem = processButton
+        
+        let cancelButton =  UIBarButtonItem()
+        cancelButton.action = #selector(cancleHandler)
+        cancelButton.target = self
+        cancelButton.tintColor = .mainColor
+        cancelButton.icon(from: .fontAwesome, code: "timescircle", ofSize: 25)
+        
+        let historyButton = UIBarButtonItem()
+        historyButton.action = #selector(historyHandler)
+        historyButton.target = self
+        historyButton.width = 75
+        historyButton.tintColor = .mainColor
+        historyButton.icon(from: .fontAwesome, code: "history", ofSize: 25)
+        
+        navigationItem.rightBarButtonItems = [cancelButton, historyButton]
     }
 }
 
@@ -78,5 +98,8 @@ extension PhotoController {
     }
     @objc func cancleHandler() {
         self.dismiss(animated: true, completion: nil)
+    }
+    @objc func historyHandler() {
+        print("Handle History")
     }
 }
