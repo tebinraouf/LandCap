@@ -25,7 +25,7 @@ class ProfileView: BaseView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "John Smith"
-        label.font = UIFont(name: "Iowan Old Style", size: 25)
+        label.font = UIFont(name: "Iowan Old Style", size: 20)
         label.numberOfLines = 2
         return label
     }()
@@ -50,7 +50,7 @@ class ProfileView: BaseView {
         addSubview(imageView)
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor, constant: 74),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 100),
             imageView.widthAnchor.constraint(equalToConstant: 100),
             ])
@@ -58,16 +58,15 @@ class ProfileView: BaseView {
     private func nameLabelSetup() {
         addSubview(nameLabel)
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 74),
-            nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+            nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             ])
     }
     private func imageCollectionSetup() {
         imageCollectionView.register(ProfileCell.self, forCellWithReuseIdentifier: CellID.ProfileCell)
         addSubview(imageCollectionView)
         NSLayoutConstraint.activate([
-            imageCollectionView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+            imageCollectionView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             imageCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
