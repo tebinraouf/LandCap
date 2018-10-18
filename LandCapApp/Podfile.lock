@@ -62,6 +62,9 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseUI/Storage (5.2.2):
+    - Firebase/Storage (~> 5.0)
+    - SDWebImage (~> 4.0)
   - GoogleAPIClientForREST/Core (1.3.6):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Vision (1.3.6):
@@ -111,6 +114,9 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - SwiftIconFont (2.8.0)
   - SwiftInstagram (1.1.1):
     - SwiftInstagram/Core (= 1.1.1)
@@ -125,6 +131,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/MLVision
   - Firebase/Storage
+  - FirebaseUI/Storage
   - SwiftIconFont
   - SwiftInstagram (~> 1.1.1)
   - SwiftyJSON
@@ -145,6 +152,7 @@ SPEC REPOS:
     - FirebaseMLCommon
     - FirebaseMLVision
     - FirebaseStorage
+    - FirebaseUI
     - GoogleAPIClientForREST
     - GoogleAppMeasurement
     - GoogleMobileVision
@@ -154,6 +162,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - SDWebImage
     - SwiftIconFont
     - SwiftInstagram
     - SwiftyJSON
@@ -173,6 +182,7 @@ SPEC CHECKSUMS:
   FirebaseMLCommon: 285b93416df5f37164ad08795cb799f253fda549
   FirebaseMLVision: b2a14ec0d0d885b6b0d0c04825794715cb755c3e
   FirebaseStorage: fd82e5e5c474897e19972b34b22ac0f589dce04e
+  FirebaseUI: 09519bf436a055cd696bf68687d624423150e4c0
   GoogleAPIClientForREST: 5b95b38a0fa912e8ac7bdcf9e124578ef1a61bf2
   GoogleAppMeasurement: fc4a4c3fe0144db9313cbf443ffe62e6b1d6268c
   GoogleMobileVision: 6b0a3a2dae1974ec35d80fdeeacc3a03193642e0
@@ -182,10 +192,11 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftIconFont: ddaccaa3bb90fc21ebc528cfdf793342618a5cc2
   SwiftInstagram: 5f60415e522d1a7721073eb3a66f254a7c40fd63
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 3a99ec7f3ddf2ff22b77b5612b41537bc897d37e
+PODFILE CHECKSUM: 267f0cb25678f24b215e6333a7c267c500fed4e2
 
 COCOAPODS: 1.5.3

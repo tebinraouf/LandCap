@@ -85,4 +85,34 @@ class CapDatabase {
         }
     }
     
+    //this might work but we need to use this:
+    //https://firebase.google.com/docs/storage/ios/download-files
+    public func getImages(_ callback: @escaping (UserImage)->()) {
+        storageRef = Storage.storage().reference()
+        let newRef = self.ref.child("users").child(self.userID!).child("images")
+        newRef.observe(DataEventType.childAdded) { (snapshot) in
+            let imageObject = snapshot.value as? [String: AnyObject]
+            var userImage = UserImage()
+            
+            if let imageObject = imageObject {
+                if let text = imageObject["text"] as? String {
+                    print(text)
+                    userImage.text = text
+                }
+                if let imageURL = imageObject["link"] as? String {
+                    userImage.imageURL = imageURL
+                }
+                callback(userImage)
+            }
+        }
+    }
+    
+    public func getImagesCount(_ count: @escaping (Int) -> ()) {
+        let newRef = self.ref.child("users").child(self.userID!).child("images")
+        newRef.observe(DataEventType.childAdded) { (snapshot) in
+            let result = Int(snapshot.childrenCount)
+            count(result)
+        }
+    }
+    
 }

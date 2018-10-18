@@ -8,11 +8,13 @@
 
 import Foundation
 import UIKit
+import FirebaseUI
 
 class ProfileController: UIViewController {
     
     var profileView = ProfileView()
-    
+    var capDatabase: CapDatabase!
+    var userImageObjects = [UserImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ProfileController")
@@ -20,6 +22,17 @@ class ProfileController: UIViewController {
         setupView()
         setNavigationItems()
         setupDelegate()
+        
+        capDatabase = CapDatabase(userID: User.session.currentUserID)
+        
+        
+   
+        
+        getImages()
+        
+    }
+    override func viewDidLayoutSubviews() {
+        self.profileView.imageCollectionView.reloadData()
     }
     private func setupView() {
         view.addSubview(profileView)
@@ -37,7 +50,16 @@ class ProfileController: UIViewController {
     private func setNavigationItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: UIBarButtonItemStyle.done, target: self, action: #selector(handleSignOut))
     }
-    
+    private func getImages() {
+        let capDatabase = CapDatabase(userID: User.session.currentUserID)
+        
+        DispatchQueue.main.async {
+            self.capDatabase.getImages { (userImage) in
+                self.userImageObjects.append(userImage)
+                self.profileView.imageCollectionView.reloadData()
+            }
+        }
+    }
     @objc func handleSignOut() {
         User.session.isSignedIn = false
         let navigationController = UINavigationController(rootViewController: PageController())
@@ -45,15 +67,20 @@ class ProfileController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
+        profileView.imageCollectionView.reloadData()
     }
 }
 
 extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 17
+        return userImageObjects.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.ProfileCell, for: indexPath) as! ProfileCell
+        DispatchQueue.main.async {
+            let url = URL(string: self.userImageObjects[indexPath.row].imageURL!)
+            cell.imageView.sd_setImage(with: url, completed: nil)
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -70,6 +97,9 @@ extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegat
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(userImageObjects[indexPath.row])
     }
     
 }

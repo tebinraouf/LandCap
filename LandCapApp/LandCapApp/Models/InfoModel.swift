@@ -9,6 +9,15 @@
 import UIKit
 import SwiftyJSON
 
+struct UserImage {
+    var text: String?
+    var imageURL: String?
+    
+    init() {
+        
+    }
+}
+
 struct WikiContentModel {
     var text: String
     var isSelected: Bool

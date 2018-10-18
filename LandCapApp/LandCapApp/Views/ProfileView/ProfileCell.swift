@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileCell: BaseCell {
-    private var imageView: UIImageView = {
+    public var imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.backgroundColor = .clear
