@@ -76,7 +76,6 @@ class CapDatabase {
         formatter.dateFormat = "yyyyMMddHHmmss"
         return formatter.string(from: currentDateTime)
     }
-    
     public func addNew(image data: Data, with text: String, callback: @escaping ()->()) {
         uploadImage(imageData: data) { (urlString) in
             let newRef = self.ref.child("users").child(self.userID!).child("images").childByAutoId()
@@ -84,19 +83,14 @@ class CapDatabase {
             callback()
         }
     }
-    
-    //this might work but we need to use this:
-    //https://firebase.google.com/docs/storage/ios/download-files
     public func getImages(_ callback: @escaping (UserImage)->()) {
         storageRef = Storage.storage().reference()
         let newRef = self.ref.child("users").child(self.userID!).child("images")
         newRef.observe(DataEventType.childAdded) { (snapshot) in
             let imageObject = snapshot.value as? [String: AnyObject]
             var userImage = UserImage()
-            
             if let imageObject = imageObject {
                 if let text = imageObject["text"] as? String {
-                    print(text)
                     userImage.text = text
                 }
                 if let imageURL = imageObject["link"] as? String {
@@ -106,13 +100,4 @@ class CapDatabase {
             }
         }
     }
-    
-    public func getImagesCount(_ count: @escaping (Int) -> ()) {
-        let newRef = self.ref.child("users").child(self.userID!).child("images")
-        newRef.observe(DataEventType.childAdded) { (snapshot) in
-            let result = Int(snapshot.childrenCount)
-            count(result)
-        }
-    }
-    
 }

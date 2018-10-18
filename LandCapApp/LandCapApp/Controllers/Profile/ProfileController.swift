@@ -23,13 +23,7 @@ class ProfileController: UIViewController {
         setNavigationItems()
         setupDelegate()
         
-        capDatabase = CapDatabase(userID: User.session.currentUserID)
-        
-        
-   
-        
         getImages()
-        
     }
     override func viewDidLayoutSubviews() {
         self.profileView.imageCollectionView.reloadData()
@@ -51,8 +45,7 @@ class ProfileController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: UIBarButtonItemStyle.done, target: self, action: #selector(handleSignOut))
     }
     private func getImages() {
-        let capDatabase = CapDatabase(userID: User.session.currentUserID)
-        
+        capDatabase = CapDatabase(userID: User.session.currentUserID)
         DispatchQueue.main.async {
             self.capDatabase.getImages { (userImage) in
                 self.userImageObjects.append(userImage)
