@@ -51,7 +51,7 @@ class PhotoController: UIViewController {
         navigationItem.leftBarButtonItem = processButton
         
         let cancelButton =  UIBarButtonItem()
-        cancelButton.action = #selector(cancleHandler)
+        cancelButton.action = #selector(cancelHandler)
         cancelButton.target = self
         cancelButton.tintColor = .mainColor
         cancelButton.icon(from: .fontAwesome, code: "timescircle", ofSize: 25)
@@ -96,7 +96,7 @@ extension PhotoController {
             }
         }
     }
-    @objc func cancleHandler() {
+    @objc func cancelHandler() {
         self.dismiss(animated: true, completion: nil)
     }
     @objc func historyHandler() {

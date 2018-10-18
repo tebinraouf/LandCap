@@ -48,7 +48,9 @@
 		43B7AC4621766CE10013E9E9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7AC4521766CE10013E9E9 /* ProfileView.swift */; };
 		43B7AC48217680390013E9E9 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B7AC47217680390013E9E9 /* ProfileCell.swift */; };
 		43C9FE3A2170FA55007C2D4A /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9FE392170FA55007C2D4A /* InfoController.swift */; };
+		43D5695A21790C6B00301E18 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D5695921790C6B00301E18 /* DetailView.swift */; };
 		43EB528B215AFBE700B3E6CF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB528A215AFBE700B3E6CF /* Home.swift */; };
+		43FAF2D5217830B10031F7A2 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FAF2D4217830B10031F7A2 /* DetailController.swift */; };
 		43FE19A9215B3E2200437B1B /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE19A8215B3E2200437B1B /* PhotoController.swift */; };
 		43FE19AC215B49AA00437B1B /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE19AB215B49AA00437B1B /* ProfileController.swift */; };
 		69E9738D7DC9B836C40F8C36 /* Pods_LandCapAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49C17DD55C25F97DC632067 /* Pods_LandCapAppTests.framework */; };
@@ -127,7 +129,9 @@
 		43B7AC4521766CE10013E9E9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		43B7AC47217680390013E9E9 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		43C9FE392170FA55007C2D4A /* InfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
+		43D5695921790C6B00301E18 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		43EB528A215AFBE700B3E6CF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		43FAF2D4217830B10031F7A2 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		43FE19A8215B3E2200437B1B /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		43FE19AB215B49AA00437B1B /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		6571EA0BB1EDB2241C4A1231 /* Pods-LandCapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandCapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LandCapApp/Pods-LandCapApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 		43478AD521472DE300C2EC24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				43FAF2D321782E2A0031F7A2 /* Detail */,
 				43FE19AA215B498B00437B1B /* Profile */,
 				43C9FE382170FA23007C2D4A /* Info */,
 				43FE19A7215B3E0C00437B1B /* Photo */,
@@ -200,6 +205,7 @@
 		43478AD621472DF600C2EC24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				43D5695821790C5B00301E18 /* DetailView */,
 				43B7AC4421766CD00013E9E9 /* ProfileView */,
 				430E6349217140C2008109B9 /* InfoView */,
 				436DE40C215DD310004D8062 /* PhotoView */,
@@ -408,12 +414,28 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		43D5695821790C5B00301E18 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				43D5695921790C6B00301E18 /* DetailView.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
 		43EB5289215AFBC400B3E6CF /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
 				43EB528A215AFBE700B3E6CF /* Home.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		43FAF2D321782E2A0031F7A2 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				43FAF2D4217830B10031F7A2 /* DetailController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		43FE19A7215B3E0C00437B1B /* Photo */ = {
@@ -703,6 +725,7 @@
 				4359069621471D9200C692D7 /* ViewController.swift in Sources */,
 				432AA0D3215C78B700809F78 /* CaptureCamera.swift in Sources */,
 				43AD40C721548EDF000FD21D /* CapDatabase.swift in Sources */,
+				43D5695A21790C6B00301E18 /* DetailView.swift in Sources */,
 				437FAA60214F37F70050AEE8 /* LoginDelegate.swift in Sources */,
 				433BD66621741C2D00E3A52C /* InfoCollectionViewDelegate.swift in Sources */,
 				43478ADF2147324400C2EC24 /* PageCell.swift in Sources */,
@@ -722,6 +745,7 @@
 				43EB528B215AFBE700B3E6CF /* Home.swift in Sources */,
 				43478AEA21473A6900C2EC24 /* BaseView.swift in Sources */,
 				430E634D21715A43008109B9 /* InfoModel.swift in Sources */,
+				43FAF2D5217830B10031F7A2 /* DetailController.swift in Sources */,
 				439BD25F214F17C500143CF7 /* LoginModel.swift in Sources */,
 				432322C421507265005B47CF /* SocialMediaDelegate.swift in Sources */,
 				437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */,

@@ -23,7 +23,14 @@ class ProfileController: UIViewController {
         setNavigationItems()
         setupDelegate()
         
-        getImages()
+        //getImages()
+        testData()
+    }
+    private func testData() {
+        var testImage = UserImage()
+        testImage.imageURL = "https://www.nps.gov/common/uploads/grid_builder/ner/crop16_9/89721987-1DD8-B71B-0BE77EEAE39E0520.jpg?width=950&quality=90&mode=crop"
+        testImage.text = "This is my text. This is test...."
+        userImageObjects.append(testImage)
     }
     override func viewDidLayoutSubviews() {
         self.profileView.imageCollectionView.reloadData()
@@ -92,7 +99,10 @@ extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegat
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(userImageObjects[indexPath.row])
+        let detailController = DetailController()
+        detailController.userImage = userImageObjects[indexPath.row]
+        let navController = UINavigationController(rootViewController: detailController)
+        self.present(navController, animated: true, completion: nil)
     }
     
 }
