@@ -31,6 +31,14 @@ class ProfileController: UIViewController {
         testImage.imageURL = "https://www.nps.gov/common/uploads/grid_builder/ner/crop16_9/89721987-1DD8-B71B-0BE77EEAE39E0520.jpg?width=950&quality=90&mode=crop"
         testImage.text = "This is my text. This is test...."
         userImageObjects.append(testImage)
+        
+        testImage.imageURL = "https://images-na.ssl-images-amazon.com/images/I/615StV0ULHL._SY679_.jpg"
+        testImage.text = "This is a nice picture of Eiffel Tower....."
+        userImageObjects.append(testImage)
+        
+        testImage.imageURL = "https://img.jakpost.net/c/2017/02/10/2017_02_10_21340_1486708892._large.jpg"
+        testImage.text = "Another nice picture....dummy text...."
+        userImageObjects.append(testImage)
     }
     override func viewDidLayoutSubviews() {
         self.profileView.imageCollectionView.reloadData()

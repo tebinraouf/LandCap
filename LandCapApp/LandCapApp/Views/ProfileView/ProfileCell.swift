@@ -13,7 +13,7 @@ class ProfileCell: BaseCell {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.backgroundColor = .clear
-        iv.contentMode = .scaleToFill
+        iv.contentMode = .scaleAspectFit
         iv.layer.borderWidth = 0.5
         return iv
     }()
