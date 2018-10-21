@@ -23,8 +23,8 @@ class ProfileController: UIViewController {
         setNavigationItems()
         setupDelegate()
         
-        //getImages()
-        testData()
+        getImages()
+        //testData()
     }
     private func testData() {
         var testImage = UserImage()

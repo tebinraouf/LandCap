@@ -41,12 +41,36 @@ class DetailController: UIViewController {
         cancelButton.action = #selector(cancelHandler)
         cancelButton.target = self
         cancelButton.tintColor = .mainColor
-        cancelButton.icon(from: .fontAwesome, code: "timescircle", ofSize: 25)
+        cancelButton.icon(from: .fontAwesome, code: "timescircleo", ofSize: 25)
         
-        navigationItem.rightBarButtonItems = [cancelButton]
+        
+        let trashButton = UIBarButtonItem()
+        trashButton.action = #selector(trashHandler)
+        trashButton.target = self
+        trashButton.tintColor = .mainColor
+//        trashButton.width = 75
+        trashButton.icon(from: .fontAwesome, code: "trasho", ofSize: 25)
+        
+        
+        let downloadButton = UIBarButtonItem()
+        downloadButton.action = #selector(downloadHandler)
+        downloadButton.target = self
+        downloadButton.tintColor = .mainColor
+        downloadButton.icon(from: .fontAwesome, code: "download", ofSize: 25)
+        
+        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spacer.width = 40
+        
+        navigationItem.rightBarButtonItems = [cancelButton, spacer ,trashButton, spacer, downloadButton]
     }
     @objc private func cancelHandler() {
         self.dismiss(animated: true, completion: nil)
+    }
+    @objc private func trashHandler() {
+        
+    }
+    @objc private func downloadHandler() {
+        
     }
 }
 
