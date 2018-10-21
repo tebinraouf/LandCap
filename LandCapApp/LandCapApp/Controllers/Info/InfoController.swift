@@ -13,6 +13,7 @@ import CDAlertView
 class InfoController: UIViewController {
     
     var landmarks: [VisionCloudLandmark]!
+    var landmarkName: String!
     var imageData: Data!
     weak var homeController: HomeController!
     
@@ -43,6 +44,7 @@ class InfoController: UIViewController {
             let roundConfidence = round(confidence.doubleValue * 100.0)
             infoModel = InfoModel(image: UIImage(data: imageData), title: landmark, confidence: roundConfidence)
             let wikiModel = WikiModel(landmark)
+            landmarkName = landmark
             wikiModel.getWikiContent { (wikiContents) in
                 DispatchQueue.main.async {
                     self.infoModel.wikiModel = wikiContents
@@ -91,7 +93,7 @@ extension InfoController {
         
         let userID = User.session.currentUserID
         let capDatabase = CapDatabase(userID: userID)
-        capDatabase.addNew(image: imageData, with: userSelectedText()) {
+        capDatabase.addNew(image: imageData, with: userSelectedText(), with: landmarkName) {
             self.infoView.spinner.stopAnimating()
             self.handleAlert()
         }

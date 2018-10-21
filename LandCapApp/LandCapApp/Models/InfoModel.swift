@@ -11,6 +11,7 @@ import SwiftyJSON
 
 struct UserImage {
     var text: String?
+    var name: String?
     var imageURL: String?
     
     init() {

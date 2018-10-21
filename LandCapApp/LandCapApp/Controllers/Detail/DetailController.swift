@@ -22,6 +22,10 @@ class DetailController: UIViewController {
         setDetails()
     }
     private func setDetails() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.title = self.userImage.name
+        
         DispatchQueue.main.async {
             let url = URL(string: self.userImage.imageURL!)
             self.detailView.imageView.sd_setImage(with: url, completed: { (image, error, cachedType, imageURL) in
@@ -49,6 +53,13 @@ class DetailController: UIViewController {
         cancelButton.tintColor = .mainColor
         cancelButton.icon(from: .fontAwesome, code: "timescircleo", ofSize: 25)
         
+
+        let shareButton =  UIBarButtonItem()
+        shareButton.action = #selector(shareHandler)
+        shareButton.target = self
+        shareButton.tintColor = .mainColor
+        shareButton.icon(from: .fontAwesome, code: "sharesquareo", ofSize: 25)
+        
         
         let trashButton = UIBarButtonItem()
         trashButton.action = #selector(trashHandler)
@@ -64,13 +75,23 @@ class DetailController: UIViewController {
         downloadButton.tintColor = .mainColor
         downloadButton.icon(from: .fontAwesome, code: "download", ofSize: 25)
         
-        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        spacer.width = 40
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//        spacer.width = 40
+
+        navigationItem.leftBarButtonItem = trashButton
+        navigationItem.rightBarButtonItem = cancelButton
         
-        navigationItem.rightBarButtonItems = [cancelButton, spacer ,trashButton, spacer, downloadButton]
+//        setToolbarItems(, animated: true)
+        
+        self.navigationController?.isToolbarHidden = false
+        setToolbarItems([shareButton, spacer, downloadButton], animated: true)
+        
     }
     @objc private func cancelHandler() {
         self.dismiss(animated: true, completion: nil)
+    }
+    @objc private func shareHandler() {
+        
     }
     @objc private func trashHandler() {
         
@@ -81,6 +102,8 @@ class DetailController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         detailView.imageText.setContentOffset(.zero, animated: true)
+        detailView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
+        detailView.textViewDidChange(detailView.imageText)
     }
 }
 

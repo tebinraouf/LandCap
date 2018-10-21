@@ -76,10 +76,10 @@ class CapDatabase {
         formatter.dateFormat = "yyyyMMddHHmmss"
         return formatter.string(from: currentDateTime)
     }
-    public func addNew(image data: Data, with text: String, callback: @escaping ()->()) {
+    public func addNew(image data: Data, with text: String, with name: String, callback: @escaping ()->()) {
         uploadImage(imageData: data) { (urlString) in
             let newRef = self.ref.child("users").child(self.userID!).child("images").childByAutoId()
-            newRef.setValue(["link": urlString, "text":text])
+            newRef.setValue(["link": urlString, "text": text, "name": name])
             callback()
         }
     }
@@ -95,6 +95,9 @@ class CapDatabase {
                 }
                 if let imageURL = imageObject["link"] as? String {
                     userImage.imageURL = imageURL
+                }
+                if let imageName = imageObject["name"] as? String {
+                    userImage.name = imageName
                 }
                 callback(userImage)
             }
