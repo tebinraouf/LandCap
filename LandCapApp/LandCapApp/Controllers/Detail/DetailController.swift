@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseUI
+import CDAlertView
 
 class DetailController: UIViewController {
     
@@ -65,7 +66,6 @@ class DetailController: UIViewController {
         trashButton.action = #selector(trashHandler)
         trashButton.target = self
         trashButton.tintColor = .mainColor
-//        trashButton.width = 75
         trashButton.icon(from: .fontAwesome, code: "trasho", ofSize: 25)
         
         
@@ -76,16 +76,12 @@ class DetailController: UIViewController {
         downloadButton.icon(from: .fontAwesome, code: "download", ofSize: 25)
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-//        spacer.width = 40
 
         navigationItem.leftBarButtonItem = trashButton
         navigationItem.rightBarButtonItem = cancelButton
         
-//        setToolbarItems(, animated: true)
-        
         self.navigationController?.isToolbarHidden = false
         setToolbarItems([shareButton, spacer, downloadButton], animated: true)
-        
     }
     @objc private func cancelHandler() {
         self.dismiss(animated: true, completion: nil)
@@ -94,7 +90,12 @@ class DetailController: UIViewController {
         
     }
     @objc private func trashHandler() {
-        
+        handleAlert {
+            let database = CapDatabase(userID: User.session.currentUserID)
+            database.deleteUserImage(userImage: self.userImage)
+            self.dismiss(animated: true, completion: nil)
+        }
+        print("deleted...")
     }
     @objc private func downloadHandler() {
         
@@ -104,6 +105,17 @@ class DetailController: UIViewController {
         detailView.imageText.setContentOffset(.zero, animated: true)
         detailView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         detailView.textViewDidChange(detailView.imageText)
+    }
+    private func handleAlert(_ callback: @escaping ()->()) {
+        let alert = CDAlertView(title: App.label.detailsAlertTitle, message: App.label.detailsAlertMessage, type: .warning)
+        let cancel = CDAlertViewAction(title: App.label.detailsAlertCancelBtn, font: nil, textColor: .mainColor, backgroundColor: nil, handler: nil)
+        let delete = CDAlertViewAction(title: App.label.detailsAlertAcceptBtn, font: nil, textColor: .mainColor, backgroundColor: nil, handler: { (action) -> Bool in
+            callback()
+            return true
+        })
+        alert.add(action: cancel)
+        alert.add(action: delete)
+        alert.show()
     }
 }
 

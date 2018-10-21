@@ -68,3 +68,9 @@
 "Wiki Firebase Message" = "Your image and text are now saved!";
 "Wiki Button Profile" = "Profile";
 "Wiki Button Home" = "More Photos";
+
+//DetailsController
+"Delete Photo Title" = "Delete Photo";
+"Cancel Photo Delete" = "Cancel";
+"Accept Photo Delete" = "Yes";
+"Photo Delete Body" = "Are you sure you want to delete the photo?";

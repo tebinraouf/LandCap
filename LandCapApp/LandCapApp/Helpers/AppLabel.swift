@@ -136,4 +136,19 @@ public class App {
     public var wikiFirebaseAlertHomeBtn: String {
         return NSLocalizedString("Wiki Button Home", comment: "Button to go back to home")
     }
+    
+    //DetailsController
+    public var detailsAlertTitle: String {
+        return NSLocalizedString("Delete Photo Title", comment: "A friendly title to show the user")
+    }
+    public var detailsAlertCancelBtn: String {
+        return NSLocalizedString("Cancel Photo Delete", comment: "Cancel and do nothing")
+    }
+    public var detailsAlertAcceptBtn: String {
+        return NSLocalizedString("Accept Photo Delete", comment: "Accept and delete the photo")
+    }
+    public var detailsAlertMessage: String {
+        return NSLocalizedString("Photo Delete Body", comment: "User message to delete photo")
+    }
+    
 }

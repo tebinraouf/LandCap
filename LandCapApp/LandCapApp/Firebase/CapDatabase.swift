@@ -99,8 +99,14 @@ class CapDatabase {
                 if let imageName = imageObject["name"] as? String {
                     userImage.name = imageName
                 }
+                userImage.id = snapshot.key
                 callback(userImage)
             }
+        }
+    }
+    public func deleteUserImage(userImage: UserImage) {
+        if let id = userImage.id {
+            ref.child("users").child(userID).child("images").child(id).removeValue()
         }
     }
 }

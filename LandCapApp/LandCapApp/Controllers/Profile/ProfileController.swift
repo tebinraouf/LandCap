@@ -23,7 +23,7 @@ class ProfileController: UIViewController {
         setNavigationItems()
         setupDelegate()
         
-        getImages()
+//        getImages()
         //testData()
     }
     private func testData() {
@@ -75,6 +75,8 @@ class ProfileController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
+        self.userImageObjects.removeAll()
+        getImages()
         profileView.imageCollectionView.reloadData()
     }
 }

@@ -13,11 +13,24 @@ struct UserImage {
     var text: String?
     var name: String?
     var imageURL: String?
+    var id: String?
     
     init() {
         
     }
 }
+
+extension UserImage: Equatable {
+    static func == (lhs: UserImage, rhs: UserImage) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+extension UserImage: Hashable {
+    var hashValue: Int {
+        return id.hashValue
+    }
+}
+
 
 struct WikiContentModel {
     var text: String
