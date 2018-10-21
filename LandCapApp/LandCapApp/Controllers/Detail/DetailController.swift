@@ -21,6 +21,14 @@ class DetailController: UIViewController {
         setupView()
         setNavigationItems()
         setDetails()
+        
+        
+        
+        
+        
+        print("hello")
+        
+        
     }
     private func setDetails() {
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -102,9 +110,11 @@ class DetailController: UIViewController {
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        detailView.imageText.setContentOffset(.zero, animated: true)
-        detailView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         detailView.textViewDidChange(detailView.imageText)
+        detailView.imageText.setContentOffset(.zero, animated: true)
+        
+        //TODO: 1000 needs to be aauto generated..
+        detailView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 1000, right: 0)
     }
     private func handleAlert(_ callback: @escaping ()->()) {
         let alert = CDAlertView(title: App.label.detailsAlertTitle, message: App.label.detailsAlertMessage, type: .warning)
@@ -118,6 +128,3 @@ class DetailController: UIViewController {
         alert.show()
     }
 }
-
-
-
