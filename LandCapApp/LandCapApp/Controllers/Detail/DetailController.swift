@@ -19,14 +19,20 @@ class DetailController: UIViewController {
         super.viewDidLoad()
         setupView()
         setNavigationItems()
-        
-        
+        setDetails()
+    }
+    private func setDetails() {
         DispatchQueue.main.async {
             let url = URL(string: self.userImage.imageURL!)
-            self.detailView.imageView.sd_setImage(with: url, completed: nil)
+            self.detailView.imageView.sd_setImage(with: url, completed: { (image, error, cachedType, imageURL) in
+                guard let image = image else { return }
+                self.detailView.imageView.image = image
+            })
+            if let text = self.userImage.text {
+                self.detailView.imageText.text = text
+            }
         }
     }
-    
     private func setupView() {
         view.addSubview(detailView)
         NSLayoutConstraint.activate([
@@ -71,6 +77,10 @@ class DetailController: UIViewController {
     }
     @objc private func downloadHandler() {
         
+    }
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        detailView.imageText.setContentOffset(.zero, animated: true)
     }
 }
 

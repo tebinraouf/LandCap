@@ -87,7 +87,10 @@ extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.ProfileCell, for: indexPath) as! ProfileCell
         DispatchQueue.main.async {
             let url = URL(string: self.userImageObjects[indexPath.row].imageURL!)
-            cell.imageView.sd_setImage(with: url, completed: nil)
+            cell.imageView.sd_setImage(with: url, completed: { (image, error, cachedType, imageURL) in
+                guard let image = image else { return }
+                cell.imageView.image = image.cropToBounds(width: 100, height: 100)
+            })
         }
         return cell
     }

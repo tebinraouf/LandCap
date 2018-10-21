@@ -13,7 +13,7 @@ class DetailView: BaseView {
     public var imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         iv.backgroundColor = .blue
         return iv
     }()
@@ -21,7 +21,7 @@ class DetailView: BaseView {
         let tv = UITextView()
         tv.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = .white
+        tv.backgroundColor = .mainLightGray
         tv.isEditable = false
         tv.textAlignment = .left
         tv.isScrollEnabled = true
@@ -29,6 +29,7 @@ class DetailView: BaseView {
         tv.layer.borderColor = UIColor.lightGray.cgColor
         tv.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
         tv.isSelectable = false
+        tv.setContentOffset(CGPoint.zero, animated: true)
         return tv
     }()
     
