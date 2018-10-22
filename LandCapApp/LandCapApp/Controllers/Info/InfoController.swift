@@ -27,6 +27,7 @@ class InfoController: UIViewController {
         setupView()
         setNavigationItems()
         setupModel()
+//        testData()
         setupDelegate()
     }
     private func setupView() {
@@ -55,11 +56,10 @@ class InfoController: UIViewController {
                 }
             }
         }
-//        testData()
     }
     func testData() {
         infoModel = InfoModel(image: UIImage(named: "statue.png")!, title: "Statue of Liberty Statue Liberty Statue", confidence: 20)
-        let wikiModel = WikiModel("Statue of Liberty")
+        let wikiModel = WikiModel("Staten Island Ferry")
         wikiModel.getWikiContent { (wikiContents) in
             DispatchQueue.main.async {
                 self.infoModel.wikiModel = wikiContents

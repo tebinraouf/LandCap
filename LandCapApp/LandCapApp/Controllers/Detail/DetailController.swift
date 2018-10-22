@@ -16,6 +16,7 @@ class DetailController: UIViewController {
     
     private var detailView = DetailView()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -106,7 +107,8 @@ class DetailController: UIViewController {
         print("deleted...")
     }
     @objc private func downloadHandler() {
-        
+        let image = textToImage(drawText: self.detailView.imageText.text, inImage: self.detailView.imageView.image!, atPoint: CGPoint(x: 0, y: 0))
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImage(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -128,5 +130,51 @@ class DetailController: UIViewController {
         alert.add(action: cancel)
         alert.add(action: delete)
         alert.show()
+    }
+    func textToImage(drawText text: String, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
+        let textColor = UIColor.blackColor
+        let textBackground = UIColor(r: 240, g: 240, b: 240, a: 0.8)
+        let textFont = UIFont(name: "Helvetica Bold", size: 50)!
+        
+        let scale = UIScreen.main.scale
+        //TODO: this is not a good solution and it doesn't work well.
+        let originalImageSize = image.size
+        var height: CGFloat = 300
+        if text.count > 600 && text.count < 1000 {
+            height = 600
+        } else if text.count > 1000 {
+            height = 700
+        }
+        
+        let size = CGSize(width: originalImageSize.width, height: originalImageSize.height + height)
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        
+        let textFontAttributes = [
+            NSAttributedStringKey.font: textFont,
+            NSAttributedStringKey.backgroundColor: textBackground,
+            NSAttributedStringKey.foregroundColor: textColor,
+            ] as [NSAttributedStringKey : Any]
+        image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
+        
+        let rect = CGRect(origin: CGPoint(x: 0, y: image.size.height), size: size)
+        text.draw(in: rect, withAttributes: textFontAttributes)
+        print(text.count)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+    @objc func saveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
 }
