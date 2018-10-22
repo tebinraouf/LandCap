@@ -53,13 +53,13 @@ class DetailView: BaseView {
     private func scrollSetup() {
         scrollView.showsVerticalScrollIndicator = true
         scrollView.isUserInteractionEnabled = true
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 4000)
         addSubview(scrollView)
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            scrollView.heightAnchor.constraint(equalTo: heightAnchor)
             ])
         
     }

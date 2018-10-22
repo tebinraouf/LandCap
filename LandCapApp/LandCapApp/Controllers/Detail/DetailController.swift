@@ -113,8 +113,10 @@ class DetailController: UIViewController {
         detailView.textViewDidChange(detailView.imageText)
         detailView.imageText.setContentOffset(.zero, animated: true)
         
-        //TODO: 1000 needs to be aauto generated..
-        detailView.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 1000, right: 0)
+        let size = CGSize(width: detailView.frame.width, height: CGFloat.infinity)
+        let estimatedSize = detailView.imageText.sizeThatFits(size)
+        //500 is the height of the image
+        detailView.scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: estimatedSize.height + 500)
     }
     private func handleAlert(_ callback: @escaping ()->()) {
         let alert = CDAlertView(title: App.label.detailsAlertTitle, message: App.label.detailsAlertMessage, type: .warning)
