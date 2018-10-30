@@ -31,13 +31,7 @@ class CapDatabase {
         ref = Database.database().reference()
         self.user = user
     }
-    func login() {
-        
-    }
-    func register() {
-        
-    }
-    func annonymous() {
+    func setupUser() {
         self.ref.child("users").child(user.Key).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary

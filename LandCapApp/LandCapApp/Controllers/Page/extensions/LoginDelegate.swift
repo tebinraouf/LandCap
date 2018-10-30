@@ -23,7 +23,7 @@ extension PageController: LoginViewDelegate {
                 if (authResult?.user.isEmailVerified)! {
                     //Get the Current User ID Saved.
                     User.session.currentUserID = (authResult?.user.uid)!
-                    
+                    User.session.isAnonymous = false
                     //Move to the HomeController
                     DispatchQueue.main.async {
                         User.session.isSignedIn = true
@@ -50,9 +50,10 @@ extension PageController: LoginViewDelegate {
                     user.Key = authResult.user.uid
                     user.Name = name
                     user.setAuthorizedUser()
+                    User.session.isAnonymous = false
                     //fill database with initial values
                     let capDatabase = CapDatabase(user: user)
-                    capDatabase.register()
+                    capDatabase.setupUser()
                 }
                 //Check if account is verified.
                 Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
@@ -108,7 +109,7 @@ extension PageController: LoginViewDelegate {
                         capUser.setAnonymousUser()
                         //fill database with initial values
                         let capDatabase = CapDatabase(user: capUser)
-                        capDatabase.annonymous()
+                        capDatabase.setupUser()
                     }
                     //Get the Current User ID Saved.
                     User.session.currentUserID = (authResult?.user.uid)!

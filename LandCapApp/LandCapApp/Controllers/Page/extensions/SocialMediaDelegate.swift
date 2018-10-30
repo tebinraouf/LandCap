@@ -29,7 +29,7 @@ extension PageController: SocialMediaLoginDelegate {
                     user.setAuthorizedUser()
                     //fill database with initial values
                     let capDatabase = CapDatabase(user: user)
-                    capDatabase.login()
+                    //capDatabase.login()
 
                     DispatchQueue.main.async {
                         User.session.isSignedIn = true
