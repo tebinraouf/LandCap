@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import SwiftIconFont
-
+import CDAlertView
 
 class PhotoController: UIViewController {
 
@@ -70,31 +70,52 @@ class PhotoController: UIViewController {
 extension PhotoController {
     @objc func processHandler() {
         photoView.spinner.startAnimating()
-        let cloudDetector = vision.cloudLandmarkDetector()
-        let image = UIImage(data: imageData)
         
-        let visionImage = VisionImage(image: image!)
-        cloudDetector.detect(in: visionImage) { (landmarks, error) in
-            
-            if let error = error {
-                alert(title: App.label.visionError, message: error.localizedDescription, viewController: self)
+        let database = CapDatabase(userID: User.session.currentUserID)
+        
+        database.photoLimit { (limit) in
+            if limit > 0 {
+                let cloudDetector = self.vision.cloudLandmarkDetector()
+                let image = UIImage(data: self.imageData)
+                let visionImage = VisionImage(image: image!)
+                cloudDetector.detect(in: visionImage) { (landmarks, error) in
+                    if let error = error {
+                        let alert = CDAlertView(title: App.label.visionError, message: error.localizedDescription, type: .error)
+                        alert.show()
+                        self.photoView.spinner.stopAnimating()
+                    }
+                    if let landmarks = landmarks {
+                        if landmarks.isEmpty {
+                            let alert = CDAlertView(title: App.label.notDetectedTitle, message: App.label.notDetectedMessage, type: .warning)
+                            alert.show()
+                            self.photoView.spinner.stopAnimating()
+                        }
+                        else {
+                            self.photoView.spinner.stopAnimating()
+                            let infoController = InfoController()
+                            infoController.homeController = self.homeController
+                            infoController.landmarks = landmarks
+                            infoController.imageData = self.imageData
+                            let navController = UINavigationController(rootViewController: infoController)
+                            self.present(navController, animated: true, completion: nil)
+                        }
+                    }
+                }
             }
-            
-            if let landmarks = landmarks {
-                if landmarks.isEmpty {
-                    alert(title: App.label.notDetectedTitle, message: App.label.notDetectedMessage, viewController: self)
+            else {
+                var message = App.label.photoLimitMessage
+                if User.session.isAnonymous {
+                    message = App.label.photoLimitAnnonymousMessage
                 }
-                else {
-                    self.photoView.spinner.stopAnimating()
-                    let infoController = InfoController()
-                    infoController.homeController = self.homeController
-                    infoController.landmarks = landmarks
-                    infoController.imageData = self.imageData
-                    let navController = UINavigationController(rootViewController: infoController)
-                    self.present(navController, animated: true, completion: nil)
-                }
+                let alert = CDAlertView(title: App.label.photoLimitTitle, message: message, type: .warning)
+                alert.show()
+                self.photoView.spinner.stopAnimating()
             }
         }
+        
+        
+        
+        
     }
     @objc func cancelHandler() {
         self.dismiss(animated: true, completion: nil)

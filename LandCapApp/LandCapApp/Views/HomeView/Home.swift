@@ -20,6 +20,18 @@ class HomeView: BaseView {
     }()
     public var delegate: HomeViewDelegate!
     
+    private var moreBtn: UIButton = {
+        let btn = UIButton(type: UIButtonType.system)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.titleLabel?.font = UIFont.icon(from: .fontAwesome, ofSize: 25)
+        btn.setTitle(String.fontAwesomeIcon("bars"), for: UIControlState.normal)
+//        btn.backgroundColor = UIColor.mainColor
+        btn.tintColor = UIColor.textColor
+//        btn.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        btn.addTarget(self, action: #selector(handleMoreButton), for: .touchDown)
+        return btn
+    }()
+    
     private var takePhotoBtn: UIButton = {
         let btn = UIButton(type: UIButtonType.system)
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +50,7 @@ class HomeView: BaseView {
         translatesAutoresizingMaskIntoConstraints = false
         previewViewSetup()
         takePhotoBtnSetup()
+        moreButtonSetup()
     }
     private func previewViewSetup() {
         addSubview(previewView)
@@ -56,11 +69,22 @@ class HomeView: BaseView {
             takePhotoBtn.heightAnchor.constraint(equalToConstant: 80)
             ])
     }
+    private func moreButtonSetup() {
+        addSubview(moreBtn)
+        NSLayoutConstraint.activate([
+            moreBtn.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            moreBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            ])
+    }
     @objc func handleTakePhoto() {
         delegate.handleTakingPhoto()
+    }
+    @objc func handleMoreButton() {
+        delegate.handleMoreButton()
     }
 }
 
 protocol HomeViewDelegate {
     func handleTakingPhoto()
+    func handleMoreButton()
 }

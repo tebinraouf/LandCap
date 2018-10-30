@@ -54,15 +54,15 @@
 "Profile Oops" = "Oops";
 "Profile Not Available" = "As an annonymous user, you don't have a profile. Create an account to get more cool features 😎";
 
-
-
 //Photo Controller
 "Cancel Photo" = "Cancel";
 "Process Photo" = "Process";
 "Not Detected Title" = "Not Detected";
 "Not Detected Message" = "The photo is not detected. Please try another one!";
 "Vision Error" = "Error";
-
+"Limit Error Title" = "Oops";
+"Limit Error Message" = "You rock! While we love to give you unlimited photo processing, we are still a baby company with so many resource limits!";
+"Limit Error Message Annonymous" = "You rock! Get more photo processing by creating an account!";
 
 //Info Controller
 "Cancel Info" = "Cancel";
@@ -73,6 +73,8 @@
 "Wiki Firebase Message" = "Your image and text are now saved!";
 "Wiki Button Profile" = "Profile";
 "Wiki Button Home" = "More Photos";
+"Wiki Save Guest Title" = "Not Available";
+"Wiki Save Guest Message" = "As an annonymous user, you don't have a profile. You can't save photos. Create an account to get more cool features 😎";
 
 //DetailsController
 "Delete Photo Title" = "Delete Photo";

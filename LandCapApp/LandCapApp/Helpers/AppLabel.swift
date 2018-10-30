@@ -118,6 +118,18 @@ public class App {
     public var visionError: String {
         return NSLocalizedString("Vision Error", comment: "Google Vision Error")
     }
+    //PhotoLimit
+    public var photoLimitTitle: String {
+        return NSLocalizedString("Limit Error Title", comment: "Label to indicate photo limit")
+    }
+    public var photoLimitMessage: String {
+        return NSLocalizedString("Limit Error Message", comment: "Message to indicate photo limit for authorized user")
+    }
+    public var photoLimitAnnonymousMessage: String {
+        return NSLocalizedString("Limit Error Message Annonymous", comment: "Message to indicate photo limit for annonymous user")
+    }
+    
+    
     
     //InfoController
     public var cancelInfo: String {
@@ -144,6 +156,14 @@ public class App {
     public var wikiFirebaseAlertHomeBtn: String {
         return NSLocalizedString("Wiki Button Home", comment: "Button to go back to home")
     }
+    public var wikiSaveGuestTitle: String {
+        return NSLocalizedString("Wiki Save Guest Title", comment: "Label to indicate save is not available for guest user")
+    }
+    public var wikiSaveGuestMessage: String {
+        return NSLocalizedString("Wiki Save Guest Message", comment: "Message to indicate save is not available for guest user")
+    }
+    
+    
     
     //DetailsController
     public var detailsAlertTitle: String {

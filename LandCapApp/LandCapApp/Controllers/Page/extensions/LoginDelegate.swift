@@ -108,7 +108,7 @@ extension PageController: LoginViewDelegate {
                         capUser.setAnonymousUser()
                         //fill database with initial values
                         let capDatabase = CapDatabase(user: capUser)
-                        capDatabase.createAnnonymous()
+                        capDatabase.annonymous()
                     }
                     //Get the Current User ID Saved.
                     User.session.currentUserID = (authResult?.user.uid)!

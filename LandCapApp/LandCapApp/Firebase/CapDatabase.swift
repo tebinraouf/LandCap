@@ -37,7 +37,7 @@ class CapDatabase {
     func register() {
         
     }
-    func createAnnonymous() {
+    func annonymous() {
         self.ref.child("users").child(user.Key).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
@@ -48,6 +48,18 @@ class CapDatabase {
         }) { (error) in
             print(error.localizedDescription)
         }
+    }
+    func photoLimit(callback: @escaping (Int)->()) {
+        self.ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            if value != nil {
+                let limitCount = value!["photoLimit"] as! Int
+                if limitCount > 0 {
+                    self.ref.child("users").child(self.userID).child("photoLimit").setValue(limitCount-1)
+                }
+                callback(limitCount)
+            }
+        })
     }
     
     func update(name: String) {

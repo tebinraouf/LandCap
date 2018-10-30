@@ -86,16 +86,23 @@ class InfoController: UIViewController {
 
 extension InfoController {
     @objc private func saveHandler() {
-        //initial setup
-        infoView.spinner.startAnimating()
-        navigationItem.rightBarButtonItem?.isEnabled = false
-        navigationItem.leftBarButtonItem?.isEnabled = false
         
-        let userID = User.session.currentUserID
-        let capDatabase = CapDatabase(userID: userID)
-        capDatabase.addNew(image: imageData, with: userSelectedText(), with: landmarkName) {
-            self.infoView.spinner.stopAnimating()
-            self.handleAlert()
+        if User.session.isAnonymous {
+            let alert = CDAlertView(title: App.label.wikiSaveGuestTitle, message: App.label.wikiSaveGuestMessage, type: .warning)
+            alert.show()
+        }
+        else {
+            //initial setup
+            infoView.spinner.startAnimating()
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            navigationItem.leftBarButtonItem?.isEnabled = false
+            
+            let userID = User.session.currentUserID
+            let capDatabase = CapDatabase(userID: userID)
+            capDatabase.addNew(image: imageData, with: userSelectedText(), with: landmarkName) {
+                self.infoView.spinner.stopAnimating()
+                self.handleAlert()
+            }
         }
     }
     private func userSelectedText() -> String {
