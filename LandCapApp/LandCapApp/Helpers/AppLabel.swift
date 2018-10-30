@@ -94,6 +94,14 @@ public class App {
         return NSLocalizedString("Skip Okay", comment: "Skip okay goes here")
     }
     
+    //HomeController
+    public var homeAlertTitle: String {
+        return NSLocalizedString("Profile Oops", comment: "Label to indicate profile is not available")
+    }
+    public var homeAlertMessage: String {
+        return NSLocalizedString("Profile Not Available", comment: "Message to indicate profile is not available")
+    }
+    
     //PhotoController
     public var cancelPhoto: String {
         return NSLocalizedString("Cancel Photo", comment: "Cancel the taken photo. Take another.")

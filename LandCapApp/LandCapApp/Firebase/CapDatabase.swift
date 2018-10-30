@@ -31,9 +31,23 @@ class CapDatabase {
         ref = Database.database().reference()
         self.user = user
     }
-    
-    func add() {
-        self.ref.child("users").child(user.Key).setValue(["name": user.Name, "isAnonymous": user.isAnonymous, "photoLimit": user.photoLimit])
+    func login() {
+        
+    }
+    func register() {
+        
+    }
+    func createAnnonymous() {
+        self.ref.child("users").child(user.Key).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            if value == nil {
+                //first time the user is anonymous
+                self.ref.child("users").child(self.user.Key).setValue(["name": self.user.Name, "isAnonymous": self.user.isAnonymous, "photoLimit": self.user.photoLimit])
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     func update(name: String) {

@@ -25,7 +25,6 @@
 "Geocode Desc" = "Get a building addrees from your photo and get geographic information.";
 
 //handling errors labels -> PageController handling() method.
-
 "Email" = "Email";
 "Password" = "Password";
 "Missing Email" = "Missing Email";
@@ -50,6 +49,12 @@
 "Request Cancel" = "Cancel";
 "Request Sent" = "Sent";
 "Request Message" = "Check your email to set your new password.";
+
+//Home Controller
+"Profile Oops" = "Oops";
+"Profile Not Available" = "As an annonymous user, you don't have a profile. Create an account to get more cool features 😎";
+
+
 
 //Photo Controller
 "Cancel Photo" = "Cancel";

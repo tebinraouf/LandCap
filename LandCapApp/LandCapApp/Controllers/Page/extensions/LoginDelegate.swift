@@ -52,7 +52,7 @@ extension PageController: LoginViewDelegate {
                     user.setAuthorizedUser()
                     //fill database with initial values
                     let capDatabase = CapDatabase(user: user)
-                    capDatabase.add()
+                    capDatabase.register()
                 }
                 //Check if account is verified.
                 Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
@@ -108,7 +108,7 @@ extension PageController: LoginViewDelegate {
                         capUser.setAnonymousUser()
                         //fill database with initial values
                         let capDatabase = CapDatabase(user: capUser)
-                        capDatabase.add()
+                        capDatabase.createAnnonymous()
                     }
                     //Get the Current User ID Saved.
                     User.session.currentUserID = (authResult?.user.uid)!

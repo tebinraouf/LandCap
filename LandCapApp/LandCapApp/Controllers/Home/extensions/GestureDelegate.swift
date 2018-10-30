@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import CDAlertView
 
 extension HomeController: UIGestureRecognizerDelegate {
     @objc func handleSwipeToProfile(sender: UISwipeGestureRecognizer) {
         if sender.direction == .left {
-            navigationController?.pushViewController(ProfileController(), animated: true)
+            if User.session.isAnonymous {
+                let alert = CDAlertView(title: App.label.homeAlertTitle, message: App.label.homeAlertMessage, type: .warning)
+                alert.show()
+            }
+            else {
+                navigationController?.pushViewController(ProfileController(), animated: true)
+            }
         }
     }
 }
