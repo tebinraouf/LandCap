@@ -18,6 +18,7 @@ class ProfileView: BaseView {
         iv.layer.borderWidth = 0.5
         iv.layer.masksToBounds = true
         iv.isHidden = false
+        iv.isUserInteractionEnabled = true
         iv.transform = CGAffineTransform(rotationAngle: .pi/2)
         return iv
     }()
@@ -39,14 +40,17 @@ class ProfileView: BaseView {
         cv.isPagingEnabled = false
         return cv
     }()
+    public var delegate: ProfileDelegate!
     override func setupView() {
         backgroundColor = .mainLightGray
-        
         imageViewSetup()
         nameLabelSetup()
         imageCollectionSetup()
     }
     private func imageViewSetup() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileTap(_:)))
+        imageView.addGestureRecognizer(tap)
+        
         addSubview(imageView)
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor, constant: 74),
@@ -72,6 +76,9 @@ class ProfileView: BaseView {
             imageCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
             ])
     }
+    @objc private func handleProfileTap(_ sender: UITapGestureRecognizer) {
+        delegate.handleProfileTap()
+    }
 }
 
 extension ProfileView {
@@ -91,4 +98,8 @@ extension ProfileView {
             imageCollectionView.dataSource = newValue
         }
     }
+}
+
+protocol ProfileDelegate {
+    func handleProfileTap()
 }

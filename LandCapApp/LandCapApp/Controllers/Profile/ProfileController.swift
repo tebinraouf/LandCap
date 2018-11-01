@@ -55,6 +55,7 @@ class ProfileController: UIViewController {
     private func setupDelegate() {
         profileView.collectionViewDataSource = self
         profileView.collectionViewDelegate = self
+        profileView.delegate = self
     }
     private func setNavigationItems() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Out", style: UIBarButtonItemStyle.done, target: self, action: #selector(handleSignOut))
@@ -118,4 +119,10 @@ extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegat
         self.present(navController, animated: true, completion: nil)
     }
     
+}
+
+extension ProfileController: ProfileDelegate {
+    func handleProfileTap() {
+        print("tap tap tap...")
+    }
 }
