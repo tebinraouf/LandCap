@@ -16,6 +16,8 @@ class DetailController: UIViewController {
     
     private var detailView = DetailView()
     
+    private var shareImage: UIImage!
+    private var shareText: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +43,11 @@ class DetailController: UIViewController {
             self.detailView.imageView.sd_setImage(with: url, completed: { (image, error, cachedType, imageURL) in
                 guard let image = image else { return }
                 self.detailView.imageView.image = image
+                self.shareImage = image.resizeWithWidth(width: 700)
             })
             if let text = self.userImage.text {
                 self.detailView.imageText.text = text
+                self.shareText = text
             }
         }
     }
@@ -96,7 +100,8 @@ class DetailController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @objc private func shareHandler() {
-        
+        let activityController = UIActivityViewController(activityItems: [shareImage, shareText], applicationActivities: [])
+        navigationController?.present(activityController, animated: true, completion: nil)
     }
     @objc private func trashHandler() {
         handleAlert {
