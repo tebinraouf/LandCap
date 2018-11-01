@@ -13,11 +13,14 @@ extension HomeController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             //After finish processing the photo, display the photo
-            let photoController = PhotoController()
-            photoController.homeController = self
-            photoController.imageData = imageData
-            let navigationController = UINavigationController(rootViewController: photoController)
-            present(navigationController, animated: true, completion: nil)
+            process(imageData: imageData)
         }
+    }
+    func process(imageData: Data) {
+        let photoController = PhotoController()
+        photoController.homeController = self
+        photoController.imageData = imageData
+        let navigationController = UINavigationController(rootViewController: photoController)
+        present(navigationController, animated: true, completion: nil)
     }
 }

@@ -31,6 +31,16 @@ class HomeView: BaseView {
         btn.addTarget(self, action: #selector(handleMoreButton), for: .touchDown)
         return btn
     }()
+    private var uploadPhotoBtn: UIButton = {
+        let btn = UIButton(type: UIButtonType.system)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.titleLabel?.font = UIFont.icon(from: .materialIcon, ofSize: 35)
+        btn.setTitle(String.fontMaterialIcon("image"), for: UIControlState.normal)
+//        btn.setTitle("Hellooooo", for: .normal)
+        btn.tintColor = UIColor.textColor
+        btn.addTarget(self, action: #selector(handleUploadingPhoto), for: .touchDown)
+        return btn
+    }()
     
     private var takePhotoBtn: UIButton = {
         let btn = UIButton(type: UIButtonType.system)
@@ -51,6 +61,7 @@ class HomeView: BaseView {
         previewViewSetup()
         takePhotoBtnSetup()
         moreButtonSetup()
+        uploadPhotoButton()
     }
     private func previewViewSetup() {
         addSubview(previewView)
@@ -76,15 +87,28 @@ class HomeView: BaseView {
             moreBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             ])
     }
+    private func uploadPhotoButton() {
+        addSubview(uploadPhotoBtn)
+        
+        NSLayoutConstraint.activate([
+            uploadPhotoBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            uploadPhotoBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
+            ])
+        
+    }
     @objc func handleTakePhoto() {
         delegate.handleTakingPhoto()
     }
     @objc func handleMoreButton() {
         delegate.handleMoreButton()
     }
+    @objc func handleUploadingPhoto() {
+        delegate.handleUploadingPhoto()
+    }
 }
 
 protocol HomeViewDelegate {
     func handleTakingPhoto()
     func handleMoreButton()
+    func handleUploadingPhoto()
 }
