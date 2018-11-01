@@ -45,6 +45,17 @@ public class User {
             UserDefaults.standard.synchronize()
         }
     }
+    public var anonymousUserID: String? {
+        get {
+            return UserDefaults.standard.string(forKey: "anonymousUserID")
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "anonymousUserID")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    
     public var isAnonymous: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "isAnonymous")

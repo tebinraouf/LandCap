@@ -70,9 +70,15 @@ class PhotoController: UIViewController {
 extension PhotoController {
     @objc func processHandler() {
         photoView.spinner.startAnimating()
-        
-        let database = CapDatabase(userID: User.session.currentUserID)
-        
+        var database: CapDatabase!
+        if User.session.isAnonymous {
+            if User.session.anonymousUserID != nil {
+                database = CapDatabase(userID: User.session.anonymousUserID!)
+            }
+        }
+        else {
+            database = CapDatabase(userID: User.session.currentUserID)
+        }
         database.photoLimit { (limit) in
             if limit > 0 {
                 let cloudDetector = self.vision.cloudLandmarkDetector()
@@ -112,10 +118,6 @@ extension PhotoController {
                 self.photoView.spinner.stopAnimating()
             }
         }
-        
-        
-        
-        
     }
     @objc func cancelHandler() {
         self.dismiss(animated: true, completion: nil)

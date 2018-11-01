@@ -9,10 +9,12 @@
 import Foundation
 import AVFoundation
 import UIKit
+import Firebase
 
 extension HomeController: HomeViewDelegate {
     func handleMoreButton() {
         print("more more more...")
+//        try? Auth.auth().signOut()
         User.session.isSignedIn = false
         let navigationController = UINavigationController(rootViewController: PageController())
         present(navigationController, animated: true, completion: nil)
