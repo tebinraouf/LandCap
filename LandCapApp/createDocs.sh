@@ -1,0 +1,1 @@
+jazzy --author Tebin Raouf --author_url https://github.com/tebinraouf --github_url https://github.com/tebinraouf/LandCap --clean --min-acl internal --exclude LandCapApp/AppDelegate.swift

@@ -22,7 +22,7 @@
 "Knowledge" = "Knowledge";
 "Knowledge Desc" = "Become smarter whenever you take a landmark photo.";
 "Geocode" = "Geocode";
-"Geocode Desc" = "Get a building addrees from your photo and get geographic information.";
+"Geocode Desc" = "Get a building address from your photo and get geographic information.";
 
 //handling errors labels -> PageController handling() method.
 "Email" = "Email";

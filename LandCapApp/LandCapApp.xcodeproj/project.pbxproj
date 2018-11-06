@@ -27,7 +27,6 @@
 		43478AE82147333700C2EC24 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478AE72147333700C2EC24 /* Extensions.swift */; };
 		43478AEA21473A6900C2EC24 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43478AE921473A6900C2EC24 /* BaseView.swift */; };
 		4359069421471D9200C692D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359069321471D9200C692D7 /* AppDelegate.swift */; };
-		4359069621471D9200C692D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359069521471D9200C692D7 /* ViewController.swift */; };
 		4359069921471D9200C692D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069721471D9200C692D7 /* Main.storyboard */; };
 		4359069B21471D9300C692D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4359069A21471D9300C692D7 /* Assets.xcassets */; };
 		4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069C21471D9300C692D7 /* LaunchScreen.storyboard */; };
@@ -100,7 +99,6 @@
 		43478AE921473A6900C2EC24 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		4359069021471D9200C692D7 /* LandCapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandCapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4359069321471D9200C692D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4359069521471D9200C692D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4359069821471D9200C692D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4359069A21471D9300C692D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4359069D21471D9300C692D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 				43478AD621472DF600C2EC24 /* Views */,
 				43478AD521472DE300C2EC24 /* Controllers */,
 				4359069321471D9200C692D7 /* AppDelegate.swift */,
-				4359069521471D9200C692D7 /* ViewController.swift */,
 				4359069721471D9200C692D7 /* Main.storyboard */,
 				4359069A21471D9300C692D7 /* Assets.xcassets */,
 				4359069C21471D9300C692D7 /* LaunchScreen.storyboard */,
@@ -722,7 +719,6 @@
 				432AA0D8215C79FF00809F78 /* GestureDelegate.swift in Sources */,
 				43AD40CA21548F12000FD21D /* CapUser.swift in Sources */,
 				43FE19A9215B3E2200437B1B /* PhotoController.swift in Sources */,
-				4359069621471D9200C692D7 /* ViewController.swift in Sources */,
 				432AA0D3215C78B700809F78 /* CaptureCamera.swift in Sources */,
 				43AD40C721548EDF000FD21D /* CapDatabase.swift in Sources */,
 				43D5695A21790C6B00301E18 /* DetailView.swift in Sources */,
