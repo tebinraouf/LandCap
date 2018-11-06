@@ -67,7 +67,7 @@ class LoginView: UIScrollView {
     lazy var forgetPasswordBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle(App.label.forgetPassword, for: .normal)
+        btn.setTitle(App.label.forgotPassword, for: .normal)
         btn.setTitleColor(UIColor.textColor, for: .normal)
         btn.addTarget(self, action: #selector(handleForgetPassword), for: .touchUpInside)
         return btn
