@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-internal class PageController: UIViewController {
+class PageController: UIViewController {
     
     let pages : [Page] = {
         let page = Page()

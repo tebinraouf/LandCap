@@ -919,27 +919,6 @@
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Helpers/AppLabel.swift",
-      "line": 11,
-      "symbol": "App",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Helpers/AppLabel.swift",
-      "line": 16,
-      "symbol": "App.appName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Helpers/AppLabel.swift",
-      "line": 20,
-      "symbol": "App.getStartedButton",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Helpers/AppLabel.swift",
       "line": 23,
       "symbol": "App.signIn",
       "symbol_kind": "source.lang.swift.decl.var.instance",

@@ -7,16 +7,16 @@
 //
 
 import Foundation
-
+///A utility class to handle all localized labels
 public class App {
     ///Singleton to handle all labels in App
     public static let label = App()
     
-    //App Name
+    ///App Name
     public var appName: String {
         return NSLocalizedString("LandCap", comment: "The name of the app")
     }
-    //On Boarding Page
+    ///On Boarding Page
     public var getStartedButton: String {
         return NSLocalizedString("Get Started", comment: "skip to login view")
     }
