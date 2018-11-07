@@ -11,26 +11,42 @@ import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
 
+///A utility class to make Firebase communication and actions easy
 class CapDatabase {
 
+    ///The current user
     private var user: CapUser!
+    
+    ///A database reference for interacting with the database
     private var ref: DatabaseReference!
+    
+    ///A storage reference for uploading photos
     private var storageRef: StorageReference!
     
+    ///The current userID
     private var userID: String!
     
+    ///Empty init
     init() {
         //empty
     }
-    //Create an instance of CapDatabase with userID and get/set user information
+    ///Create an instance of CapDatabase with userID and get/set user information
+    /// - Parameter userID: unique user ID
+    ///
     init(userID: String) {
         ref = Database.database().reference()
         self.userID = userID
     }
+    ///Create an instance of CapDatabase with a `CapUser` instance
+    /// - Parameter user: a CapUser user
+    ///
     init(user: CapUser) {
         ref = Database.database().reference()
         self.user = user
     }
+    ///Setup the initial user and user limit
+    ///
+    /// - Returns: Void
     func setupUser() {
         self.ref.child("users").child(user.Key).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
@@ -43,6 +59,10 @@ class CapDatabase {
             print(error.localizedDescription)
         }
     }
+    ///Update the user's photo limit
+    /// - Parameter callback: a callback function to return the current photoLimit
+    ///
+    /// - Returns: Void
     func photoLimit(callback: @escaping (Int)->()) {
         self.ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
@@ -55,15 +75,20 @@ class CapDatabase {
             }
         })
     }
-    
+    ///Update/Replace the user's name
+    /// - Parameter name: the name to be updated/replaced
+    ///
+    /// - Returns: Void
     func update(name: String) {
         self.ref.child("users/\(user.Key!)/name").setValue(name)
     }
-    //Accepts an image data to be uploaded and return its URL
+    ///Accepts an image data to be uploaded and return its URL
+    /// - Parameter imageData: the image data to be uploaded
+    /// - Parameter success: a callback function with url
+    ///
+    /// - Returns: Void
     func uploadImage(imageData: Data, success: @escaping (_ url:String)->()) {
-        
         let imageID = uniqueImageName()
-        
         //Upload the image
         storageRef = Storage.storage().reference()
         let photoRef = storageRef.child("users").child(userID!).child("\(imageID).png")
@@ -80,7 +105,6 @@ class CapDatabase {
             }
         }
         photo.resume()
-        
         photo.observe(StorageTaskStatus.success) { (snap) in
             snap.reference.downloadURL { (url, error) in
                 if let downloadUrl = url {
@@ -89,6 +113,9 @@ class CapDatabase {
             }
         }
     }
+    /// A utility function to generate a unique name for images
+    ///
+    /// - Returns: the unique name
     private func uniqueImageName() -> String {
         //get unique id for image
         let currentDateTime = Date()
@@ -96,14 +123,25 @@ class CapDatabase {
         formatter.dateFormat = "yyyyMMddHHmmss"
         return formatter.string(from: currentDateTime)
     }
-    public func addNew(image data: Data, with text: String, with name: String, callback: @escaping ()->()) {
+    ///Add a new image with text and name to Firebase
+    /// - Parameter data: the image data to be uploaded
+    /// - Parameter text: the text of the image (landmark text taken from WikiPedia).
+    /// - Parameter name: the name of the image (landmark name)
+    /// - Parameter callback: a callback for UI.
+    ///
+    /// - Returns: Void
+    func addNew(image data: Data, with text: String, with name: String, callback: @escaping ()->()) {
         uploadImage(imageData: data) { (urlString) in
             let newRef = self.ref.child("users").child(self.userID!).child("images").childByAutoId()
             newRef.setValue(["link": urlString, "text": text, "name": name])
             callback()
         }
     }
-    public func getImages(_ callback: @escaping (UserImage)->()) {
+    ///Get all user images from the database
+    /// - Parameter callback: a callback function that returns the `UserImage` object for presentation
+    ///
+    /// - Returns: Void
+    func getImages(_ callback: @escaping (UserImage)->()) {
         storageRef = Storage.storage().reference()
         let newRef = self.ref.child("users").child(self.userID!).child("images")
         newRef.observe(DataEventType.childAdded) { (snapshot) in
@@ -124,7 +162,11 @@ class CapDatabase {
             }
         }
     }
-    public func deleteUserImage(userImage: UserImage) {
+    ///Delete image from the database
+    /// - Parameter userImage: the `UserImage` object to be deleted
+    ///
+    /// - Returns: Void
+    func deleteUserImage(userImage: UserImage) {
         if let id = userImage.id {
             ref.child("users").child(userID).child("images").child(id).removeValue()
         }

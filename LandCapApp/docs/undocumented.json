@@ -1,41 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/CapUser/CapUser.swift",
-      "line": 11,
-      "symbol": "CapUser",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/CapUser/CapUser.swift",
-      "line": 12,
-      "symbol": "CapUser.Name",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/CapUser/CapUser.swift",
-      "line": 13,
-      "symbol": "CapUser.Key",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/CapUser/CapUser.swift",
-      "line": 14,
-      "symbol": "CapUser.isAnonymous",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/CapUser/CapUser.swift",
-      "line": 15,
-      "symbol": "CapUser.photoLimit",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Detail/DetailController.swift",
       "line": 13,
       "symbol": "DetailController",
@@ -837,83 +802,6 @@
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Extensions/Extensions.swift",
       "line": 71,
       "symbol": "UIImage.resizeWithWidth(width:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 14,
-      "symbol": "CapDatabase",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 22,
-      "symbol": "CapDatabase.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 26,
-      "symbol": "CapDatabase.init(userID:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 30,
-      "symbol": "CapDatabase.init(user:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 34,
-      "symbol": "CapDatabase.setupUser()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 46,
-      "symbol": "CapDatabase.photoLimit(callback:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 59,
-      "symbol": "CapDatabase.update(name:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 63,
-      "symbol": "CapDatabase.uploadImage(imageData:success:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 99,
-      "symbol": "CapDatabase.addNew(image:with:with:callback:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 106,
-      "symbol": "CapDatabase.getImages(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Firebase/CapDatabase.swift",
-      "line": 127,
-      "symbol": "CapDatabase.deleteUserImage(userImage:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
