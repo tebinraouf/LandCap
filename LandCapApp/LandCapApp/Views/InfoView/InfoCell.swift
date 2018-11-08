@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftIconFont
-
+///The InfoController UICollectionView Cell view
 class InfoCell: BaseCell {
+    ///The wikipedia text view
     public var wikiTextView: UITextView = {
         let tv = UITextView()
         tv.text = "Testing...."
@@ -26,20 +27,10 @@ class InfoCell: BaseCell {
         tv.isSelectable = false
         return tv
     }()
-    var bookmarkButton: UIButton = {
-        let btn = UIButton(type: UIButtonType.system)
-        btn.titleLabel?.font = UIFont.icon(from: .fontAwesome, ofSize: 30)
-//        btn.setTitle(String.fontAwesomeIcon("bookmarko"), for: UIControlState.normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.showsTouchWhenHighlighted = true
-        btn.tintColor = .lightGray
-        btn.backgroundColor = .clear
-        return btn
-    }()
+    ///Initial cell setup
     override func setupView() {
         backgroundColor = .clear
         textViewSetup()
-        bookmarkButtonSetup()
     }
     private func textViewSetup() {
         addSubview(wikiTextView)
@@ -56,15 +47,7 @@ class InfoCell: BaseCell {
         textViewDidChange(wikiTextView)
         wikiTextView.layoutIfNeeded()
     }
-    private func bookmarkButtonSetup() {
-        addSubview(bookmarkButton)
-        NSLayoutConstraint.activate([
-            bookmarkButton.topAnchor.constraint(equalTo: topAnchor, constant: -7),
-            bookmarkButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            bookmarkButton.heightAnchor.constraint(equalToConstant: 40),
-            bookmarkButton.widthAnchor.constraint(equalToConstant: 40)
-            ])
-    }
+    ///A callback function to handle `wikiTextView` textview
     public var didCellTap: (()->())?
     @objc private func handleWikiTextTap() {
         didCellTap?()
@@ -72,6 +55,7 @@ class InfoCell: BaseCell {
 }
 
 extension InfoCell: UITextViewDelegate {
+    ///UITextViewDelegate function to calculate textview height based on its height
     func textViewDidChange(_ textView: UITextView) {
         let size = CGSize(width: frame.width, height: CGFloat.infinity)
         let estimatedSize = textView.sizeThatFits(size)

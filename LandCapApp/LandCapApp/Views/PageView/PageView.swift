@@ -8,9 +8,9 @@
 
 import UIKit
 import FBSDKLoginKit
-
+///PageController View
 class PageView: BaseView {
-    lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -20,7 +20,7 @@ class PageView: BaseView {
         cv.isPagingEnabled = true
         return cv
     }()
-    var logoLabel: UILabel = {
+    private var logoLabel: UILabel = {
         let label = UILabel()
         label.text = "LandCap" //App.label.appName
         label.tintColor = .white
@@ -30,13 +30,13 @@ class PageView: BaseView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    var getStartedBackground: UIView = {
+    private var getStartedBackground: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
-    lazy var pageControl: UIPageControl = {
+    private lazy var pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.pageIndicatorTintColor = .lightGray
         pc.translatesAutoresizingMaskIntoConstraints = false
@@ -44,7 +44,7 @@ class PageView: BaseView {
         pc.currentPageIndicatorTintColor = UIColor.mainColor
         return pc
     }()
-    var getStartedButton: UIButton = {
+    private var getStartedButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle(App.label.getStartedButton, for: .normal)
@@ -55,7 +55,7 @@ class PageView: BaseView {
         btn.addTarget(self, action: #selector(handleGetStarted), for: .touchDown)
         return btn
     }()
-    var skipBtn: UIButton = {
+    private var skipBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle(App.label.skipButton, for: .normal)
@@ -64,14 +64,22 @@ class PageView: BaseView {
         btn.addTarget(self, action: #selector(handleSkip), for: .touchDown)
         return btn
     }()
-    var loginView = LoginView()
+    ///LoginView instance
+    public var loginView = LoginView()
+    ///SocialLoginView instance
     var socialLoginView = SocialMediaLoginView()
+    ///centerConstraint animation constraint
     var centerConstraint: NSLayoutConstraint!
+    ///getStartedConstraint animation constraint
     var getStartedConstraint: NSLayoutConstraint!
+    ///skipConstraint animation constraint
     var skipConstraint: NSLayoutConstraint!
+    ///pageControlConstraint animation constraint
     var pageControlConstraint: NSLayoutConstraint!
+    ///socialLoginCenterConstraint animation constraint
     var socialLoginCenterConstraint: NSLayoutConstraint!
     
+    //initial setup
     override func setupView() {
         collectionViewSetup()
         logoLabelViewSetup()
@@ -84,7 +92,7 @@ class PageView: BaseView {
         setupLoginView()
         setupSocialMediaView()
     }
-    func collectionViewSetup() {
+    private func collectionViewSetup() {
         addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: -44),
@@ -93,7 +101,7 @@ class PageView: BaseView {
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -150)
             ])
     }
-    func setupGetStartedBackground(){
+    private func setupGetStartedBackground(){
         addSubview(getStartedBackground)
         NSLayoutConstraint.activate([
             getStartedBackground.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
@@ -102,7 +110,7 @@ class PageView: BaseView {
             getStartedBackground.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
-    func logoLabelViewSetup() {
+    private func logoLabelViewSetup() {
         addSubview(logoLabel)
         NSLayoutConstraint.activate([
             logoLabel.topAnchor.constraint(equalTo: topAnchor, constant: 50),
@@ -111,7 +119,7 @@ class PageView: BaseView {
             logoLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
             ])
     }
-    func setupPageControl(){
+    private func setupPageControl(){
         addSubview(pageControl)
         pageControlConstraint = pageControl.centerXAnchor.constraint(equalTo: getStartedBackground.centerXAnchor)
         pageControlConstraint.isActive = true
@@ -121,7 +129,7 @@ class PageView: BaseView {
             pageControl.topAnchor.constraint(equalTo: getStartedBackground.topAnchor, constant: 30)
             ])
     }
-    func setupGetStartedButton(){
+    private func setupGetStartedButton(){
         addSubview(getStartedButton)
         getStartedConstraint = getStartedButton.centerXAnchor.constraint(equalTo: getStartedBackground.centerXAnchor)
         getStartedConstraint.isActive = true
@@ -131,7 +139,7 @@ class PageView: BaseView {
              getStartedButton.widthAnchor.constraint(equalTo: getStartedButton.widthAnchor),
              ])
     }
-    func setupSkipButton(){
+    private func setupSkipButton(){
         addSubview(skipBtn)
         skipConstraint = skipBtn.rightAnchor.constraint(equalTo: rightAnchor, constant: 100)
         skipConstraint.isActive = true
@@ -139,7 +147,7 @@ class PageView: BaseView {
             skipBtn.topAnchor.constraint(equalTo: topAnchor, constant: 20)
             ])
     }
-    func setupLoginView() {
+    private func setupLoginView() {
         addSubview(loginView)
         let top = loginView.topAnchor.constraint(equalTo: logoLabel.bottomAnchor, constant: 60)
         let width = loginView.widthAnchor.constraint(equalTo: widthAnchor, constant: -40)
@@ -149,7 +157,7 @@ class PageView: BaseView {
         let constraints = [top, width, bottom]
         NSLayoutConstraint.activate(constraints)
     }
-    func setupSocialMediaView() {
+    private func setupSocialMediaView() {
         addSubview(socialLoginView)
         let width = socialLoginView.widthAnchor.constraint(equalTo: widthAnchor, constant: -40)
         let centerY = socialLoginView.centerYAnchor.constraint(equalTo: getStartedBackground.centerYAnchor)
@@ -158,7 +166,15 @@ class PageView: BaseView {
         socialLoginCenterConstraint.isActive = true
         NSLayoutConstraint.activate([width, centerY, height])
     }
-    func updateConstraintFor(getStarted: CGFloat, skip: CGFloat ,pageControl: CGFloat, loginView: CGFloat, socialLoginBtn: CGFloat){
+    ///Update constraints on user interactions
+    /// - Parameter getStarted: GetStarted button constraint
+    /// - Parameter skip: Skip button constraint
+    /// - Parameter pageControl: PageControll button constraint
+    /// - Parameter loginView: `LoginView` constraint
+    /// - Parameter socialLoginBtn:  Facebook button constraint
+    ///
+    /// - Returns: Void
+    public func updateConstraintFor(getStarted: CGFloat, skip: CGFloat ,pageControl: CGFloat, loginView: CGFloat, socialLoginBtn: CGFloat){
         getStartedConstantConstraint = getStarted
         skipConstantConstraint = skip
         pageControlConstantConstraint = pageControl
@@ -169,17 +185,19 @@ class PageView: BaseView {
             self.layoutIfNeeded()
         }, completion: nil)
     }
-    @objc func handleGetStarted() {
+    @objc private func handleGetStarted() {
         let indexPath = IndexPath(item: 3, section: 0)
         pageCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.left, animated: true)
         updateConstraintFor(getStarted: -300, skip: -20, pageControl: -300, loginView: 0, socialLoginBtn: 0)
     }
-    @objc func handleSkip() {
+    @objc private func handleSkip() {
         loginDelegate.skipBtn()
     }
-    func keyboardResponder(){
+    ///Handle keyboard responsiveness
+    public func keyboardResponder(){
         loginView.keyboardResponder()
     }
+    ///LoginView component delegate
     func setTextFieldsDelegate(_ delegate: UITextFieldDelegate?){
         loginView.nameTextField.delegate = delegate
         loginView.emailTextField.delegate = delegate
@@ -187,13 +205,15 @@ class PageView: BaseView {
     }
 }
 
-
+///Setter and Getter
 extension PageView {
+    ///PageCollectionView getter
     var pageCollectionView: UICollectionView {
         get {
             return collectionView
         }
     }
+    ///CollectionView Delegate getter and setter
     var collectionViewDelegate: UICollectionViewDelegate? {
         get {
             return collectionView.delegate
@@ -202,6 +222,7 @@ extension PageView {
             collectionView.delegate = newValue
         }
     }
+    ///CollectionView DataSource getter and setter
     var collectionViewDataSource: UICollectionViewDataSource? {
         get {
             return collectionView.dataSource
@@ -210,6 +231,7 @@ extension PageView {
             collectionView.dataSource = newValue
         }
     }
+    ///Current Page getter and setter
     var currentPage: Int {
         get {
             return pageControl.currentPage
@@ -218,6 +240,7 @@ extension PageView {
             pageControl.currentPage = newValue
         }
     }
+    ///getStartedConstraint getter and setter
     var getStartedConstantConstraint: CGFloat {
         get {
             return getStartedConstraint.constant
@@ -226,6 +249,7 @@ extension PageView {
             getStartedConstraint.constant = newValue
         }
     }
+    ///skipConstraint getter and setter
     var skipConstantConstraint: CGFloat {
         get {
             return skipConstraint.constant
@@ -234,6 +258,7 @@ extension PageView {
             skipConstraint.constant = newValue
         }
     }
+    ///pageControlConstraint getter and setter
     var pageControlConstantConstraint: CGFloat {
         get {
             return pageControlConstraint.constant
@@ -242,6 +267,7 @@ extension PageView {
             pageControlConstraint.constant = newValue
         }
     }
+    ///centerConstraint getter and setter
     var loginViewConstantConstraint: CGFloat {
         get {
             return centerConstraint.constant
@@ -250,6 +276,7 @@ extension PageView {
             centerConstraint.constant = newValue
         }
     }
+    ///LoginViewDelegate getter and setter
     var loginDelegate: LoginViewDelegate {
         get {
             return loginView.loginDelegate
@@ -258,6 +285,7 @@ extension PageView {
             loginView.loginDelegate = newValue
         }
     }
+    ///SocialMediaLoginDelegate getter and setter
     var socialMediaDelegate: SocialMediaLoginDelegate {
         get {
             return socialLoginView.socialMediaDelegate

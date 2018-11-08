@@ -11,6 +11,8 @@ import FBSDKLoginKit
 import FirebaseAuth
 
 extension PageController: SocialMediaLoginDelegate {
+
+    ///FBSDKLoginKit login delegate
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
 
         if FBSDKAccessToken.currentAccessTokenIsActive() {
@@ -39,7 +41,7 @@ extension PageController: SocialMediaLoginDelegate {
             }
         }
     }
-    
+    ///FBSDKLoginKit logout delegate
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("loginButtonDidLogOut")
     }

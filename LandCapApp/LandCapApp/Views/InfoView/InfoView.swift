@@ -9,9 +9,10 @@
 import UIKit
 
 
-
+///InfoController view
 class InfoView: BaseView {
     
+    ///InfoController model to fill the view components
     public var infoModel: InfoModel? {
         didSet {
             guard let info = infoModel else { return }
@@ -46,11 +47,13 @@ class InfoView: BaseView {
         label.font = UIFont(name: "Iowan Old Style", size: 20)
         return label
     }()
+    ///A UIActivityIndicatorView instance to handle loading when processing
     public var spinner: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
         ai.translatesAutoresizingMaskIntoConstraints = false
         return ai
     }()
+    ///The UICollectionView instance to show wiki text
     public var wikiCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -61,6 +64,7 @@ class InfoView: BaseView {
         cv.isPagingEnabled = false
         return cv
     }()
+    ///Initial setup
     override func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .mainLightGray
@@ -126,7 +130,9 @@ class InfoView: BaseView {
     }
 }
 
+///Utility getters and setters
 extension InfoView {
+    /// UICollectionViewDelegate getter and setter
     public var collectionViewDelegate: UICollectionViewDelegate? {
         get {
             return wikiCollectionView.delegate
@@ -135,6 +141,7 @@ extension InfoView {
             wikiCollectionView.delegate = newValue
         }
     }
+    /// UICollectionViewDataSource getter and setter
     public var collectionViewDataSource: UICollectionViewDataSource? {
         get {
             return wikiCollectionView.dataSource
@@ -143,6 +150,7 @@ extension InfoView {
             wikiCollectionView.dataSource = newValue
         }
     }
+    ///ImageView visibility getter and setter
     public var imageViewIsHidden: Bool {
         get {
             return imageView.isHidden

@@ -10,14 +10,17 @@ import Foundation
 import UIKit
 import AVFoundation
 
+///The HomeController View
 class HomeView: BaseView {
     
+    ///The main view to hold the camera
     public var previewView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.mainColor
         return view
     }()
+    ///The HomeViewDelegate instance to handle `HomeView` actions
     public var delegate: HomeViewDelegate!
     
     private var moreBtn: UIButton = {
@@ -25,9 +28,7 @@ class HomeView: BaseView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.titleLabel?.font = UIFont.icon(from: .fontAwesome, ofSize: 25)
         btn.setTitle(String.fontAwesomeIcon("bars"), for: UIControlState.normal)
-//        btn.backgroundColor = UIColor.mainColor
         btn.tintColor = UIColor.textColor
-//        btn.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
         btn.addTarget(self, action: #selector(handleMoreButton), for: .touchDown)
         return btn
     }()
@@ -36,12 +37,10 @@ class HomeView: BaseView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.titleLabel?.font = UIFont.icon(from: .materialIcon, ofSize: 35)
         btn.setTitle(String.fontMaterialIcon("image"), for: UIControlState.normal)
-//        btn.setTitle("Hellooooo", for: .normal)
         btn.tintColor = UIColor.textColor
         btn.addTarget(self, action: #selector(handleUploadingPhoto), for: .touchDown)
         return btn
     }()
-    
     private var takePhotoBtn: UIButton = {
         let btn = UIButton(type: UIButtonType.system)
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -53,8 +52,7 @@ class HomeView: BaseView {
         btn.addTarget(self, action: #selector(handleTakePhoto), for: .touchDown)
         return btn
     }()
-    
-    
+    ///Main view setup
     override func setupView() {
         //required because programatically setting up views.
         translatesAutoresizingMaskIntoConstraints = false
@@ -89,24 +87,22 @@ class HomeView: BaseView {
     }
     private func uploadPhotoButton() {
         addSubview(uploadPhotoBtn)
-        
         NSLayoutConstraint.activate([
             uploadPhotoBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             uploadPhotoBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
             ])
-        
     }
-    @objc func handleTakePhoto() {
+    @objc private func handleTakePhoto() {
         delegate.handleTakingPhoto()
     }
-    @objc func handleMoreButton() {
+    @objc private func handleMoreButton() {
         delegate.handleMoreButton()
     }
-    @objc func handleUploadingPhoto() {
+    @objc private func handleUploadingPhoto() {
         delegate.handleUploadingPhoto()
     }
 }
-
+///HomeViewDelegate protocal to handle `HomeView` actions
 protocol HomeViewDelegate {
     func handleTakingPhoto()
     func handleMoreButton()

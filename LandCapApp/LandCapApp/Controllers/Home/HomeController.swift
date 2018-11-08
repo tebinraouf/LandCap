@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 
-
+///The main controller after the user is signed in
 class HomeController: UIViewController {
+    ///The HomeController view
+    public var homeView: HomeView = HomeView()
+    ///`CaptureCamera` instance
+    public var captureCamera: CaptureCamera!
     
-    var homeView: HomeView = HomeView()
-    var captureCamera: CaptureCamera!
-    
+    ///Initial Controller load
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -28,17 +30,15 @@ class HomeController: UIViewController {
         
         //Configure Swiping
         handleSwipeGestureRecognizer()
-
     }
+    ///viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
-    
-    func setupDelegate() {
+    private func setupDelegate() {
         homeView.delegate = self
     }
-    func setupView() {
+    private func setupView() {
         view.addSubview(homeView)
         NSLayoutConstraint.activate([
             homeView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -46,7 +46,7 @@ class HomeController: UIViewController {
             homeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
     }
-    func handleSwipeGestureRecognizer() {
+    private func handleSwipeGestureRecognizer() {
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeToProfile(sender:)))
         swipe.direction = UISwipeGestureRecognizerDirection.left
         view.addGestureRecognizer(swipe)

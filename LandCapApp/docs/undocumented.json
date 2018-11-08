@@ -2,169 +2,15 @@
   "warnings": [
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Detail/DetailController.swift",
-      "line": 13,
-      "symbol": "DetailController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Detail/DetailController.swift",
-      "line": 15,
-      "symbol": "DetailController.userImage",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Detail/DetailController.swift",
-      "line": 22,
-      "symbol": "DetailController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Detail/DetailController.swift",
-      "line": 118,
+      "line": 110,
       "symbol": "DetailController.viewWillLayoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Detail/DetailController.swift",
-      "line": 139,
-      "symbol": "DetailController.textToImage(drawText:inImage:atPoint:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Detail/DetailController.swift",
-      "line": 173,
+      "line": 165,
       "symbol": "DetailController.saveImage(_:didFinishSavingWithError:contextInfo:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/CaptureCamera.swift",
-      "line": 11,
-      "symbol": "CaptureCamera",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/CaptureCamera.swift",
-      "line": 15,
-      "symbol": "CaptureCamera.photoOutput",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/CaptureCamera.swift",
-      "line": 19,
-      "symbol": "CaptureCamera.init(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/CaptureCamera.swift",
-      "line": 23,
-      "symbol": "CaptureCamera.setupCamera()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": null,
-      "symbol": "HomeController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": null,
-      "symbol": "HomeController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": null,
-      "symbol": "HomeController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": 13,
-      "symbol": "HomeController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": 15,
-      "symbol": "HomeController.homeView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": 16,
-      "symbol": "HomeController.captureCamera",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": 18,
-      "symbol": "HomeController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": 33,
-      "symbol": "HomeController.viewWillAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": 38,
-      "symbol": "HomeController.setupDelegate()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": 41,
-      "symbol": "HomeController.setupView()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/HomeController.swift",
-      "line": 49,
-      "symbol": "HomeController.handleSwipeGestureRecognizer()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/extensions/AVDelegate.swift",
-      "line": 13,
-      "symbol": "HomeController.photoOutput(_:didFinishProcessingPhoto:error:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/extensions/AVDelegate.swift",
-      "line": 19,
-      "symbol": "HomeController.process(imageData:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/extensions/GestureDelegate.swift",
-      "line": 13,
-      "symbol": "HomeController.handleSwipeToProfile(sender:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -193,349 +39,6 @@
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Home/extensions/HomeViewDelegate.swift",
       "line": 33,
       "symbol": "HomeController.imagePickerController(_:didFinishPickingMediaWithInfo:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoCollectionViewDelegate.swift",
-      "line": 12,
-      "symbol": "InfoController.collectionView(_:numberOfItemsInSection:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoCollectionViewDelegate.swift",
-      "line": 15,
-      "symbol": "InfoController.collectionView(_:cellForItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoCollectionViewDelegate.swift",
-      "line": 35,
-      "symbol": "InfoController.collectionView(_:layout:sizeForItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoCollectionViewDelegate.swift",
-      "line": 45,
-      "symbol": "InfoController.collectionView(_:layout:minimumLineSpacingForSectionAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoCollectionViewDelegate.swift",
-      "line": 48,
-      "symbol": "InfoController.collectionView(_:layout:insetForSectionAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoCollectionViewDelegate.swift",
-      "line": 51,
-      "symbol": "InfoController.handleCellTap(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": null,
-      "symbol": "InfoController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 13,
-      "symbol": "InfoController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 15,
-      "symbol": "InfoController.landmarks",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 16,
-      "symbol": "InfoController.landmarkName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 17,
-      "symbol": "InfoController.imageData",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 18,
-      "symbol": "InfoController.homeController",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 20,
-      "symbol": "InfoController.infoView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 21,
-      "symbol": "InfoController.infoModel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 22,
-      "symbol": "InfoController.selected",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 24,
-      "symbol": "InfoController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 60,
-      "symbol": "InfoController.testData()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Info/InfoController.swift",
-      "line": 74,
-      "symbol": "InfoController.viewWillAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": null,
-      "symbol": "PageController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": null,
-      "symbol": "PageController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": null,
-      "symbol": "PageController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": null,
-      "symbol": "PageController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": null,
-      "symbol": "PageController",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 12,
-      "symbol": "PageController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 14,
-      "symbol": "PageController.pages",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 18,
-      "symbol": "PageController.pageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 19,
-      "symbol": "PageController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 27,
-      "symbol": "PageController.viewWillAppear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 30,
-      "symbol": "PageController.preferredStatusBarStyle",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 36,
-      "symbol": "PageController.setupView()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 45,
-      "symbol": "PageController.setDelegates()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 52,
-      "symbol": "PageController.nextController()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/PageController.swift",
-      "line": 55,
-      "symbol": "PageController.handling(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/CollectionDelegate.swift",
-      "line": 13,
-      "symbol": "PageController.collectionView(_:numberOfItemsInSection:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/CollectionDelegate.swift",
-      "line": 16,
-      "symbol": "PageController.collectionView(_:cellForItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/CollectionDelegate.swift",
-      "line": 24,
-      "symbol": "PageController.collectionView(_:layout:sizeForItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/CollectionDelegate.swift",
-      "line": 28,
-      "symbol": "PageController.collectionView(_:layout:minimumLineSpacingForSectionAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/CollectionDelegate.swift",
-      "line": 31,
-      "symbol": "PageController.collectionView(_:willDisplay:forItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/CollectionDelegate.swift",
-      "line": 41,
-      "symbol": "PageController.scrollViewWillEndDragging(_:withVelocity:targetContentOffset:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/CollectionDelegate.swift",
-      "line": 46,
-      "symbol": "PageController.prepareLoginPage(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/CollectionDelegate.swift",
-      "line": 53,
-      "symbol": "PageController.isLoginPage(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/LoginDelegate.swift",
-      "line": 15,
-      "symbol": "PageController.signInBtn(email:password:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/LoginDelegate.swift",
-      "line": 39,
-      "symbol": "PageController.registerBtn(name:email:password:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/LoginDelegate.swift",
-      "line": 79,
-      "symbol": "PageController.forgetPasswordBtn()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/LoginDelegate.swift",
-      "line": 96,
-      "symbol": "PageController.skipBtn()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/SocialMediaDelegate.swift",
-      "line": 14,
-      "symbol": "PageController.loginButton(_:didCompleteWith:error:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/SocialMediaDelegate.swift",
-      "line": 43,
-      "symbol": "PageController.loginButtonDidLogOut(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/TextFieldDelegate.swift",
-      "line": 14,
-      "symbol": "PageController.scrollViewWillBeginDragging(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Controllers/Page/extensions/TextFieldDelegate.swift",
-      "line": 17,
-      "symbol": "PageController.textFieldShouldReturn(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -1044,27 +547,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Subclasses/LeftPaddedTextField.swift",
-      "line": 11,
-      "symbol": "LeftPaddedTextField",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Subclasses/LeftPaddedTextField.swift",
-      "line": 12,
-      "symbol": "LeftPaddedTextField.textRect(forBounds:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Subclasses/LeftPaddedTextField.swift",
-      "line": 15,
-      "symbol": "LeftPaddedTextField.editingRect(forBounds:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/Commons/BaseView.swift",
       "line": 12,
       "symbol": "BaseView.init(frame:)",
@@ -1072,443 +554,107 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/DetailView/DetailView.swift",
-      "line": null,
-      "symbol": "DetailView",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/DetailView/DetailView.swift",
-      "line": 11,
-      "symbol": "DetailView",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/DetailView/DetailView.swift",
-      "line": 14,
-      "symbol": "DetailView.scrollView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/DetailView/DetailView.swift",
-      "line": 21,
-      "symbol": "DetailView.imageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/DetailView/DetailView.swift",
-      "line": 28,
-      "symbol": "DetailView.imageText",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/DetailView/DetailView.swift",
-      "line": 86,
-      "symbol": "DetailView.textViewDidChange(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 13,
-      "symbol": "HomeView",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 15,
-      "symbol": "HomeView.previewView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 21,
-      "symbol": "HomeView.delegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 99,
-      "symbol": "HomeView.handleTakePhoto()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 102,
-      "symbol": "HomeView.handleMoreButton()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 105,
-      "symbol": "HomeView.handleUploadingPhoto()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 110,
-      "symbol": "HomeViewDelegate",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 111,
+      "line": 107,
       "symbol": "HomeViewDelegate.handleTakingPhoto()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 112,
+      "line": 108,
       "symbol": "HomeViewDelegate.handleMoreButton()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/HomeView/Home.swift",
-      "line": 113,
+      "line": 109,
       "symbol": "HomeViewDelegate.handleUploadingPhoto()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoCell.swift",
-      "line": null,
-      "symbol": "InfoCell",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoCell.swift",
-      "line": 12,
-      "symbol": "InfoCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoCell.swift",
-      "line": 13,
-      "symbol": "InfoCell.wikiTextView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoCell.swift",
+      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
       "line": 29,
-      "symbol": "InfoCell.bookmarkButton",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoCell.swift",
-      "line": 68,
-      "symbol": "InfoCell.didCellTap",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoCell.swift",
-      "line": 75,
-      "symbol": "InfoCell.textViewDidChange(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoView.swift",
-      "line": null,
-      "symbol": "InfoView",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoView.swift",
-      "line": 13,
-      "symbol": "InfoView",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoView.swift",
-      "line": 15,
-      "symbol": "InfoView.infoModel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoView.swift",
-      "line": 49,
-      "symbol": "InfoView.spinner",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoView.swift",
-      "line": 54,
-      "symbol": "InfoView.wikiCollectionView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoView.swift",
-      "line": 130,
-      "symbol": "InfoView.collectionViewDelegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoView.swift",
-      "line": 138,
-      "symbol": "InfoView.collectionViewDataSource",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/InfoView/InfoView.swift",
-      "line": 146,
-      "symbol": "InfoView.imageViewIsHidden",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 12,
-      "symbol": "LoginView",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 13,
-      "symbol": "LoginView.loginRegisterSegmentedControl",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 22,
-      "symbol": "LoginView.container",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 28,
       "symbol": "LoginView.nameTextField",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 37,
+      "line": 38,
       "symbol": "LoginView.emailTextField",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 47,
+      "line": 48,
       "symbol": "LoginView.passTextField",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 57,
+      "line": 58,
       "symbol": "LoginView.loginRegisterButton",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 67,
+      "line": 68,
       "symbol": "LoginView.forgetPasswordBtn",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 76,
+      "line": 77,
       "symbol": "LoginView.fieldHeight",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 77,
+      "line": 78,
       "symbol": "LoginView.containerHeight",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 78,
+      "line": 79,
       "symbol": "LoginView.containerHeightWithoutName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 80,
+      "line": 81,
       "symbol": "LoginView.containerConstraint",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 81,
+      "line": 82,
       "symbol": "LoginView.nameHeightConstraint",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 82,
+      "line": 83,
       "symbol": "LoginView.nameTopConstarint",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 84,
+      "line": 85,
       "symbol": "LoginView.handleLoginRegisterChange()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 105,
-      "symbol": "LoginView.init(frame:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 118,
-      "symbol": "LoginView.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 121,
-      "symbol": "LoginView.setupViews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 128,
-      "symbol": "LoginView.addSubViews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 137,
-      "symbol": "LoginView.setupSegmentedControl()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 146,
-      "symbol": "LoginView.setupContainer()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 160,
-      "symbol": "LoginView.setupName()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 173,
-      "symbol": "LoginView.setupEmail()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 181,
-      "symbol": "LoginView.setupPassword()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 189,
-      "symbol": "LoginView.setupForgetPassword()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 196,
-      "symbol": "LoginView.setupLoginRegisterBtn()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 203,
-      "symbol": "LoginView.keyboardResponder()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 209,
-      "symbol": "LoginView.loginDelegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 234,
-      "symbol": "LoginViewDelegate",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 235,
-      "symbol": "LoginViewDelegate.signInBtn(email:password:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 236,
-      "symbol": "LoginViewDelegate.registerBtn(name:email:password:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 237,
-      "symbol": "LoginViewDelegate.forgetPasswordBtn()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/LoginView/LoginView.swift",
-      "line": 238,
-      "symbol": "LoginViewDelegate.skipBtn()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -1584,366 +730,9 @@
     },
     {
       "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 11,
-      "symbol": "PageCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 12,
-      "symbol": "PageCell.page",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 20,
-      "symbol": "PageCell.imageView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 27,
-      "symbol": "PageCell.titleLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 35,
-      "symbol": "PageCell.descriptionLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 45,
-      "symbol": "PageCell.gradientLayer",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 53,
+      "line": 60,
       "symbol": "PageCell.layoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 56,
-      "symbol": "PageCell.addSubViews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 61,
-      "symbol": "PageCell.backgroundSetup()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 67,
-      "symbol": "PageCell.titleSetup()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 73,
-      "symbol": "PageCell.descriptionSetup()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 81,
-      "symbol": "PageCell.setupGradientColor()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 88,
-      "symbol": "PageCell.loginView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageCell.swift",
-      "line": 89,
-      "symbol": "PageCell.touchesBegan(_:with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": null,
-      "symbol": "PageView",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 12,
-      "symbol": "PageView",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 13,
-      "symbol": "PageView.collectionView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 23,
-      "symbol": "PageView.logoLabel",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 33,
-      "symbol": "PageView.getStartedBackground",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 39,
-      "symbol": "PageView.pageControl",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 47,
-      "symbol": "PageView.getStartedButton",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 58,
-      "symbol": "PageView.skipBtn",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 67,
-      "symbol": "PageView.loginView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 68,
-      "symbol": "PageView.socialLoginView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 69,
-      "symbol": "PageView.centerConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 70,
-      "symbol": "PageView.getStartedConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 71,
-      "symbol": "PageView.skipConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 72,
-      "symbol": "PageView.pageControlConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 73,
-      "symbol": "PageView.socialLoginCenterConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 87,
-      "symbol": "PageView.collectionViewSetup()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 96,
-      "symbol": "PageView.setupGetStartedBackground()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 105,
-      "symbol": "PageView.logoLabelViewSetup()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 114,
-      "symbol": "PageView.setupPageControl()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 124,
-      "symbol": "PageView.setupGetStartedButton()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 134,
-      "symbol": "PageView.setupSkipButton()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 142,
-      "symbol": "PageView.setupLoginView()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 152,
-      "symbol": "PageView.setupSocialMediaView()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 161,
-      "symbol": "PageView.updateConstraintFor(getStarted:skip:pageControl:loginView:socialLoginBtn:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 172,
-      "symbol": "PageView.handleGetStarted()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 177,
-      "symbol": "PageView.handleSkip()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 180,
-      "symbol": "PageView.keyboardResponder()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 183,
-      "symbol": "PageView.setTextFieldsDelegate(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 192,
-      "symbol": "PageView.pageCollectionView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 197,
-      "symbol": "PageView.collectionViewDelegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 205,
-      "symbol": "PageView.collectionViewDataSource",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 213,
-      "symbol": "PageView.currentPage",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 221,
-      "symbol": "PageView.getStartedConstantConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 229,
-      "symbol": "PageView.skipConstantConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 237,
-      "symbol": "PageView.pageControlConstantConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 245,
-      "symbol": "PageView.loginViewConstantConstraint",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 253,
-      "symbol": "PageView.loginDelegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/Tebin/Documents/Documents/Backup/Documents/CUNY/Fall 2018/CSC714 Software System Analysis Design/LandCap/LandCapApp/LandCapApp/Views/PageView/PageView.swift",
-      "line": 261,
-      "symbol": "PageView.socialMediaDelegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {

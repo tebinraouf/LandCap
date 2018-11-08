@@ -9,29 +9,22 @@
 import UIKit
 import FirebaseUI
 import CDAlertView
-
+///DetailController to show individual view
 class DetailController: UIViewController {
     
+    ///The tapped `UserImage` instance
     public var userImage: UserImage!
-    
     private var detailView = DetailView()
     
     private var shareImage: UIImage!
     private var shareText: String!
     
+    ///The initial setup when the view first loads
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setNavigationItems()
         setDetails()
-        
-        
-        
-        
-        
-        print("hello")
-        
-        
     }
     private func setDetails() {
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -109,7 +102,6 @@ class DetailController: UIViewController {
             database.deleteUserImage(userImage: self.userImage)
             self.dismiss(animated: true, completion: nil)
         }
-        print("deleted...")
     }
     @objc private func downloadHandler() {
         let image = textToImage(drawText: self.detailView.imageText.text, inImage: self.detailView.imageView.image!, atPoint: CGPoint(x: 0, y: 0))
@@ -136,7 +128,7 @@ class DetailController: UIViewController {
         alert.add(action: delete)
         alert.show()
     }
-    func textToImage(drawText text: String, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
+    private func textToImage(drawText text: String, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
         let textColor = UIColor.blackColor
         let textBackground = UIColor(r: 240, g: 240, b: 240, a: 0.8)
         let textFont = UIFont(name: "Helvetica Bold", size: 50)!

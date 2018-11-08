@@ -8,16 +8,16 @@
 
 import UIKit
 
+///The DetailController View
 class DetailView: BaseView {
     
-    
+    ///The outer container ScrollView
     public var scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.translatesAutoresizingMaskIntoConstraints = false
-        
         return sv
     }()
-    
+    ///The image
     public var imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -25,6 +25,7 @@ class DetailView: BaseView {
         iv.backgroundColor = .blue
         return iv
     }()
+    ///Image Text
     public var imageText: UITextView = {
         let tv = UITextView()
         tv.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -40,7 +41,7 @@ class DetailView: BaseView {
         tv.setContentOffset(CGPoint.zero, animated: true)
         return tv
     }()
-    
+    ///Initial setup
     override func setupView() {
         backgroundColor = .mainLightGray
         
@@ -61,9 +62,7 @@ class DetailView: BaseView {
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scrollView.heightAnchor.constraint(equalTo: heightAnchor)
             ])
-        
     }
-    
     private func imageSetup() {
         scrollView.addSubview(imageView)
         NSLayoutConstraint.activate([
@@ -83,6 +82,7 @@ class DetailView: BaseView {
 }
 
 extension DetailView: UITextViewDelegate {
+    ///Calculate TextView hight based on its size
     func textViewDidChange(_ textView: UITextView) {
         let size = CGSize(width: frame.width, height: CGFloat.infinity)
         let estimatedSize = textView.sizeThatFits(size)

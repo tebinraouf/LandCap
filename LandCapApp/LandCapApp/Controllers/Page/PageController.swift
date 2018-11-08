@@ -9,13 +9,18 @@
 import UIKit
 import Firebase
 
+///Initial onborading controller
 class PageController: UIViewController {
     
-    let pages : [Page] = {
+    ///PageController model
+    public let pages : [Page] = {
         let page = Page()
         return page.getPages()
     }()
+    ///PageController view
     let pageView = PageView()
+    
+    ///Initial load
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -24,16 +29,18 @@ class PageController: UIViewController {
         setupView()
         setDelegates()
     }
+    ///viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    ///preferredStatusBarStyle
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
 }
 
 extension PageController {
-    func setupView() {
+    private func setupView() {
         view.addSubview(pageView)
         NSLayoutConstraint.activate([
             pageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -42,17 +49,19 @@ extension PageController {
             pageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
-    func setDelegates(){
+    private func setDelegates(){
         pageView.collectionViewDelegate = self
         pageView.collectionViewDataSource = self
         pageView.loginDelegate = self
         pageView.socialMediaDelegate = self
         pageView.setTextFieldsDelegate(self)
     }
-    func nextController() {
+    ///NextController on success
+    public func nextController() {
         navigationController?.pushViewController(HomeController(), animated: true)
     }
-    func handling(_ error: Error?) {
+    ///Error handling
+    public func handling(_ error: Error?) {
         if error != nil {
             if let errCode = AuthErrorCode(rawValue: (error?._code)!) {
                 switch errCode {

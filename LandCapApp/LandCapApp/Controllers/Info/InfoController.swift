@@ -10,17 +10,29 @@ import UIKit
 import Firebase
 import CDAlertView
 
+///InforController to show a processed photo
 class InfoController: UIViewController {
     
-    var landmarks: [VisionCloudLandmark]!
-    var landmarkName: String!
-    var imageData: Data!
-    weak var homeController: HomeController!
+    ///The list of landmarks returns from the Vision API
+    public var landmarks: [VisionCloudLandmark]!
     
-    var infoView: InfoView = InfoView()
-    var infoModel: InfoModel!
-    var selected = Dictionary<Int, WikiContentModel>()
+    ///The taken image data
+    public var imageData: Data!
+
+    ///The HomeController instance to go back after saving the photo
+    public weak var homeController: HomeController!
+
+    ///The landmark name
+    private var landmarkName: String!
     
+    private var infoView: InfoView = InfoView()
+    ///The `InfoModel` instance of the controller
+    public var infoModel: InfoModel!
+    
+    ///Hold the user selected texts
+    public var selected = Dictionary<Int, WikiContentModel>()
+    
+    ///Initial load
     override func viewDidLoad() {
         super.viewDidLoad()
         print("InfoController")
@@ -57,7 +69,7 @@ class InfoController: UIViewController {
             }
         }
     }
-    func testData() {
+    private func testData() {
         infoModel = InfoModel(image: UIImage(named: "statue.png")!, title: "Statue of Liberty Statue Liberty Statue", confidence: 20)
         let wikiModel = WikiModel("Staten Island Ferry")
         wikiModel.getWikiContent { (wikiContents) in
@@ -70,7 +82,7 @@ class InfoController: UIViewController {
             }
         }
     }
-    
+    ///viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         self.infoView.wikiCollectionView.reloadData()
     }
@@ -86,7 +98,6 @@ class InfoController: UIViewController {
 
 extension InfoController {
     @objc private func saveHandler() {
-        
         if User.session.isAnonymous {
             let alert = CDAlertView(title: App.label.wikiSaveGuestTitle, message: App.label.wikiSaveGuestMessage, type: .warning)
             alert.show()

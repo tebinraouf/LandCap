@@ -8,18 +8,25 @@
 
 import AVFoundation
 
+///A Utility class to create a custom camera
 class CaptureCamera {
     
     private var captureSession: AVCaptureSession = AVCaptureSession()
     private var backCamera: AVCaptureDevice?
+    
+    ///AVCapturePhotoOutput instance of the photo
     public var photoOutput: AVCapturePhotoOutput?
     private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     private var homeView: HomeView
     private var frame: CGRect
+    ///Initialize a camera
+    /// - Parameter homeView: a `HomeView` instance to display the camera
+    ///
     init(_ homeView: HomeView, _ frame: CGRect) {
         self.homeView = homeView
         self.frame = frame
     }
+    ///Setup the camera
     public func setupCamera() {
         setupCaptureSession()
         setupDevice()

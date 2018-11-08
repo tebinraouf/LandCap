@@ -10,8 +10,14 @@ import Foundation
 import UIKit
 import Firebase
 
+///LoginViewDelegate action implementation
 extension PageController: LoginViewDelegate {
 
+    ///Event listener for sign in button
+    /// - Parameter email: the entered email
+    /// - Parameter password: the entered password
+    ///
+    /// - Returns: Void
     func signInBtn(email: String?, password: String?) {
         //print("Email: \(email), password: \(password)")
         guard let email = email else { return }
@@ -35,7 +41,12 @@ extension PageController: LoginViewDelegate {
             }
         })
     }
-    
+    ///Event listener for sign up button
+    /// - Parameter name: the user name
+    /// - Parameter email: the entered email
+    /// - Parameter password: the entered password
+    ///
+    /// - Returns: Void
     func registerBtn(name: String?, email: String?, password: String?) {
         guard let name = name else { return }
         guard let email = email else { return }
@@ -75,8 +86,8 @@ extension PageController: LoginViewDelegate {
             }
         })
     }
-    
-    func forgetPasswordBtn() {
+    ///Listener for fogot button
+    func forgotPasswordBtn() {
         let requestAlert = UIAlertController(title: App.label.requestPassword, message: nil, preferredStyle: .alert)
         requestAlert.addTextField { (textfield) in
             textfield.keyboardType = .emailAddress
@@ -92,7 +103,7 @@ extension PageController: LoginViewDelegate {
         })
         self.present(requestAlert, animated: true)
     }
-    
+    ///Listener for Skip button
     func skipBtn() {
         let requestAlert = UIAlertController(title: App.label.skipTitle, message: App.label.skipMessage, preferredStyle: .alert)
         requestAlert.addAction(UIAlertAction(title: App.label.skipCancel, style: .cancel, handler: nil))

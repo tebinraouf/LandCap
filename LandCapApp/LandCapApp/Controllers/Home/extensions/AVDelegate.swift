@@ -10,13 +10,15 @@ import UIKit
 import AVFoundation
 
 extension HomeController: AVCapturePhotoCaptureDelegate {
+    ///AVCapturePhotoCaptureDelegate delegate function
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             //After finish processing the photo, display the photo
             process(imageData: imageData)
         }
     }
-    func process(imageData: Data) {
+    ///Pass the taken photo to the next controller
+    public func process(imageData: Data) {
         let photoController = PhotoController()
         photoController.homeController = self
         photoController.imageData = imageData

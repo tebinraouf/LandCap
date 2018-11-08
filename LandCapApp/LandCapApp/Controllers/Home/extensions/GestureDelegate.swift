@@ -10,6 +10,8 @@ import UIKit
 import CDAlertView
 
 extension HomeController: UIGestureRecognizerDelegate {
+    ///UIGestureRecognizerDelegate delegate to handle swip left
+    ///Check if the user is anonymous or not
     @objc func handleSwipeToProfile(sender: UISwipeGestureRecognizer) {
         if sender.direction == .left {
             if User.session.isAnonymous {

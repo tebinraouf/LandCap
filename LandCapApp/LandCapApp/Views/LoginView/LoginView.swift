@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
+///The Login view components
 class LoginView: UIScrollView {
-    lazy var loginRegisterSegmentedControl: UISegmentedControl = {
+    private lazy var loginRegisterSegmentedControl: UISegmentedControl = {
         let sc = UISegmentedControl(items: [App.label.signIn, App.label.signUp])
         //sc.backgroundColor = .white
         sc.tintColor = UIColor.textColor
@@ -19,7 +20,7 @@ class LoginView: UIScrollView {
         sc.addTarget(self, action: #selector(handleLoginRegisterChange), for: UIControlEvents.valueChanged)
         return sc
     }()
-    let container: UIView = {
+    private let container: UIView = {
         let container = UIView()
         container.backgroundColor = .clear
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +102,7 @@ class LoginView: UIScrollView {
         nameHeightConstraint = nameTextField.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: nameHeight)
         nameHeightConstraint.isActive = true
     }
-    //MARK:- Initializer
+    ///Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
@@ -109,15 +110,13 @@ class LoginView: UIScrollView {
         isScrollEnabled = true
         alwaysBounceVertical = true
         showsVerticalScrollIndicator = false
-        
-        
         setupViews()
-        
     }
-    
+    ///Required init
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    ///Initial setup
     func setupViews(){
         addSubViews()
         setupSegmentedControl()
@@ -125,7 +124,7 @@ class LoginView: UIScrollView {
         setupForgetPassword()
         setupLoginRegisterBtn()
     }
-    func addSubViews(){
+    private func addSubViews(){
         addSubview(loginRegisterSegmentedControl)
         addSubview(container)
         container.addSubview(nameTextField)
@@ -134,7 +133,7 @@ class LoginView: UIScrollView {
         addSubview(forgetPasswordBtn)
         addSubview(loginRegisterButton)
     }
-    func setupSegmentedControl(){
+    private func setupSegmentedControl(){
         NSLayoutConstraint.activate([
             loginRegisterSegmentedControl.centerXAnchor.constraint(equalTo: centerXAnchor),
             loginRegisterSegmentedControl.topAnchor.constraint(equalTo: topAnchor),
@@ -143,34 +142,30 @@ class LoginView: UIScrollView {
             loginRegisterSegmentedControl.trailingAnchor.constraint(equalTo: trailingAnchor)
             ])
     }
-    func setupContainer(){
+    private func setupContainer(){
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: loginRegisterSegmentedControl.bottomAnchor),
             container.leadingAnchor.constraint(equalTo: leadingAnchor),
             container.trailingAnchor.constraint(equalTo: trailingAnchor),
             ])
-        //height = name + email + password + spacing height
         containerConstraint = container.heightAnchor.constraint(equalToConstant: fieldHeight * 3 + 30)
         containerConstraint.isActive = true
-        
         setupName()
         setupEmail()
         setupPassword()
     }
-    func setupName(){
+    private func setupName(){
         NSLayoutConstraint.activate([
             nameTextField.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             nameTextField.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             ])
-        
         nameTopConstarint = nameTextField.topAnchor.constraint(equalTo: container.topAnchor)
         nameTopConstarint.constant = 10
         nameTopConstarint.isActive = true
-        
         nameHeightConstraint = nameTextField.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 1/3 - 0.06)
         nameHeightConstraint.isActive = true
     }
-    func setupEmail() {
+    private func setupEmail() {
         NSLayoutConstraint.activate([
             emailTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 10),
             emailTextField.leadingAnchor.constraint(equalTo: container.leadingAnchor),
@@ -178,7 +173,7 @@ class LoginView: UIScrollView {
             emailTextField.heightAnchor.constraint(equalToConstant: fieldHeight)
             ])
     }
-    func setupPassword() {
+    private func setupPassword() {
         NSLayoutConstraint.activate([
             passTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10),
             passTextField.leadingAnchor.constraint(equalTo: container.leadingAnchor),
@@ -186,27 +181,29 @@ class LoginView: UIScrollView {
             passTextField.heightAnchor.constraint(equalToConstant: fieldHeight)
             ])
     }
-    func setupForgetPassword() {
+    private func setupForgetPassword() {
         forgetPasswordBtn.topAnchor.constraint(equalTo: passTextField.bottomAnchor).isActive = true
         forgetPasswordBtn.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         forgetPasswordBtn.heightAnchor.constraint(equalTo: forgetPasswordBtn.heightAnchor).isActive = true
         forgetPasswordBtn.widthAnchor.constraint(equalTo: forgetPasswordBtn.widthAnchor).isActive = true
         forgetPasswordBtn.isHidden = true
     }
-    func setupLoginRegisterBtn() {
+    private func setupLoginRegisterBtn() {
         loginRegisterButton.topAnchor.constraint(equalTo: forgetPasswordBtn.bottomAnchor, constant: 10).isActive = true
         loginRegisterButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: fieldHeight).isActive = true
         loginRegisterButton.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         loginRegisterButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -220).isActive = true
     }
-    func keyboardResponder() {
+    ///Handle keyboard responsiveness
+    public func keyboardResponder() {
         nameTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
         passTextField.resignFirstResponder()
     }
     
-    var loginDelegate: LoginViewDelegate!
+    ///LoginViewDelegate instance to handle login actions
+    public var loginDelegate: LoginViewDelegate!
     //MARK: Button Handlers
     @objc private func handleLoginRegister() {
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0{
@@ -224,16 +221,32 @@ class LoginView: UIScrollView {
         loginDelegate.registerBtn(name: nameTextField.text, email: emailTextField.text, password: passTextField.text)
     }
     @objc private func handleForgetPassword(){
-        loginDelegate.forgetPasswordBtn()
+        loginDelegate.forgotPasswordBtn()
     }
     
 }
 
 
-
+///LoginView protocol to handle actions
 protocol LoginViewDelegate {
+    ///Event listener for sign in button
+    /// - Parameter email: the entered email
+    /// - Parameter password: the entered password
+    ///
+    /// - Returns: Void
     func signInBtn(email: String?, password: String?)
+    
+    ///Event listener for sign up button
+    /// - Parameter name: the user name
+    /// - Parameter email: the entered email
+    /// - Parameter password: the entered password
+    ///
+    /// - Returns: Void
     func registerBtn(name: String?, email: String?, password: String?)
-    func forgetPasswordBtn()
+    
+    ///Listener for fogot button
+    func forgotPasswordBtn()
+    
+    ///Listener for Skip button
     func skipBtn()
 }
