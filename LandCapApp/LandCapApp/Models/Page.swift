@@ -8,9 +8,13 @@
 
 import UIKit
 
+///Page Model for PageController
 struct Page {
+    ///Page title
     var title: String?
+    ///Page description
     var description: String?
+    ///Page image
     var image: UIImage?
     
     private let firstPageName = NSLocalizedString("Building", comment: "Building")
@@ -22,16 +26,23 @@ struct Page {
     private let thirdPageDesc = NSLocalizedString("Geocode Desc", comment: "Geocode Page Description")
     
     
-    
+    ///Empty init
     init() {
         //empty constructor
     }
+    ///Initialize a page
+    /// - Parameter title: page title
+    /// - Parameter description: page description
+    /// - Parameter image: page image
+    ///
     init(title: String, description: String, image: UIImage) {
         self.title = title
         self.description = description
         self.image = image
     }
-    
+    ///Get predefined pages
+    ///
+    /// - Returns: an array of `Page`
     func getPages() -> [Page] {
         let pages: [Page] = {
             let firstPage = Page(title: firstPageName, description: firstPageDesc, image: #imageLiteral(resourceName: "building"))

@@ -39,7 +39,6 @@
 		437FAA67214F41C00050AEE8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA66214F41C00050AEE8 /* Helper.swift */; };
 		437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA69214F43A90050AEE8 /* HomeController.swift */; };
 		439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439BD25A214EFB3A00143CF7 /* Localizable.strings */; };
-		439BD25F214F17C500143CF7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BD25E214F17C500143CF7 /* LoginModel.swift */; };
 		43AD40C721548EDF000FD21D /* CapDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD40C621548EDF000FD21D /* CapDatabase.swift */; };
 		43AD40CA21548F12000FD21D /* CapUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD40C921548F12000FD21D /* CapUser.swift */; };
 		43ADA76C214EE47500F09835 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADA76B214EE47500F09835 /* LoginView.swift */; };
@@ -119,7 +118,6 @@
 		439BD25B214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/Main.strings"; sourceTree = "<group>"; };
 		439BD25C214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		439BD25D214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		439BD25E214F17C500143CF7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		43AD40C621548EDF000FD21D /* CapDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapDatabase.swift; sourceTree = "<group>"; };
 		43AD40C921548F12000FD21D /* CapUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapUser.swift; sourceTree = "<group>"; };
 		43ADA76B214EE47500F09835 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				43478AE3214732B100C2EC24 /* Page.swift */,
-				439BD25E214F17C500143CF7 /* LoginModel.swift */,
 				430E634C21715A43008109B9 /* InfoModel.swift */,
 			);
 			path = Models;
@@ -742,7 +739,6 @@
 				43478AEA21473A6900C2EC24 /* BaseView.swift in Sources */,
 				430E634D21715A43008109B9 /* InfoModel.swift in Sources */,
 				43FAF2D5217830B10031F7A2 /* DetailController.swift in Sources */,
-				439BD25F214F17C500143CF7 /* LoginModel.swift in Sources */,
 				432322C421507265005B47CF /* SocialMediaDelegate.swift in Sources */,
 				437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */,
 				43B7AC4621766CE10013E9E9 /* ProfileView.swift in Sources */,

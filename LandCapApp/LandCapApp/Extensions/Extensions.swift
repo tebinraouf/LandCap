@@ -9,32 +9,52 @@
 import Foundation
 import UIKit
 
+///UIColor utility extension
 public extension UIColor {
     
+    ///convenience initializer
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: a)
     }
+    ///App mainColor
     public class var mainColor: UIColor {
         return UIColor(r: 33, g: 147, b: 176, a: 1)
     }
+    
+    ///App secondary color
     public class var secondaryColor: UIColor {
         return UIColor(r: 109, g: 213, b: 237, a: 1)
     }
+    
+    ///App text color
     public class var textColor: UIColor {
         return .white
     }
+    
+    ///App black color
     public class var blackColor: UIColor {
         return .black
     }
+    
+    ///App white color
     public class var whiteColor: UIColor {
         return .white
     }
+    
+    ///App main light gray color
     public class var mainLightGray: UIColor {
         return UIColor(r: 245, g: 245, b: 245, a: 1)
     }
 }
 
+///UIImage utility extension
 extension UIImage {
+    
+    ///Crop an image by size
+    /// - Parameter width: image width
+    /// - Parameter height: image height
+    ///
+    /// - Returns: a new `UIImage` image
     func cropToBounds(width: Double, height: Double) -> UIImage {
         
         let cgimage = self.cgImage!
@@ -68,6 +88,10 @@ extension UIImage {
         
         return image
     }
+    ///Resize an image by width
+    /// - Parameter width: the total image width
+    ///
+    /// - Returns: a new `UIImage` image
     func resizeWithWidth(width: CGFloat) -> UIImage? {
         let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
         imageView.contentMode = .scaleAspectFit

@@ -104,7 +104,10 @@ class HomeView: BaseView {
 }
 ///HomeViewDelegate protocal to handle `HomeView` actions
 protocol HomeViewDelegate {
+    ///handle taking photo button
     func handleTakingPhoto()
+    ///handle more button
     func handleMoreButton()
+    ///handle upload button
     func handleUploadingPhoto()
 }

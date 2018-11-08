@@ -9,6 +9,7 @@
 import UIKit
 ///A utility class derived from UIView for all UIView cells
 class BaseView: UIView {
+    ///init
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false

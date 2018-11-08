@@ -12,6 +12,7 @@ import UIKit
 import Firebase
 
 extension HomeController: HomeViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    ///handle more button
     func handleMoreButton() {
         print("more more more...")
 //        try? Auth.auth().signOut()
@@ -19,10 +20,12 @@ extension HomeController: HomeViewDelegate, UINavigationControllerDelegate, UIIm
         let navigationController = UINavigationController(rootViewController: PageController())
         present(navigationController, animated: true, completion: nil)
     }
+    ///handle taking photo button
     func handleTakingPhoto() {
         let settings = AVCapturePhotoSettings()
         captureCamera.photoOutput?.capturePhoto(with: settings, delegate: self)
     }
+    ///handle uploading photo
     func handleUploadingPhoto() {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary //UIImagePickerController.SourceType.
@@ -30,6 +33,7 @@ extension HomeController: HomeViewDelegate, UINavigationControllerDelegate, UIIm
         vc.delegate = self
         present(vc, animated: true)
     }
+    ///handle image picker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true)
         let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage

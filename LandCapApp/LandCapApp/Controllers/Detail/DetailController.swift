@@ -107,6 +107,7 @@ class DetailController: UIViewController {
         let image = textToImage(drawText: self.detailView.imageText.text, inImage: self.detailView.imageView.image!, atPoint: CGPoint(x: 0, y: 0))
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImage(_:didFinishSavingWithError:contextInfo:)), nil)
     }
+    ///viewWillLayoutSubviews
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         detailView.textViewDidChange(detailView.imageText)
@@ -162,7 +163,7 @@ class DetailController: UIViewController {
         
         return newImage!
     }
-    @objc func saveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    @objc private func saveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             // we got back an error!
             let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+///PhotoController view
 class PhotoView: BaseView {
     
     private var imageView: UIImageView = {
@@ -18,11 +18,13 @@ class PhotoView: BaseView {
         iv.backgroundColor = .whiteColor
         return iv
     }()
+    ///UIActivityIndicatorView for UI
     public var spinner: UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
         ai.translatesAutoresizingMaskIntoConstraints = false
         return ai
     }()
+    ///Initial setup
     override func setupView() {
         imageViewSetup()
         spinnerSetup()
@@ -45,7 +47,8 @@ class PhotoView: BaseView {
 }
 
 extension PhotoView {
-    var image: UIImage? {
+    ///Taken image getter and setter
+    public var image: UIImage? {
         get {
             return imageView.image
         }

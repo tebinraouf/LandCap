@@ -8,7 +8,9 @@
 
 import UIKit
 
+///ProfileController CollectionView cell
 class ProfileCell: BaseCell {
+    ///CollectionView image
     public var imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -17,6 +19,7 @@ class ProfileCell: BaseCell {
         iv.layer.borderWidth = 0.5
         return iv
     }()
+    ///Initial setup
     override func setupView() {
         imageViewSetup()
         imageView.image = (UIImage(named: "statue.png")!).cropToBounds(width: 137, height: 137)

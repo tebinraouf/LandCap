@@ -12,23 +12,29 @@ import Firebase
 import SwiftIconFont
 import CDAlertView
 
+///PhotoController to show the taken photo before processing
 class PhotoController: UIViewController {
 
+    ///Photo data
     var imageData: Data!
+    ///PhotoController view
     let photoView = PhotoView()
     
+    ///HomeController instance to go back on cancel
     weak var homeController: HomeController!
-    lazy var vision = Vision.vision()
     
+    ///Vison instance
+    private lazy var vision = Vision.vision()
+    
+    ///Initial load
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor  = UIColor.whiteColor
         setNavigationItems()
         setupView()
         photoView.image = UIImage(data: imageData)
-        print("PhotoController")
     }
-    
+    ///viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
@@ -68,7 +74,9 @@ class PhotoController: UIViewController {
 }
 
 extension PhotoController {
-    @objc func processHandler() {
+    ///Process photo
+    /// TODO:- Cleanup
+    @objc private func processHandler() {
         photoView.spinner.startAnimating()
         var database: CapDatabase!
         if User.session.isAnonymous {
@@ -119,10 +127,13 @@ extension PhotoController {
             }
         }
     }
-    @objc func cancelHandler() {
+    ///Cancel controller
+    @objc private func cancelHandler() {
         self.dismiss(animated: true, completion: nil)
     }
-    @objc func historyHandler() {
+    
+    ///Show history controller
+    @objc private func historyHandler() {
         print("Handle History")
     }
 }

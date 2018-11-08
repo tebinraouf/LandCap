@@ -10,19 +10,24 @@ import Foundation
 import UIKit
 import FirebaseUI
 
+///User ProfileController
 class ProfileController: UIViewController {
     
+    ///ProfileController View
     var profileView = ProfileView()
+    
+    ///Database instance
     var capDatabase: CapDatabase!
+    
+    ///Collection of user images
     var userImageObjects = [UserImage]()
+    
+    ///Initial load
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ProfileController")
-        
         setupView()
         setNavigationItems()
         setupDelegate()
-        
 //        getImages()
         //testData()
     }
@@ -40,6 +45,7 @@ class ProfileController: UIViewController {
         testImage.text = "Another nice picture....dummy text...."
         userImageObjects.append(testImage)
     }
+    ///viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         self.profileView.imageCollectionView.reloadData()
     }
@@ -69,11 +75,12 @@ class ProfileController: UIViewController {
             }
         }
     }
-    @objc func handleSignOut() {
+    @objc private func handleSignOut() {
         User.session.isSignedIn = false
         let navigationController = UINavigationController(rootViewController: PageController())
         present(navigationController, animated: true, completion: nil)
     }
+    ///viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
         self.userImageObjects.removeAll()
@@ -83,9 +90,11 @@ class ProfileController: UIViewController {
 }
 
 extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    ///numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return userImageObjects.count
     }
+    ///cellForItemAt
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.ProfileCell, for: indexPath) as! ProfileCell
         DispatchQueue.main.async {
@@ -97,21 +106,26 @@ extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegat
         }
         return cell
     }
+    ///collectionViewLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let layout = profileView.imageCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         layout.invalidateLayout()
         return CGSize(width: ((self.view.frame.width/3) - 1), height:((self.view.frame.width / 3) - 1));
     }
+    ///minimumLineSpacingForSectionAt
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
+    ///minimumInteritemSpacingForSectionAt
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
+    ///insetForSectionAt
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
+    ///didSelectItemAt
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailController = DetailController()
         detailController.userImage = userImageObjects[indexPath.row]
@@ -122,6 +136,7 @@ extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegat
 }
 
 extension ProfileController: ProfileDelegate {
+    ///Profile image tap handler
     func handleProfileTap() {
         print("tap tap tap...")
     }

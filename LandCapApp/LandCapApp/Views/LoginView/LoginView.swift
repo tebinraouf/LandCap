@@ -26,6 +26,7 @@ class LoginView: UIScrollView {
         container.translatesAutoresizingMaskIntoConstraints = false
         return container
     }()
+    ///nameTextField
     let nameTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +36,7 @@ class LoginView: UIScrollView {
         textField.placeholder = App.label.enterName
         return textField
     }()
+    ///emailTextField
     let emailTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -45,6 +47,7 @@ class LoginView: UIScrollView {
         textField.keyboardType = .emailAddress
         return textField
     }()
+    ///passTextField
     let passTextField: LeftPaddedTextField = {
         let textField = LeftPaddedTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +58,7 @@ class LoginView: UIScrollView {
         textField.isSecureTextEntry = true
         return textField
     }()
+    ///loginRegisterButton
     lazy var loginRegisterButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -65,6 +69,7 @@ class LoginView: UIScrollView {
         btn.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
         return btn
     }()
+    ///forgetPasswordBtn
     lazy var forgetPasswordBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -74,15 +79,15 @@ class LoginView: UIScrollView {
         return btn
     }()
     
-    let fieldHeight: CGFloat = 40
-    let containerHeight: CGFloat = 40 * 3 + 30
-    let containerHeightWithoutName: CGFloat = 40 * 3
+    private let fieldHeight: CGFloat = 40
+    private let containerHeight: CGFloat = 40 * 3 + 30
+    private let containerHeightWithoutName: CGFloat = 40 * 3
     
-    var containerConstraint: NSLayoutConstraint!
-    var nameHeightConstraint: NSLayoutConstraint!
-    var nameTopConstarint: NSLayoutConstraint!
+    private var containerConstraint: NSLayoutConstraint!
+    private var nameHeightConstraint: NSLayoutConstraint!
+    private var nameTopConstarint: NSLayoutConstraint!
     
-    @objc func handleLoginRegisterChange(){
+    @objc private func handleLoginRegisterChange(){
         let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
         loginRegisterButton.setTitle(title, for: .normal)
     

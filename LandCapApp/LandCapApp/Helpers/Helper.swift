@@ -19,6 +19,7 @@ class CellID {
     static let ProfileCell = "ProfileCell"
 }
 
+///A utility alert function
 public func alert(title: String, message: String, viewController: UIViewController) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))

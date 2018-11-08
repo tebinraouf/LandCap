@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
+///ProfileController view
 class ProfileView: BaseView {
+    ///User profile picture
     private var imageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -22,6 +24,7 @@ class ProfileView: BaseView {
         iv.transform = CGAffineTransform(rotationAngle: .pi/2)
         return iv
     }()
+    ///User name
     private var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -30,6 +33,7 @@ class ProfileView: BaseView {
         label.numberOfLines = 2
         return label
     }()
+    ///CollectionView for user image
     public var imageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -40,7 +44,10 @@ class ProfileView: BaseView {
         cv.isPagingEnabled = false
         return cv
     }()
+    ///ProfileDelegate to handle view actions
     public var delegate: ProfileDelegate!
+    
+    ///Initial setup
     override func setupView() {
         backgroundColor = .mainLightGray
         imageViewSetup()
@@ -81,7 +88,9 @@ class ProfileView: BaseView {
     }
 }
 
+///Utility setters and getters
 extension ProfileView {
+    ///imageCollectionView delegate setter and getter
     public var collectionViewDelegate: UICollectionViewDelegate? {
         get {
             return imageCollectionView.delegate
@@ -90,6 +99,7 @@ extension ProfileView {
             imageCollectionView.delegate = newValue
         }
     }
+    ///imageCollectionView dataSource setter and getter
     public var collectionViewDataSource: UICollectionViewDataSource? {
         get {
             return imageCollectionView.dataSource
@@ -100,6 +110,8 @@ extension ProfileView {
     }
 }
 
+///ProfileView delegate
 protocol ProfileDelegate {
+    ///Profile image tap handler
     func handleProfileTap()
 }
