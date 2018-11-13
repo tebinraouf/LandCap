@@ -27,9 +27,18 @@ class HomeView: BaseView {
         let btn = UIButton(type: UIButtonType.system)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.titleLabel?.font = UIFont.icon(from: .fontAwesome, ofSize: 25)
-        btn.setTitle(String.fontAwesomeIcon("bars"), for: UIControlState.normal)
+        btn.setTitle(String.fontAwesomeIcon("signout"), for: UIControlState.normal)
         btn.tintColor = UIColor.textColor
         btn.addTarget(self, action: #selector(handleMoreButton), for: .touchDown)
+        return btn
+    }()
+    private var profileBtn: UIButton = {
+        let btn = UIButton(type: UIButtonType.system)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.titleLabel?.font = UIFont.icon(from: .fontAwesome, ofSize: 25)
+        btn.setTitle(String.fontAwesomeIcon("usercircleo"), for: UIControlState.normal)
+        btn.tintColor = UIColor.textColor
+        btn.addTarget(self, action: #selector(handleProfileButton), for: .touchDown)
         return btn
     }()
     private var uploadPhotoBtn: UIButton = {
@@ -59,6 +68,7 @@ class HomeView: BaseView {
         previewViewSetup()
         takePhotoBtnSetup()
         moreButtonSetup()
+        profileButtonSetup()
         uploadPhotoButton()
     }
     private func previewViewSetup() {
@@ -85,6 +95,13 @@ class HomeView: BaseView {
             moreBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             ])
     }
+    private func profileButtonSetup() {
+        addSubview(profileBtn)
+        NSLayoutConstraint.activate([
+            profileBtn.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            profileBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            ])
+    }
     private func uploadPhotoButton() {
         addSubview(uploadPhotoBtn)
         NSLayoutConstraint.activate([
@@ -98,6 +115,9 @@ class HomeView: BaseView {
     @objc private func handleMoreButton() {
         delegate.handleMoreButton()
     }
+    @objc private func handleProfileButton() {
+        delegate.handleProfileButton()
+    }
     @objc private func handleUploadingPhoto() {
         delegate.handleUploadingPhoto()
     }
@@ -108,6 +128,8 @@ protocol HomeViewDelegate {
     func handleTakingPhoto()
     ///handle more button
     func handleMoreButton()
+    ///handle profile button
+    func handleProfileButton()
     ///handle upload button
     func handleUploadingPhoto()
 }

@@ -28,7 +28,7 @@ class ProfileView: BaseView {
     private var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "John Smith"
+        label.text = ""
         label.font = UIFont(name: "Iowan Old Style", size: 20)
         label.numberOfLines = 2
         return label
@@ -106,6 +106,15 @@ extension ProfileView {
         }
         set {
             imageCollectionView.dataSource = newValue
+        }
+    }
+    ///User name getter and setter
+    public var userName: String? {
+        get {
+            return nameLabel.text
+        }
+        set {
+            nameLabel.text = newValue
         }
     }
 }

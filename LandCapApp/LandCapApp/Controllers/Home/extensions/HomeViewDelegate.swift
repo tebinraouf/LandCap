@@ -14,11 +14,13 @@ import Firebase
 extension HomeController: HomeViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     ///handle more button
     func handleMoreButton() {
-        print("more more more...")
-//        try? Auth.auth().signOut()
         User.session.isSignedIn = false
         let navigationController = UINavigationController(rootViewController: PageController())
         present(navigationController, animated: true, completion: nil)
+    }
+    ///handle profile button
+    func handleProfileButton() {
+        navigateToProfile()
     }
     ///handle taking photo button
     func handleTakingPhoto() {

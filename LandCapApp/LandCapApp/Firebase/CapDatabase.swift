@@ -162,6 +162,22 @@ class CapDatabase {
             }
         }
     }
+    
+    ///Get the user name
+    /// - Parameter callback: a a callback function that returns the name of the user
+    ///
+    /// - Returns: Void
+    func getName(_ callback: @escaping (String)->()) {
+        ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let username = value?["name"] as? String ?? ""
+            callback(username)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     ///Delete image from the database
     /// - Parameter userImage: the `UserImage` object to be deleted
     ///

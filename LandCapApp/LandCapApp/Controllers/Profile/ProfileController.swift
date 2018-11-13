@@ -28,6 +28,7 @@ class ProfileController: UIViewController {
         setupView()
         setNavigationItems()
         setupDelegate()
+        getName()
 //        getImages()
         //testData()
     }
@@ -73,6 +74,14 @@ class ProfileController: UIViewController {
                 self.userImageObjects.append(userImage)
                 self.profileView.imageCollectionView.reloadData()
             }
+        }
+    }
+    private func getName() {
+        capDatabase = CapDatabase(userID: User.session.currentUserID)
+        DispatchQueue.main.async {
+            self.capDatabase.getName({ (name) in
+                self.profileView.userName = name
+            })
         }
     }
     @objc private func handleSignOut() {

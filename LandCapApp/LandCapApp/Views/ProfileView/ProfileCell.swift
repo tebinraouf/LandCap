@@ -22,7 +22,7 @@ class ProfileCell: BaseCell {
     ///Initial setup
     override func setupView() {
         imageViewSetup()
-        imageView.image = (UIImage(named: "statue.png")!).cropToBounds(width: 137, height: 137)
+        //imageView.image = (UIImage(named: "statue.png")!).cropToBounds(width: 137, height: 137)
     }
     private func imageViewSetup() {
         addSubview(imageView)

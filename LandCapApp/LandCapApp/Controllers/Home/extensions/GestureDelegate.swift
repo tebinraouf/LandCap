@@ -14,13 +14,17 @@ extension HomeController: UIGestureRecognizerDelegate {
     ///Check if the user is anonymous or not
     @objc func handleSwipeToProfile(sender: UISwipeGestureRecognizer) {
         if sender.direction == .left {
-            if User.session.isAnonymous {
-                let alert = CDAlertView(title: App.label.homeAlertTitle, message: App.label.homeAlertMessage, type: .warning)
-                alert.show()
-            }
-            else {
-                navigationController?.pushViewController(ProfileController(), animated: true)
-            }
+            navigateToProfile()
+        }
+    }
+    ///Navigate to profile controller
+    func navigateToProfile() {
+        if User.session.isAnonymous {
+            let alert = CDAlertView(title: App.label.homeAlertTitle, message: App.label.homeAlertMessage, type: .warning)
+            alert.show()
+        }
+        else {
+            navigationController?.pushViewController(ProfileController(), animated: true)
         }
     }
 }
