@@ -126,6 +126,22 @@ public class App {
     public var homeAlertMessage: String {
         return NSLocalizedString("Profile Not Available", comment: "Message to indicate profile is not available")
     }
+    ///Camera Access Title Label
+    public var homeAlertCameraAccessTitle: String {
+        return NSLocalizedString("Camera Access Title", comment: "Camera access title label")
+    }
+    ///Camera Access Message Label
+    public var homeAlertCameraAccessBody: String {
+        return NSLocalizedString("Camera Access Body", comment: "Camera access message (body) label")
+    }
+    ///Camera Access Setting Button Label
+    public var homeAlertCameraAccessSettingBtn: String {
+        return NSLocalizedString("Camera Access Settings Btn", comment: "Camera access settings button label")
+    }
+    ///Camera Access Cancel Button Label
+    public var homeAlertCameraAccessCancelBtn: String {
+        return NSLocalizedString("Camera Access Cancel Btn", comment: "Camera access cancel button label")
+    }
     
     //PhotoController
     ///Cancel taken photo label

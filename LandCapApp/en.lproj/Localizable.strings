@@ -53,6 +53,11 @@
 //Home Controller
 "Profile Oops" = "Oops";
 "Profile Not Available" = "As an anonymous user, you don't have a profile. Create an account to get more cool features 😎";
+"Camera Access Title" = "Access Error";
+"Camera Access Body" = "Camera access is denied. LandCap is a Camera App. Please give us access so that we are useful!";
+"Camera Access Settings Btn" = "Settings";
+"Camera Access Cancel Btn" = "Cancel";
+
 
 //Photo Controller
 "Cancel Photo" = "Cancel";
