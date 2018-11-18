@@ -29,7 +29,6 @@
 		4359069421471D9200C692D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4359069321471D9200C692D7 /* AppDelegate.swift */; };
 		4359069921471D9200C692D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069721471D9200C692D7 /* Main.storyboard */; };
 		4359069B21471D9300C692D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4359069A21471D9300C692D7 /* Assets.xcassets */; };
-		4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4359069C21471D9300C692D7 /* LaunchScreen.storyboard */; };
 		435906A921471D9300C692D7 /* LandCapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906A821471D9300C692D7 /* LandCapAppTests.swift */; };
 		435906B421471D9300C692D7 /* LandCapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435906B321471D9300C692D7 /* LandCapAppUITests.swift */; };
 		436DE40E215DD323004D8062 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436DE40D215DD323004D8062 /* PhotoView.swift */; };
@@ -39,6 +38,7 @@
 		437FAA67214F41C00050AEE8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA66214F41C00050AEE8 /* Helper.swift */; };
 		437FAA6A214F43A90050AEE8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FAA69214F43A90050AEE8 /* HomeController.swift */; };
 		439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 439BD25A214EFB3A00143CF7 /* Localizable.strings */; };
+		43A72B4721A21F4500863794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A72B4621A21F4500863794 /* LaunchScreen.storyboard */; };
 		43AD40C721548EDF000FD21D /* CapDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD40C621548EDF000FD21D /* CapDatabase.swift */; };
 		43AD40CA21548F12000FD21D /* CapUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD40C921548F12000FD21D /* CapUser.swift */; };
 		43ADA76C214EE47500F09835 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ADA76B214EE47500F09835 /* LoginView.swift */; };
@@ -100,7 +100,6 @@
 		4359069321471D9200C692D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4359069821471D9200C692D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4359069A21471D9300C692D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4359069D21471D9300C692D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4359069F21471D9300C692D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		435906A421471D9300C692D7 /* LandCapAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LandCapAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		435906A821471D9300C692D7 /* LandCapAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandCapAppTests.swift; sourceTree = "<group>"; };
@@ -116,8 +115,8 @@
 		437FAA69214F43A90050AEE8 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		439BD259214EFB3A00143CF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		439BD25B214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/Main.strings"; sourceTree = "<group>"; };
-		439BD25C214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		439BD25D214EFD8400143CF7 /* ckb-IQ */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ckb-IQ"; path = "ckb-IQ.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		43A72B4621A21F4500863794 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43AD40C621548EDF000FD21D /* CapDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapDatabase.swift; sourceTree = "<group>"; };
 		43AD40C921548F12000FD21D /* CapUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapUser.swift; sourceTree = "<group>"; };
 		43ADA76B214EE47500F09835 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -294,9 +293,9 @@
 				4359069321471D9200C692D7 /* AppDelegate.swift */,
 				4359069721471D9200C692D7 /* Main.storyboard */,
 				4359069A21471D9300C692D7 /* Assets.xcassets */,
-				4359069C21471D9300C692D7 /* LaunchScreen.storyboard */,
 				432AA0DB215C906700809F78 /* GoogleService-Info.plist */,
 				4359069F21471D9300C692D7 /* Info.plist */,
+				43A72B4621A21F4500863794 /* LaunchScreen.storyboard */,
 			);
 			path = LandCapApp;
 			sourceTree = "<group>";
@@ -580,10 +579,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4359069E21471D9300C692D7 /* LaunchScreen.storyboard in Resources */,
 				439BD258214EFB3A00143CF7 /* Localizable.strings in Resources */,
 				432AA0DC215C906700809F78 /* GoogleService-Info.plist in Resources */,
 				4359069B21471D9300C692D7 /* Assets.xcassets in Resources */,
+				43A72B4721A21F4500863794 /* LaunchScreen.storyboard in Resources */,
 				4359069921471D9200C692D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -793,15 +792,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		4359069C21471D9300C692D7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4359069D21471D9300C692D7 /* Base */,
-				439BD25C214EFD8400143CF7 /* ckb-IQ */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		439BD25A214EFB3A00143CF7 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -935,6 +925,7 @@
 			baseConfigurationReference = 6571EA0BB1EDB2241C4A1231 /* Pods-LandCapApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XF3ZLL552H;
 				INFOPLIST_FILE = LandCapApp/Info.plist;
@@ -955,6 +946,7 @@
 			baseConfigurationReference = 1A0482344FE67E693FB81DB5 /* Pods-LandCapApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XF3ZLL552H;
 				INFOPLIST_FILE = LandCapApp/Info.plist;
