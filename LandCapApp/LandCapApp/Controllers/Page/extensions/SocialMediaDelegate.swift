@@ -17,26 +17,28 @@ extension PageController: SocialMediaLoginDelegate {
 
         if FBSDKAccessToken.currentAccessTokenIsActive() {
             let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-            
-            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-                if let error = error {
-                    self.handling(error)
-                    User.session.isSignedIn = false
-                }
-                if let authResult = authResult {
-                    //set the initial user details for database
-                    let user = CapUser()
-                    user.Key = authResult.user.uid
-                    user.Name = authResult.user.displayName
-                    user.setAuthorizedUser()
-                    //fill database with initial values
-                    let capDatabase = CapDatabase(user: user)
-                    //capDatabase.login()
 
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if error == nil {
+                    //Store the user's name in the database
+                    if let authResult = authResult {
+                        //set the initial user details for database
+                        let user = CapUser()
+                        user.Key = authResult.user.uid
+                        user.Name = authResult.user.displayName
+                        user.setAuthorizedUser()
+                        User.session.currentUserID = authResult.user.uid
+                        User.session.isAnonymous = false
+                        //fill database with initial values
+                        let capDatabase = CapDatabase(user: user)
+                        capDatabase.setupUser()
+                    }
                     DispatchQueue.main.async {
                         User.session.isSignedIn = true
                         self.nextController()
                     }
+                } else {
+                    self.handling(error)
                 }
             }
         }
