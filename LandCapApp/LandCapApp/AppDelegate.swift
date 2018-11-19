@@ -27,10 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             var viewController: UIViewController
-            if User.session.isSignedIn {
-                viewController = HomeController()
+            if !Reachability.isConnectedToNetwork {
+                viewController = ConnectionController()
             } else {
-                viewController = PageController()
+                if User.session.isSignedIn {
+                    viewController = HomeController()
+                } else {
+                    viewController = PageController()
+                }
             }
             window.rootViewController = UINavigationController(rootViewController: viewController)
             window.makeKeyAndVisible()

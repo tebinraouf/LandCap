@@ -21,7 +21,6 @@ class HomeController: UIViewController {
     ///Initial Controller load
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         //setup the view
         setupView()
         setupDelegate()
