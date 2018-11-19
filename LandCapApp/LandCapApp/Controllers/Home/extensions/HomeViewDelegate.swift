@@ -43,4 +43,8 @@ extension HomeController: HomeViewDelegate, UINavigationControllerDelegate, UIIm
         guard let imageData = UIImagePNGRepresentation(image) else { return }
         process(imageData: imageData)
     }
+    ///handle camera access tap
+    func handleCameraAccessTap() {
+        let _ = CameraAccessHandler(homeView)
+    }
 }

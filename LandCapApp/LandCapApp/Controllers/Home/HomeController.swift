@@ -34,7 +34,7 @@ class HomeController: UIViewController {
         handleSwipeGestureRecognizer()
         
         //check camera permission
-        let _ = CameraAccessHandler()
+        let _ = CameraAccessHandler(homeView)
     }
     ///viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
@@ -62,23 +62,31 @@ class HomeController: UIViewController {
 
 ///A utility class to handle Camera Access
 public class CameraAccessHandler {
-    init() {
+    private var homeView: HomeView
+    ///Empty constructor to start checking for Camera Access
+    init(_ homeView: HomeView) {
+        self.homeView = homeView
         checkCameraAccess()
     }
     private func checkCameraAccess() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .denied:
+            homeView.isCameraAccessLabelHidden = false
             print("Denied, request permission from settings")
             presentCameraSettings()
         case .restricted:
+            homeView.isCameraAccessLabelHidden = false
             print("Restricted, device owner must approve")
         case .authorized:
+            homeView.isCameraAccessLabelHidden = true
             print("Authorized, proceed")
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { success in
                 if success {
+                    self.homeView.isCameraAccessLabelHidden = true
                     print("Permission granted, proceed")
                 } else {
+                    self.homeView.isCameraAccessLabelHidden = false
                     print("Permission denied")
                 }
             }

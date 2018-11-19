@@ -23,7 +23,7 @@ class HomeView: BaseView {
     ///The HomeViewDelegate instance to handle `HomeView` actions
     public var delegate: HomeViewDelegate!
     
-    private var moreBtn: UIButton = {
+    private var logoutBtn: UIButton = {
         let btn = UIButton(type: UIButtonType.system)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.titleLabel?.font = UIFont.icon(from: .fontAwesome, ofSize: 25)
@@ -61,6 +61,19 @@ class HomeView: BaseView {
         btn.addTarget(self, action: #selector(handleTakePhoto), for: .touchDown)
         return btn
     }()
+    private var cameraAccessLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = App.label.homeLabelCameraAccess
+        label.tintColor = UIColor.textColor
+        label.textColor = UIColor.textColor
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        return label
+    }()
+    
+    
     ///Main view setup
     override func setupView() {
         //required because programatically setting up views.
@@ -69,7 +82,9 @@ class HomeView: BaseView {
         takePhotoBtnSetup()
         moreButtonSetup()
         profileButtonSetup()
-        uploadPhotoButton()
+        uploadPhotoButtonSetup()
+        cameraAccessLabelSetup()
+        
     }
     private func previewViewSetup() {
         addSubview(previewView)
@@ -89,10 +104,10 @@ class HomeView: BaseView {
             ])
     }
     private func moreButtonSetup() {
-        addSubview(moreBtn)
+        addSubview(logoutBtn)
         NSLayoutConstraint.activate([
-            moreBtn.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            moreBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            logoutBtn.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            logoutBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             ])
     }
     private func profileButtonSetup() {
@@ -102,12 +117,26 @@ class HomeView: BaseView {
             profileBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             ])
     }
-    private func uploadPhotoButton() {
+    private func uploadPhotoButtonSetup() {
         addSubview(uploadPhotoBtn)
         NSLayoutConstraint.activate([
             uploadPhotoBtn.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             uploadPhotoBtn.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
             ])
+    }
+    private func cameraAccessLabelSetup() {
+        addSubview(cameraAccessLabel)
+        NSLayoutConstraint.activate([
+            cameraAccessLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            cameraAccessLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            cameraAccessLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            cameraAccessLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+            
+            ])
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleCameraAccessTap))
+        cameraAccessLabel.isUserInteractionEnabled = true
+        cameraAccessLabel.addGestureRecognizer(tap)
     }
     @objc private func handleTakePhoto() {
         delegate.handleTakingPhoto()
@@ -121,7 +150,23 @@ class HomeView: BaseView {
     @objc private func handleUploadingPhoto() {
         delegate.handleUploadingPhoto()
     }
+    @objc private func handleCameraAccessTap() {
+        delegate.handleCameraAccessTap()
+    }
 }
+
+extension HomeView {
+    ///CameraAccessLabel isHidden getter and setter
+    public var isCameraAccessLabelHidden: Bool {
+        get {
+            return cameraAccessLabel.isHidden
+        }
+        set {
+            cameraAccessLabel.isHidden = newValue
+        }
+    }
+}
+
 ///HomeViewDelegate protocal to handle `HomeView` actions
 protocol HomeViewDelegate {
     ///handle taking photo button
@@ -132,4 +177,6 @@ protocol HomeViewDelegate {
     func handleProfileButton()
     ///handle upload button
     func handleUploadingPhoto()
+    ///handle camera access tap to show alert
+    func handleCameraAccessTap()
 }

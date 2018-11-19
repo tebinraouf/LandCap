@@ -57,7 +57,7 @@
 "Camera Access Body" = "Camera access is denied. LandCap is a Camera App. Please give us access so that we are useful!";
 "Camera Access Settings Btn" = "Settings";
 "Camera Access Cancel Btn" = "Cancel";
-
+"Camera Access Label" = "Camera Access is denied. Please tap on this text to grant permission!";
 
 //Photo Controller
 "Cancel Photo" = "Cancel";

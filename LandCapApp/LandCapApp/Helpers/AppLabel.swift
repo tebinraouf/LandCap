@@ -142,6 +142,10 @@ public class App {
     public var homeAlertCameraAccessCancelBtn: String {
         return NSLocalizedString("Camera Access Cancel Btn", comment: "Camera access cancel button label")
     }
+    ///Camera Access Label
+    public var homeLabelCameraAccess: String {
+        return NSLocalizedString("Camera Access Label", comment: "Camera access label")
+    }
     
     //PhotoController
     ///Cancel taken photo label
