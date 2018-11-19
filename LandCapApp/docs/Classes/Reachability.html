@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CaptureCamera Class Reference</title>
+    <title>Reachability Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/CaptureCamera" class="dashAnchor"></a>
-    <a title="CaptureCamera Class Reference"></a>
+    <a name="//apple_ref/swift/Class/Reachability" class="dashAnchor"></a>
+    <a title="Reachability Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        CaptureCamera Class Reference
+        Reachability Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -184,14 +184,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>CaptureCamera</h1>
+            <h1>Reachability</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CaptureCamera</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Reachability</span></code></pre>
 
                 </div>
               </div>
-            <p>A Utility class to create a custom camera</p>
+            <p>A utility class to handle internet connection</p>
 
           </section>
           <section class="section task-group-section">
@@ -200,9 +200,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:10LandCapApp13CaptureCameraC11photoOutputSo014AVCapturePhotoG0CSgvp"></a>
-                    <a name="//apple_ref/swift/Property/photoOutput" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10LandCapApp13CaptureCameraC11photoOutputSo014AVCapturePhotoG0CSgvp">photoOutput</a>
+                    <a name="/s:10LandCapApp12ReachabilityC20isConnectedToNetworkSbvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/isConnectedToNetwork" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LandCapApp12ReachabilityC20isConnectedToNetworkSbvpZ">isConnectedToNetwork</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -210,87 +210,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>AVCapturePhotoOutput instance of the photo</p>
+                        <p>A static variable to indicate connection</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">photoOutput</span><span class="p">:</span> <span class="kt">AVCapturePhotoOutput</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10LandCapApp13CaptureCameraCyAcA8HomeViewC_So6CGRectVtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10LandCapApp13CaptureCameraCyAcA8HomeViewC_So6CGRectVtcfc">init(_:_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Initialize a camera</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">homeView</span><span class="p">:</span> <span class="kt"><a href="../Classes/HomeView.html">HomeView</a></span><span class="p">,</span> <span class="n">_</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>homeView</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>a <code><a href="../Classes/HomeView.html">HomeView</a></code> instance to display the camera</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:10LandCapApp13CaptureCameraC05setupE0yyF"></a>
-                    <a name="//apple_ref/swift/Method/setupCamera()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:10LandCapApp13CaptureCameraC05setupE0yyF">setupCamera()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Setup the camera</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setupCamera</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">var</span> <span class="nv">isConnectedToNetwork</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

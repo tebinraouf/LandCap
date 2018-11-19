@@ -55,7 +55,7 @@ class ConnectionView: BaseView {
         return label
     }()
     private var gradientLayer = CAGradientLayer()
-    
+    ///Setup initial view
     override func setupView() {
         setupGradientColor()
         logoLabelViewSetup()

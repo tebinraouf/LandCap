@@ -11,9 +11,10 @@ import Foundation
 import SystemConfiguration
 import UIKit
 
+///A utility class to handle internet connection
 public class Reachability {
-    
-    class var isConnectedToNetwork: Bool {
+    ///A static variable to indicate connection
+    static var isConnectedToNetwork: Bool {
         
         var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
@@ -45,9 +46,4 @@ public class Reachability {
         return ret
         
     }
-}
-func noInternetAlert(_ viewController: UIViewController) {
-    let alert = UIAlertController(title: "Internet Connection", message: "There is no Internet connection, please try again.", preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-    viewController.present(alert, animated: true)
 }
