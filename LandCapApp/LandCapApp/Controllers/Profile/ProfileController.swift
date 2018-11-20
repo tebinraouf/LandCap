@@ -6,8 +6,8 @@
 //  Copyright © 2018 Tebin. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import AVFoundation
 import FirebaseUI
 
 ///User ProfileController
@@ -144,9 +144,25 @@ extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegat
     
 }
 
-extension ProfileController: ProfileDelegate {
+extension ProfileController: ProfileDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     ///Profile image tap handler
     func handleProfileTap() {
         print("tap tap tap...")
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary //UIImagePickerController.SourceType.
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
+    }
+    ///handle image picker for profile
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true)
+        let chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage
+        guard let image = chosenImage else { return }
+        guard let imageData = UIImagePNGRepresentation(image) else { return }
+        
+        profileView.profileImage = UIImage(data: imageData)
+        
+        //process(imageData: imageData)
     }
 }

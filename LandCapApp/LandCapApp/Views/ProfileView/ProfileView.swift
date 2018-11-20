@@ -21,7 +21,6 @@ class ProfileView: BaseView {
         iv.layer.masksToBounds = true
         iv.isHidden = false
         iv.isUserInteractionEnabled = true
-        iv.transform = CGAffineTransform(rotationAngle: .pi/2)
         return iv
     }()
     ///User name
@@ -115,6 +114,15 @@ extension ProfileView {
         }
         set {
             nameLabel.text = newValue
+        }
+    }
+    ///User profile image setter and getter
+    public var profileImage: UIImage? {
+        get {
+            return imageView.image
+        }
+        set {
+            imageView.image = newValue
         }
     }
 }
