@@ -22,7 +22,7 @@ class DetailView: BaseView {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
-        iv.backgroundColor = .blue
+        iv.backgroundColor = .clear
         return iv
     }()
     ///Image Text

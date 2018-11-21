@@ -79,8 +79,12 @@ class ProfileController: UIViewController {
     private func getName() {
         capDatabase = CapDatabase(userID: User.session.currentUserID)
         DispatchQueue.main.async {
-            self.capDatabase.getName({ (name) in
+            self.capDatabase.getName({ (name, profileUrl) in
                 self.profileView.userName = name
+                self.profileView.imageView.sd_setImage(with: URL(string: profileUrl), completed: { (image, error, cachedType, imageURL) in
+                    guard let image = image else { return }
+                    self.profileView.imageView.image = image
+                })
             })
         }
     }
@@ -147,7 +151,6 @@ extension ProfileController: UICollectionViewDataSource, UICollectionViewDelegat
 extension ProfileController: ProfileDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     ///Profile image tap handler
     func handleProfileTap() {
-        print("tap tap tap...")
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary //UIImagePickerController.SourceType.
         vc.allowsEditing = true
@@ -161,8 +164,12 @@ extension ProfileController: ProfileDelegate, UINavigationControllerDelegate, UI
         guard let image = chosenImage else { return }
         guard let imageData = UIImagePNGRepresentation(image) else { return }
         
-        profileView.profileImage = UIImage(data: imageData)
-        
-        //process(imageData: imageData)
+        DispatchQueue.main.async {
+            let capDatabase = CapDatabase(userID: User.session.currentUserID)
+            capDatabase.updateProfileImage(imageData: imageData) { (imageUrl) in
+                capDatabase.update(profileUrl: imageUrl)
+            }
+            self.profileView.imageView.image = UIImage(data: imageData)
+        }
     }
 }

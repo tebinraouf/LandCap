@@ -12,10 +12,11 @@ import UIKit
 ///ProfileController view
 class ProfileView: BaseView {
     ///User profile picture
-    private var imageView: UIImageView = {
+    public var imageView: UIImageView = {
         let iv = UIImageView()
+        iv.image = UIImage(named: "profile_holder")
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.backgroundColor = .mainColor
+        iv.backgroundColor = .clear
         iv.layer.cornerRadius = 50
         iv.layer.borderWidth = 0.5
         iv.layer.masksToBounds = true
@@ -114,15 +115,6 @@ extension ProfileView {
         }
         set {
             nameLabel.text = newValue
-        }
-    }
-    ///User profile image setter and getter
-    public var profileImage: UIImage? {
-        get {
-            return imageView.image
-        }
-        set {
-            imageView.image = newValue
         }
     }
 }

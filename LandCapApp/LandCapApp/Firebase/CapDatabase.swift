@@ -82,28 +82,44 @@ class CapDatabase {
     func update(name: String) {
         self.ref.child("users/\(user.Key!)/name").setValue(name)
     }
+    ///Update/Replace the user's profile
+    /// - Parameter name: the name to be updated/replaced
+    ///
+    /// - Returns: Void
+    func update(profileUrl: String) {
+        self.ref.child("users/\(userID!)/profileUrl").setValue(profileUrl)
+    }
     ///Accepts an image data to be uploaded and return its URL
     /// - Parameter imageData: the image data to be uploaded
     /// - Parameter success: a callback function with url
     ///
     /// - Returns: Void
     func uploadImage(imageData: Data, success: @escaping (_ url:String)->()) {
+        uploadImage(path: "users/\(userID!)", imageData: imageData, success: success)
+    }
+    ///Accepts an image data to be uploaded and return its URL for profile photo
+    /// - Parameter imageData: the image data to be uploaded
+    /// - Parameter success: a callback function with url
+    ///
+    /// - Returns: Void
+    func updateProfileImage(imageData: Data, success: @escaping (_ url:String)->()) {
+        uploadImage(path: "users/\(userID!)/profileImage", imageData: imageData, success: success)
+    }
+    ///A utility function to accept an image data to be uploaded and return its URL
+    /// - Parameter imageData: the image data to be uploaded
+    /// - Parameter success: a callback function with url
+    ///
+    /// - Returns: Void
+    private func uploadImage(path: String, imageData: Data, success: @escaping (_ url:String)->()) {
         let imageID = uniqueImageName()
         //Upload the image
         storageRef = Storage.storage().reference()
-        let photoRef = storageRef.child("users").child(userID!).child("\(imageID).png")
+        let photoRef = storageRef.child(path).child("\(imageID).png")
         //Set Image Metadata
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         //Upload Image to Firebase
-        let photo = photoRef.putData(imageData, metadata: metaData) { (metaData, error) in
-            if error == nil {
-//                print(metaData)
-            }
-            else {
-//                print(error)
-            }
-        }
+        let photo = photoRef.putData(imageData, metadata: metaData, completion: nil)
         photo.resume()
         photo.observe(StorageTaskStatus.success) { (snap) in
             snap.reference.downloadURL { (url, error) in
@@ -167,12 +183,13 @@ class CapDatabase {
     /// - Parameter callback: a a callback function that returns the name of the user
     ///
     /// - Returns: Void
-    func getName(_ callback: @escaping (String)->()) {
+    func getName(_ callback: @escaping (String, String)->()) {
         ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
             let username = value?["name"] as? String ?? ""
-            callback(username)
+            let profileUrl = value?["profileUrl"] as? String ?? ""
+            callback(username, profileUrl)
         }) { (error) in
             print(error.localizedDescription)
         }
