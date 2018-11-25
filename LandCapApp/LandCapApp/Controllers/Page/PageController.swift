@@ -37,6 +37,11 @@ class PageController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
+    private func calculateTopDistance() -> CGFloat {
+        guard let navigationHeight = self.navigationController?.navigationBar.frame.height else {return 0}
+        let statusHeight = UIApplication.shared.statusBarFrame.height
+        return navigationHeight + statusHeight
+    }
 }
 
 extension PageController {
@@ -55,6 +60,7 @@ extension PageController {
         pageView.loginDelegate = self
         pageView.socialMediaDelegate = self
         pageView.setTextFieldsDelegate(self)
+        pageView.delegate = self
     }
     ///NextController on success
     public func nextController() {
@@ -83,4 +89,12 @@ extension PageController {
             return
         }
     }
+}
+
+extension PageController: PageViewDelegate {
+    var topDistance: CGFloat {
+        return calculateTopDistance()
+    }
+    
+    
 }

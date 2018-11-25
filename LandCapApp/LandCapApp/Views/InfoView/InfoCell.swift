@@ -10,6 +10,7 @@ import UIKit
 import SwiftIconFont
 ///The InfoController UICollectionView Cell view
 class InfoCell: BaseCell {
+    
     ///The wikipedia text view
     public var wikiTextView: UITextView = {
         let tv = UITextView()
@@ -38,14 +39,11 @@ class InfoCell: BaseCell {
             wikiTextView.topAnchor.constraint(equalTo: topAnchor),
             wikiTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             wikiTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            wikiTextView.heightAnchor.constraint(equalToConstant: 150)
+            wikiTextView.heightAnchor.constraint(equalToConstant: 100)
             ])
-        wikiTextView.delegate = self
+//        wikiTextView.delegate = self
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleWikiTextTap))
         wikiTextView.addGestureRecognizer(tap)
-        
-        textViewDidChange(wikiTextView)
-        wikiTextView.layoutIfNeeded()
     }
     ///A callback function to handle `wikiTextView` textview
     public var didCellTap: (()->())?
@@ -54,15 +52,3 @@ class InfoCell: BaseCell {
     }
 }
 
-extension InfoCell: UITextViewDelegate {
-    ///UITextViewDelegate function to calculate textview height based on its height
-    func textViewDidChange(_ textView: UITextView) {
-        let size = CGSize(width: frame.width, height: CGFloat.infinity)
-        let estimatedSize = textView.sizeThatFits(size)
-        wikiTextView.constraints.forEach { (constraint) in
-            if constraint.firstAttribute == .height {
-                constraint.constant = estimatedSize.height
-            }
-        }
-    }
-}

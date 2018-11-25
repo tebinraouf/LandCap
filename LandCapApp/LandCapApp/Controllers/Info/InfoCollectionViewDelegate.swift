@@ -18,7 +18,7 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellID.InfoCell, for: indexPath) as! InfoCell
         
         cell.wikiTextView.text = infoModel?.wikiModel[indexPath.row].text
-        cell.textViewDidChange(cell.wikiTextView)
+        textViewDidChange(cell.wikiTextView)
         cell.didCellTap = {
             self.handleCellTap(cell, indexPath)
         }
@@ -40,7 +40,7 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
         let cell = InfoCell()
         cell.wikiTextView.text = infoModel.wikiModel[indexPath.row].text
         let estimatedSize = cell.wikiTextView.sizeThatFits(CGSize(width: view.frame.width, height: .infinity))
-        cell.textViewDidChange(cell.wikiTextView)
+        textViewDidChange(cell.wikiTextView)
         
         let size = CGSize(width: collectionView.frame.width, height: estimatedSize.height)
         return size
@@ -72,6 +72,20 @@ extension InfoController: UICollectionViewDataSource, UICollectionViewDelegate, 
             cell.wikiTextView.backgroundColor = .white
             cell.wikiTextView.textColor = .black
             self.selected[indexPath.row] = nil
+        }
+    }
+}
+
+
+extension InfoController: UITextViewDelegate {
+    ///UITextViewDelegate function to calculate textview height based on its height
+    func textViewDidChange(_ textView: UITextView) {
+        let size = CGSize(width: view.frame.width, height: CGFloat.infinity)
+        let estimatedSize = textView.sizeThatFits(size)
+        textView.constraints.forEach { (constraint) in
+            if constraint.firstAttribute == .height {
+                constraint.constant = estimatedSize.height
+            }
         }
     }
 }

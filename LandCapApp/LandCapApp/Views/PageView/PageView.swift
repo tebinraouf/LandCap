@@ -78,7 +78,8 @@ class PageView: BaseView {
     var pageControlConstraint: NSLayoutConstraint!
     ///socialLoginCenterConstraint animation constraint
     var socialLoginCenterConstraint: NSLayoutConstraint!
-    
+    ///view delegate
+    var delegate: PageViewDelegate!
     //initial setup
     override func setupView() {
         collectionViewSetup()
@@ -143,9 +144,6 @@ class PageView: BaseView {
         addSubview(skipBtn)
         skipConstraint = skipBtn.rightAnchor.constraint(equalTo: rightAnchor, constant: 100)
         skipConstraint.isActive = true
-        NSLayoutConstraint.activate([
-            skipBtn.topAnchor.constraint(equalTo: topAnchor, constant: 20)
-            ])
     }
     private func setupLoginView() {
         addSubview(loginView)
@@ -202,6 +200,9 @@ class PageView: BaseView {
         loginView.nameTextField.delegate = delegate
         loginView.emailTextField.delegate = delegate
         loginView.passTextField.delegate = delegate
+    }
+    override func layoutMarginsDidChange() {
+        skipBtn.topAnchor.constraint(equalTo: topAnchor, constant: delegate.topDistance - 40).isActive = true
     }
 }
 
@@ -294,6 +295,12 @@ extension PageView {
             socialLoginView.socialMediaDelegate = newValue
         }
     }
+}
+
+//PageView Delegate
+public protocol PageViewDelegate {
+    ///Get the top distance height from controller
+    var topDistance: CGFloat {get}
 }
 
 

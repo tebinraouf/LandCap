@@ -25,7 +25,7 @@ class InfoController: UIViewController {
     ///The landmark name
     private var landmarkName: String!
     
-    private var infoView: InfoView = InfoView()
+    private var infoView: InfoView!
     ///The `InfoModel` instance of the controller
     public var infoModel: InfoModel!
     
@@ -38,11 +38,13 @@ class InfoController: UIViewController {
         print("InfoController")
         setupView()
         setNavigationItems()
-        setupModel()
-//        testData()
+//        setupModel()
+        testData()
         setupDelegate()
     }
     private func setupView() {
+        infoView = InfoView()
+        infoView.delegate = self
         view.addSubview(infoView)
         NSLayoutConstraint.activate([
             infoView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -50,6 +52,11 @@ class InfoController: UIViewController {
             infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             infoView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
+    }
+    private func calculateTopDistance() -> CGFloat {
+        guard let navigationHeight = self.navigationController?.navigationBar.frame.height else {return 0}
+        let statusHeight = UIApplication.shared.statusBarFrame.height
+        return navigationHeight + statusHeight
     }
     private func setupModel() {
         infoView.spinner.startAnimating()
@@ -149,7 +156,12 @@ extension InfoController {
 
 
 
-
+///Handle InfoView Delegate
+extension InfoController: InfoViewDelegate {
+    var topDistance: CGFloat {
+        return calculateTopDistance()
+    }
+}
 
 
 

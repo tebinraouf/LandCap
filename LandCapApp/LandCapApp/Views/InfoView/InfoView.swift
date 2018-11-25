@@ -12,6 +12,9 @@ import UIKit
 ///InfoController view
 class InfoView: BaseView {
     
+    ///View Delegate
+    public var delegate: InfoViewDelegate!
+    
     ///InfoController model to fill the view components
     public var infoModel: InfoModel? {
         didSet {
@@ -29,7 +32,7 @@ class InfoView: BaseView {
         iv.layer.borderWidth = 0.5
         iv.layer.masksToBounds = true
         iv.isHidden = true
-        iv.transform = CGAffineTransform(rotationAngle: .pi/2)
+//        iv.transform = CGAffineTransform(rotationAngle: .pi/2)
         return iv
     }()
     private var titleLabel: UILabel = {
@@ -56,6 +59,7 @@ class InfoView: BaseView {
     ///The UICollectionView instance to show wiki text
     public var wikiCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayoutAutomaticSize
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .mainLightGray
@@ -80,7 +84,6 @@ class InfoView: BaseView {
     private func imageViewSetup() {
         addSubview(imageView)
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 74),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             imageView.heightAnchor.constraint(equalToConstant: 100),
             imageView.widthAnchor.constraint(equalToConstant: 100),
@@ -100,10 +103,10 @@ class InfoView: BaseView {
     private func titleLabelSetup() {
         addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 74),
             titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             ])
+        layoutIfNeeded()
     }
     private func confidenceLabelSetup() {
         addSubview(confidenceLabel)
@@ -127,6 +130,13 @@ class InfoView: BaseView {
             spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
             spinner.centerYAnchor.constraint(equalTo: centerYAnchor)
             ])
+    }
+    ///layoutMarginsDidChange
+    override func layoutMarginsDidChange() {
+        ///calculate top anchor based on navigation bar height taken from the controller
+        imageView.topAnchor.constraint(equalTo: topAnchor, constant: delegate.topDistance + 10).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: delegate.topDistance + 10).isActive = true
+        layoutIfNeeded()
     }
 }
 
@@ -159,4 +169,11 @@ extension InfoView {
             imageView.isHidden = newValue
         }
     }
+}
+
+
+///InfoView Delegate
+protocol InfoViewDelegate {
+    ///Get the top distance height from controller
+    var topDistance: CGFloat {get}
 }
